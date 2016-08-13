@@ -1,53 +1,102 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React, { Component } from 'react'
 
-import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+  Navigator
+} from 'react-native'
+
+import Main from "./app/components/Main"
+import Setup from "./app/components/Setup"
+import Questionnaire from "./app/components/Questionnaire"
+import Menu from "./app/components/Menu"
+import Loading from "./app/components/Loading"
+import Recommendations from "./app/components/Recommendations"
+import Map from "./app/components/Map"
 
 class doctordick extends Component {
+
+  nextRoute(route) {
+    if(this.props){
+      this.props.navigator.push(route);
+    } else {
+      this.navigator.push(route);
+    }
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Navigator
+        initialRoute={{id: 'Main', title: 'Main'}}
+        renderScene={this.renderScene.bind(this)} />
     );
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  renderScene(route, navigator){
+    var routeId = route.id;
+
+    if(routeId === 'Main'){
+      return(
+        <Main
+          title={route.title}
+          navigator={navigator}
+          nextRoute={this.nextRoute} />
+      );
+    }
+
+    if(routeId === 'Setup'){
+      return(
+        <Setup
+          title={route.title}
+          navigator={navigator}
+          nextRoute={this.nextRoute} />
+      );
+    }
+
+    if(routeId === 'Menu'){
+      return(
+        <Menu
+          title={route.title}
+          navigator={navigator}
+          nextRoute={this.nextRoute} />
+      );
+    }
+
+    if(routeId === 'Questionnaire'){
+      return(
+        <Questionnaire
+          title={route.title}
+          navigator={navigator}
+          nextRoute={this.nextRoute} />
+      );
+    }
+
+    if(routeId === 'Loading'){
+      return(
+        <Loading
+          title={route.title}
+          navigator={navigator}
+          nextRoute={this.nextRoute} />
+      );
+    }
+
+    if(routeId === 'Recommendations'){
+      return(
+        <Recommendations
+          title={route.title}
+          navigator={navigator}
+          nextRoute={this.nextRoute} />
+      );
+    }
+
+    if(routeId === 'Map'){
+      return(
+        <Map
+          title={route.title}
+          navigator={navigator}
+          nextRoute={this.nextRoute} />
+      );
+    }
+  }
+}
 
 AppRegistry.registerComponent('doctordick', () => doctordick);
