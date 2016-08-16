@@ -5,13 +5,10 @@ import {
   Navigator
 } from 'react-native'
 
-import Main from "./app/components/Main"
-import Setup from "./app/components/Setup"
-import Questionnaire from "./app/components/Questionnaire"
-import Menu from "./app/components/Menu"
-import Loading from "./app/components/Loading"
-import Recommendations from "./app/components/Recommendations"
-import Map from "./app/components/Map"
+import LoginSignup from "./app/components/setup/LoginSignup"
+import Setup from "./app/components/setup/Setup"
+import Questionnaire from "./app/components/questionnaire/Questionnaire"
+import Splash from "./app/components/shared/Splash"
 
 class doctordick extends Component {
 
@@ -26,7 +23,7 @@ class doctordick extends Component {
   render() {
     return (
       <Navigator
-        initialRoute={{id: 'Main', title: 'Main'}}
+        initialRoute={{id: 'LoginSignup', title: 'Login/Signup'}}
         renderScene={this.renderScene.bind(this)} />
     );
   }
@@ -34,9 +31,9 @@ class doctordick extends Component {
   renderScene(route, navigator){
     var routeId = route.id;
 
-    if(routeId === 'Main'){
+    if(routeId === 'LoginSignup'){
       return(
-        <Main
+        <LoginSignup
           title={route.title}
           navigator={navigator}
           nextRoute={this.nextRoute} />
@@ -52,15 +49,6 @@ class doctordick extends Component {
       );
     }
 
-    if(routeId === 'Menu'){
-      return(
-        <Menu
-          title={route.title}
-          navigator={navigator}
-          nextRoute={this.nextRoute} />
-      );
-    }
-
     if(routeId === 'Questionnaire'){
       return(
         <Questionnaire
@@ -70,27 +58,9 @@ class doctordick extends Component {
       );
     }
 
-    if(routeId === 'Loading'){
+    if(routeId === 'Splash'){
       return(
         <Loading
-          title={route.title}
-          navigator={navigator}
-          nextRoute={this.nextRoute} />
-      );
-    }
-
-    if(routeId === 'Recommendations'){
-      return(
-        <Recommendations
-          title={route.title}
-          navigator={navigator}
-          nextRoute={this.nextRoute} />
-      );
-    }
-
-    if(routeId === 'Map'){
-      return(
-        <Map
           title={route.title}
           navigator={navigator}
           nextRoute={this.nextRoute} />
