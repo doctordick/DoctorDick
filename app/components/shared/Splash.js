@@ -8,49 +8,13 @@ import {
 
 import appColors from '../_appColors'
 
-class Splash extends Component {
-
-  findPreviousState() {
-    let previousState = this.props.navigator.state.routeStack;
-    return previousState[previousState.length - 2].id;
-  }
-
-  generateText(){
-    let previousState = this.findPreviousState(),
-        text;
-    if(previousState === 'Menu'){
-      text = 'Hi! Dr. Dick has more questions for you...';
-    } else if(previousState === 'Questionnaire') {
-      text = 'Generating recommendations...';
-    }
-
-    return text;
-  }
-
-  componentWillMount() {
-    let previousState = this.findPreviousState(),
-        nextRouteId;
-
-    if(previousState === 'Menu'){
-      nextRouteId = 'Questionnaire';
-    } else if(previousState === 'Questionnaire') {
-      nextRouteId = 'Menu';
-    }
-
-    const navigator = this.props.navigator;
-
-    setTimeout(() => {
-      navigator.replace({
-        id: nextRouteId,
-      });
-    }, 1500);
-  }
+export default class Splash extends Component {
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
-          { this.generateText() }
+          asdf
         </Text>
       </View>
     );
@@ -73,5 +37,3 @@ const styles = StyleSheet.create({
   },
 
 });
-
-export default Splash

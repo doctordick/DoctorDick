@@ -12,16 +12,18 @@ import {
 import colors from '../_colors'
 import appColors from '../_appColors'
 import appStyles from '../_appStyles'
+import routes from '../../../routes'
 
-class LoginSignup extends Component {
+export default class LoginSignup extends Component {
 
   render() {
     return (
-      <Navigator renderScene={this.renderScene.bind(this)} />
+      <Navigator 
+        renderScene={this.navigatorRenderScene.bind(this)} />
     );
   }
 
-  renderScene(){
+  navigatorRenderScene(route, navigator){
     return (
       <View style={styles.container}>
 
@@ -32,7 +34,7 @@ class LoginSignup extends Component {
           Our Dick Helps Keep Yours Healthy
         </Text>
         <TouchableHighlight underlayColor={colors.white}
-          onPress={this.props.nextRoute.bind(this, { id: 'Setup', title: 'Setup' })}>
+          onPress={this.props.onForward.bind(this,  {title: 'Setup', id: 'setup'})}>
           <View style={styles.button}>
             <Text style={styles.buttonText} >
               Get Started
@@ -100,5 +102,3 @@ const styles = StyleSheet.create({
     color: 'blue'
   },
 });
-
-export default LoginSignup

@@ -10,7 +10,7 @@ import {
 import Question from './Question'
 // import questionCollection from './_questionCollection'
 
-class Questionnaire extends Component {
+export default class Questionnaire extends Component {
 
     constructor(props){
         super(props);
@@ -51,11 +51,11 @@ class Questionnaire extends Component {
 
     render() {
       return (
-          <Navigator renderScene={this.renderScene.bind(this)} />
+          <Navigator renderScene={this.navigatorRenderScene.bind(this)} />
       );
     }
 
-    renderScene(route, navigator){
+    navigatorRenderScene(route, navigator){
       return (
         <Question header={this.state.header}
                   question={this.state.question}
@@ -64,5 +64,3 @@ class Questionnaire extends Component {
       );
     }
 }
-
-export default Questionnaire

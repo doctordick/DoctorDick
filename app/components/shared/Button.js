@@ -12,13 +12,13 @@ import colors from '../_colors'
 import appColors from '../_appColors'
 import appStyles from '../_appStyles'
 
-class Button extends Component {
+export default class Button extends Component {
   render() {
     return (
       <View style={styles.container}>
           <TouchableHighlight
             underlayColor={colors.blue_4}
-            onPress={this.props.nextRoute.bind(this, this.props.nextRouteInfo)}>
+            onPress={this.props.onForward.bind(this, this.props.nextRouteInfo)}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Next</Text>
             </View>
@@ -52,5 +52,3 @@ const styles = StyleSheet.create({
   },
 
 });
-
-export default Button

@@ -8,12 +8,12 @@ import {
   Navigator
 } from 'react-native';
 
-import Header from '../shared/Header';
+import NavigationBar from '../shared/NavigationBar';
 import colors from '../_colors';
 import appColors from '../_appColors';
 import appStyles from '../_appStyles';
 
-class Question extends Component {
+export default class Question extends Component {
 
   nextQuestion() {
     this.props.nextQuestion();
@@ -49,7 +49,7 @@ class Question extends Component {
   render() {
     return (
       <View style={styles.mainContainer}>
-        <Header
+        <NavigationBar
           navigator={this.props.navigator}
           value={this.props.header} />
         <View style={styles.container} >
@@ -99,5 +99,3 @@ const styles = StyleSheet.create({
   }
 
 });
-
-export default Question

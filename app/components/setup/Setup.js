@@ -9,10 +9,42 @@ import {
 } from 'react-native'
 
 import Button from '../shared/Button'
-import Header from '../shared/Header'
+import NavigationBar from '../shared/NavigationBar'
 import appColors from '../_appColors'
 
-class Setup extends Component {
+export default class Setup extends Component {
+
+  render() {
+    return (
+      <Navigator 
+        renderScene={this.navigatorRenderScene.bind(this)} 
+        configureScene={(route, routeStack) =>
+          Navigator.SceneConfigs.FloatFromBottom} />
+    );
+  }
+
+  navigatorRenderScene(){
+    return (
+      <View style={styles.mainContainer}>
+        <NavigationBar 
+          value="Setup"
+          navigator={this.props.navigator}
+          onBack={this.props.onBack} />
+        <View style={styles.container}>
+          {this.inputGenerator()}
+          <Text style={styles.infoText}>
+            &nbsp; Dr. Dick is HIPAA compliant and secures your &nbsp; &nbsp;
+            data with encryption.
+          </Text>
+        </View>
+        <View style={styles.nextButton}>
+          <Button onForward={this.props.onForward}
+              nextRouteInfo={{id: 'Menu', title: 'New Session'}}
+          />
+        </View>
+      </View>
+    );
+  }
 
   inputGenerator() {
     let inputs = [
@@ -49,32 +81,6 @@ class Setup extends Component {
     });
   }
 
-  render() {
-    return (
-      <Navigator renderScene={this.renderScene.bind(this)} />
-    );
-  }
-
-  renderScene(){
-    return (
-      <View style={styles.mainContainer}>
-        <Header value="Setup" navigator={this.props.navigator}/>
-        <View style={styles.container}>
-          {this.inputGenerator()}
-          <Text style={styles.infoText}>
-            &nbsp; Dr. Dick is HIPAA compliant and secures your &nbsp; &nbsp;
-            data with encryption.
-          </Text>
-        </View>
-        <View style={styles.nextButton}>
-          <Button nextRoute={this.props.nextRoute}
-              nextRouteInfo={{id: 'Menu', title: 'New Session'}}
-              navigator={this.props.navigator}
-          />
-        </View>
-      </View>
-    );
-  }
 }
 
 const styles = StyleSheet.create({
@@ -115,5 +121,3 @@ const styles = StyleSheet.create({
   },
 
 });
-
-export default Setup

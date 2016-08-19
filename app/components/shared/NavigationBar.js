@@ -4,26 +4,27 @@ import {
   Text,
   StyleSheet,
   TouchableHighlight,
+  Navigator,
   View
 } from 'react-native'
 
 import appColors from '../_appColors'
 import appStyles from '../_appStyles'
 
-class Header extends Component {
-
-  goBack() {
-    if(this.props.navigator){
-      this.props.navigator.pop();
-    }
-  }
+export default class NavigationBar extends Component {
 
   render() {
+    return (
+      <Navigator renderScene={this.navigatorRenderScene.bind(this)} />
+    );
+  }
+
+  navigatorRenderScene() {
     return (
       <View style={styles.container}>
         <TouchableHighlight
           underlayColor={"'rgba(255, 255, 255, 0.05)'"}
-          onPress={this.goBack.bind(this)}>
+          onPress={this.props.onBack.bind(this)}>
           <View style={styles.backButton}>
             <Text style={styles.backButtonText}>
               &lsaquo;
@@ -75,5 +76,3 @@ const styles = StyleSheet.create({
   }
 
 });
-
-export default Header
