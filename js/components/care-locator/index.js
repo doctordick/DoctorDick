@@ -12,6 +12,8 @@ import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
+import sampleTestCenters from './sample-test-centers.js'
+
 class CareLocator extends Component {
 
     popRoute() {
@@ -35,26 +37,12 @@ class CareLocator extends Component {
 
                 <Content style={{backgroundColor: 'transparent'}}>
                     <List>
-                        <ListItem iconLeft>
-                            <Icon name='ios-people'/>
-                            <Text >Daily Stand Up</Text>
-                            <Text style={{fontWeight: '400'}} note>10:00 AM</Text>
-                        </ListItem>
-                        <ListItem iconLeft>
-                            <Icon name='ios-flag'/>
-                            <Text>Finish list Screen</Text>
-                            <Text style={{fontWeight: '400'}} note>By 2:00 PM</Text>
-                        </ListItem>
-                        <ListItem iconLeft>
-                            <Icon name='ios-restaurant'/>
-                            <Text>Lunch Break</Text>
-                            <Text style={{fontWeight: '400'}} note>2:00 PM</Text>
-                        </ListItem>
-                        <ListItem iconLeft>
-                          <Icon name='ios-megaphone'/>
-                            <Text>Discussion With Client</Text>
-                            <Text style={{fontWeight: '400'}} note>6:00 PM</Text>
-                        </ListItem>
+                        {sampleTestCenters.map((center, index) => (
+                          <ListItem iconLeft key={index}>
+                              <Icon name='ios-medkit'/>
+                              <Text>{center.title}</Text>
+                          </ListItem>
+                        ))}
                     </List>
                 </Content>
             </Container>
