@@ -40,7 +40,14 @@ class CareLocator extends Component {
                         {sampleTestCenters.map((center, index) => (
                           <ListItem iconLeft key={index}>
                               <Icon name='ios-medkit'/>
-                              <Text>{center.title}</Text>
+                              <Text>{[
+                                  center.title,
+                                  center.telephone,
+                                  '',
+                                  center.streetAddress,
+                                  `${center.locality}, ${center.region} ${center.postalCode}`
+                                ].join('\n')
+                                }</Text>
                           </ListItem>
                         ))}
                     </List>
