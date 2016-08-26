@@ -81,7 +81,7 @@ class CareLocator extends Component {
                     <Tabs>
                         <List tabLabel="List">
                             {this.state.testCenters.map((center, index) => (
-                              <ListItem iconLeft key={index}>
+                              <ListItem iconLeft key={index} style={{width:360}}>
                                   <Icon name='ios-medkit'/>
                                   <Text>{[
                                       center.title,
@@ -96,7 +96,7 @@ class CareLocator extends Component {
                         </List>
                         <View tabLabel='Map'>
                             <MapView 
-                                style={{height:700, width: 400}}
+                                style={{height:558, width: 380}}
                                 showsUserLocation
                                 region={{
                                     latitude: this.state.lat,
