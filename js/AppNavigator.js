@@ -28,6 +28,7 @@ import Modal from './components/modal/';
 import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
 import RecommendationPage from './components/recommendation-page';
+import CareLocator from './components/care-locator';
 
 Navigator.prototype.replaceWithAnimation = function (route) {
     const activeLength = this.state.presentedIndex + 1;
@@ -181,6 +182,8 @@ class AppNavigator extends Component {
                 return <Modal navigator={navigator} />;
             case 'recommendationPage':
                 return <RecommendationPage navigator={navigator} />;
+            case 'careLocator':
+                return <CareLocator navigator={navigator} />;
             default :
                 return <RecommendationPage navigator={navigator} />;
         }

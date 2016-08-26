@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { connect } from 'react-redux';
 
-import { popRoute } from '../../actions/route';
+import { popRoute, replaceOrPushRoute } from '../../actions/route';
+
 
 import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View } from 'native-base';
 
@@ -15,6 +16,9 @@ class RecommendationPage extends Component {
 
     popRoute() {
         this.props.popRoute();
+    }
+    navigateTo(route) {
+        this.props.replaceOrPushRoute(route);
     }
 
     render() {
@@ -31,7 +35,10 @@ class RecommendationPage extends Component {
 
                     <Content padder style={{backgroundColor: 'transparent'}}>
                         <View padder>
-                            <Button rounded block style={{backgroundColor: '#fff', marginTop: 20}} textStyle={{color: '#00c497'}}>
+                            <Button rounded block style={{backgroundColor: '#fff', marginTop: 20}} textStyle={{color: '#00c497'}}
+                                onPress={() => {
+                                    this.navigateTo('careLocator')}
+                                }>
                                 Find Test Centers
                             </Button>
                             <Button rounded block style={{backgroundColor: '#fff', marginTop: 20}} textStyle={{color: '#00c497'}}>
@@ -47,7 +54,8 @@ class RecommendationPage extends Component {
 
 function bindAction(dispatch) {
     return {
-        popRoute: () => dispatch(popRoute())
+        popRoute: () => dispatch(popRoute()),
+        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route))
     }
 }
 
