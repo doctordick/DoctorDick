@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component} from 'react';
-import { Image, MapView } from 'react-native';
+import { Image, MapView, Linking } from 'react-native';
 import { connect } from 'react-redux';
 
 import { openDrawer } from '../../actions/drawer';
@@ -83,7 +83,9 @@ class CareLocator extends Component {
                             {this.state.testCenters.map((center, index) => (
                               <ListItem iconLeft key={index} style={{width:360}}>
                                   <Icon name='ios-medkit'/>
-                                  <Text>{[
+                                  <Text onPress={() => Linking.openURL(
+                                        'http://maps.apple.com/?q='+ center.title+', '+center.streetAddress+', '+center.postalCode
+                                    )}>{[
                                       center.title,
                                       center.telephone,
                                       '',
@@ -107,7 +109,11 @@ class CareLocator extends Component {
                                     latitude: Number(center.point.lat), 
                                     longitude: Number(center.point.long),
                                     title: center.title,
-                                    subtitle: center.telephone
+                                    subtitle: center.telephone,
+                                    animateDrop: true,
+                                    leftCalloutView: <Icon name='ios-navigate-outline' style={{color:'black'}} onPress={() => Linking.openURL(
+                                        'http://maps.apple.com/?q='+ center.title+', '+center.streetAddress+', '+center.postalCode
+                                    )} />
                                 })))()} 
                             />
                         </View>
