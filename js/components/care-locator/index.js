@@ -12,9 +12,29 @@ import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
-import sampleTestCenters from './sample-test-centers.js'
-
 class CareLocator extends Component {
+
+    constructor(props) {
+      super(props);
+      this.state = {testCenters: []};
+    }
+
+    componentWillMount() {
+      this.lookupTestingCenters()
+    }
+
+    lookupTestingCenters() {
+      const location = '94107';
+
+      fetch('https://locator.aids.gov/data?zip=' + location + '&services=testing')
+        .then((response) => response.json())
+        .then((responseJson) => {
+            this.setState({testCenters: responseJson.services[0].providers});
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    }
 
     popRoute() {
         this.props.popRoute();
@@ -37,7 +57,7 @@ class CareLocator extends Component {
 
                 <Content style={{backgroundColor: 'transparent'}}>
                     <List>
-                        {sampleTestCenters.map((center, index) => (
+                        {this.state.testCenters.map((center, index) => (
                           <ListItem iconLeft key={index}>
                               <Icon name='ios-medkit'/>
                               <Text>{[
