@@ -1,13 +1,13 @@
 'use strict';
 
-import React, { Component } from 'react';
-import { Image } from 'react-native';
+import React, { Component} from 'react';
+import { Image, MapView } from 'react-native';
 import { connect } from 'react-redux';
 
 import { openDrawer } from '../../actions/drawer';
 import { popRoute } from '../../actions/route';
 
-import {Container, Header, Title, Content, Text, Icon, Button, List, ListItem, Spinner } from 'native-base';
+import {Container, Header, Title, Content, Text, Icon, Button, List, ListItem, Spinner, Tabs, View} from 'native-base';
 
 import theme from '../../themes/base-theme';
 import styles from './styles';
@@ -53,9 +53,11 @@ class CareLocator extends Component {
         });
     }
 
+
     popRoute() {
         this.props.popRoute();
     }
+
 
     render() {
         return (
@@ -75,21 +77,41 @@ class CareLocator extends Component {
                 <Content style={{backgroundColor: 'transparent'}}>
                   { this.state.testCenters.length === 0 ?
                     <Spinner /> :
-                    <List>
-                        {this.state.testCenters.map((center, index) => (
-                          <ListItem iconLeft key={index}>
-                              <Icon name='ios-medkit'/>
-                              <Text>{[
-                                  center.title,
-                                  center.telephone,
-                                  '',
-                                  center.streetAddress,
-                                  `${center.locality}, ${center.region} ${center.postalCode}`
-                                ].join('\n')
-                                }</Text>
-                          </ListItem>
-                        ))}
-                    </List>
+
+                    <Tabs>
+                        <List tabLabel="List">
+                            {this.state.testCenters.map((center, index) => (
+                              <ListItem iconLeft key={index}>
+                                  <Icon name='ios-medkit'/>
+                                  <Text>{[
+                                      center.title,
+                                      center.telephone,
+                                      '',
+                                      center.streetAddress,
+                                      `${center.locality}, ${center.region} ${center.postalCode}`
+                                    ].join('\n')
+                                    }</Text>
+                              </ListItem>
+                            ))}
+                        </List>
+                        <View tabLabel='Map'>
+                            <MapView 
+                                style={{height:700, width: 400}}
+                                showsUserLocation
+                                region={{
+                                    latitude: this.state.lat,
+                                    longitude: this.state.long,
+                                    latitudeDelta: .2,
+                                    longitudeDelta: .2 }} 
+                                annotations={(() => this.state.testCenters.map(center => ({
+                                    latitude: Number(center.point.lat), 
+                                    longitude: Number(center.point.long),
+                                    title: center.title,
+                                    subtitle: center.telephone
+                                })))()} 
+                            />
+                        </View>
+                    </Tabs>
                   }
                 </Content>
             </Container>
