@@ -27,6 +27,7 @@ import Form from './components/form/';
 import Modal from './components/modal/';
 import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
+import RecommendationPage from './components/recommendation-page';
 
 Navigator.prototype.replaceWithAnimation = function (route) {
     const activeLength = this.state.presentedIndex + 1;
@@ -139,7 +140,7 @@ class AppNavigator extends Component {
                             gestures: {}
                         };
                     }}
-                    initialRoute={{id: (Platform.OS === 'android') ? 'splashscreen' : 'login', statusBarHidden: true}}
+                    initialRoute={{id: (Platform.OS === 'android') ? 'splashscreen' : 'recommendationPage', statusBarHidden: true}}
                     renderScene={this.renderScene}
                   />
             </Drawer>
@@ -178,8 +179,10 @@ class AppNavigator extends Component {
                 return <Form navigator={navigator} />;
             case 'modal':
                 return <Modal navigator={navigator} />;
+            case 'recommendationPage':
+                return <RecommendationPage navigator={navigator} />;
             default :
-                return <Login navigator={navigator} />;
+                return <RecommendationPage navigator={navigator} />;
         }
     }
 }
