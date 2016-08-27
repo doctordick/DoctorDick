@@ -29,6 +29,12 @@ import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
 import RecommendationPage from './components/recommendation-page';
 import CareLocator from './components/care-locator';
+import CheckSymptoms from './components/check-symptoms/';
+import Emergency from './components/emergency/';
+import Dashboard from './components/dashboard/';
+import Shop from './components/shop/';
+import FAQ from './components/faq/';
+import Survey from './components/survey/';
 
 Navigator.prototype.replaceWithAnimation = function (route) {
     const activeLength = this.state.presentedIndex + 1;
@@ -126,7 +132,7 @@ class AppNavigator extends Component {
                 tapToClose={true}
                 acceptPan={false}
                 onClose={() => this.closeDrawer()}
-                openDrawerOffset={0.2}
+                openDrawerOffset={0}
                 panCloseMask={0.2}
                 negotiatePan={true}>
                 <StatusBar
@@ -141,7 +147,7 @@ class AppNavigator extends Component {
                             gestures: {}
                         };
                     }}
-                    initialRoute={{id: (Platform.OS === 'android') ? 'splashscreen' : 'recommendationPage', statusBarHidden: true}}
+                    initialRoute={{id: (Platform.OS === 'android') ? 'splashscreen' : 'splashscreen', statusBarHidden: true}}
                     renderScene={this.renderScene}
                   />
             </Drawer>
@@ -184,7 +190,19 @@ class AppNavigator extends Component {
                 return <RecommendationPage navigator={navigator} />;
             case 'careLocator':
                 return <CareLocator navigator={navigator} />;
-            default :
+            case 'checkSymptoms':
+                return <CheckSymptoms navigator={navigator} />;
+            case 'emergency':
+                return <Emergency navigator={navigator} />;
+            case 'dashboard':
+                return <Dashboard navigator={navigator} />;
+            case 'shop':
+                return <Shop navigator={navigator} />;
+            case 'faq':
+                return <FAQ navigator={navigator} />;
+            case 'survey':
+                return <Survey navigator={navigator} />;
+            default:
                 return <RecommendationPage navigator={navigator} />;
         }
     }
