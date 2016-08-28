@@ -4,66 +4,61 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { closeDrawer } from '../../actions/drawer';
-import { replaceOrPushRoute } from '../../actions/route';
+import { pushNewRoute } from '../../actions/route';
 
-import { Text, Icon, List, ListItem, Content, Thumbnail, Badge } from 'native-base';
+import { View, Button, Title, Header, Text, Icon, List, ListItem, Content, Thumbnail, Badge } from 'native-base';
 
-import styles from './style';
+import styles from './styles';
+import Modal from 'react-native-modalbox';
+import CONSTANTS from '../login/constants';
 
 class SideBar extends Component {
 
     navigateTo(route) {
         this.props.closeDrawer();
-        this.props.replaceOrPushRoute(route);
+        this.props.pushNewRoute(route);
+    }
+
+    openLegalsModal() {
+        this.refs.legalsModal.open()
+    }
+    closeLegalsModal() {
+        this.refs.legalsModal.close()
     }
 
     render(){
         return (
-            <Content style={{backgroundColor: '#252A30'}} >
-                <Thumbnail size={200} style={{alignSelf: 'center', marginTop: 20, marginBottom: 15, resizeMode: 'contain'}} circular source={require('../../../images/icon2.png')} />
+            <Content style={{backgroundColor: '#363d46'}} >
+                <Thumbnail size={150} square style={{alignSelf: 'center', marginTop: 50, marginBottom: 15, resizeMode: 'contain'}} source={require('../../../images/banana.png')} />
                 <List  foregroundColor={'white'} >
-                    <ListItem button onPress={() => this.navigateTo('home')} iconLeft style={styles.links} >
-                        <Icon name='ios-home' />
-                        <Text >Home</Text>
+                    <ListItem button onPress={() => this.navigateTo('faq')} iconLeft style={styles.links} >
+                        <Icon name='ios-help' />
+                        <Text >FAQ</Text>
                     </ListItem>
                     <ListItem button onPress={() => this.navigateTo('inbox')} iconLeft style={styles.links} >
-                        <Icon name='ios-mail-open-outline' />
-                        <Text>Inbox</Text>
-                        <Badge>2</Badge>
+                        <Icon name='ios-share-outline' />
+                        <Text>Share</Text>
                     </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('mail')} iconLeft style={styles.links} >
+                    <ListItem button onPress={this.openLegalsModal.bind(this)} iconLeft style={styles.links} >
                         <Icon name='ios-paper-outline' />
-                        <Text>Mail</Text>
-                    </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('compose')} iconLeft style={styles.links} >
-                      <Icon name='ios-paper-plane' />
-                      <Text>Compose</Text>
-                    </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('lists')} iconLeft style={styles.links} >
-                        <Icon name='ios-list-box-outline' />
-                        <Text>List</Text>
-                    </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('icons')} iconLeft style={styles.links} >
-                        <Icon name='ios-planet' />
-                        <Text>Icons</Text>
-                    </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('progressBar')} iconLeft style={styles.links} >
-                        <Icon name='ios-finger-print-outline' />
-                        <Text>Progressbar</Text>
-                    </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('spinners')} iconLeft style={styles.links} >
-                        <Icon name='ios-jet' />
-                        <Text>Spinner</Text>
-                    </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('form')} iconLeft style={styles.links}>
-                        <Icon name='ios-aperture-outline' />
-                        <Text>Form</Text>
-                    </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('modal')} iconLeft style={styles.links}>
-                        <Icon name='ios-alert-outline' />
-                        <Text>Modal</Text>
+                        <Text>Legals</Text>
                     </ListItem>
                 </List>
+                 <Modal navigator={this.props.navigator} style={[styles.modal, styles.legalsModal]} backdrop={false} ref={'legalsModal'}  swipeToClose={false} >
+                     <Header style={styles.modalHeader}>
+                        <Button transparent onPress={this.closeLegalsModal.bind(this)}>
+                            <Icon name="ios-arrow-back" style={{fontSize: 30, lineHeight: 32, color: '#d8bfd8'}} />
+                        </Button>
+
+                        <Title style={styles.modalHeaderTitle}>Legals</Title>
+                    </Header>
+
+                    <View style={styles.space}>
+                        <Text style={{color: '#000'}}>
+                            {CONSTANTS.legals}
+                        </Text>
+                    </View>
+                </Modal>
             </Content>
         );
     }
@@ -72,7 +67,7 @@ class SideBar extends Component {
 function bindAction(dispatch) {
     return {
         closeDrawer: ()=>dispatch(closeDrawer()),
-        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route))
+        pushNewRoute:(route)=>dispatch(pushNewRoute(route))
     }
 }
 

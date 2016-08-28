@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, View, Text } from 'react-native';
 import { connect } from 'react-redux';
 
 export default class SplashPage extends Component {
@@ -17,7 +17,17 @@ export default class SplashPage extends Component {
     
     render () {
         return (
-            <Image source={require('../../../images/launchscreen.png')} style={{flex: 1, height: null, width: null}} />
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <Image source={require('../../../images/banana.png')} style={{height: 150, width: 150}} />
+                <Text>
+                    Doctor Dick
+                </Text>
+            </View>
         );
     }
 }

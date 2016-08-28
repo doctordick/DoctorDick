@@ -3,39 +3,39 @@
 import React, {Component} from 'react';
 import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import { openDrawer } from '../../actions/drawer';
+import { pushNewRoute } from '../../actions/route';
 
-import { closeDrawer } from '../../actions/drawer';
-import { replaceOrPushRoute } from '../../actions/route';
-
-import { Icon, View, Text } from 'native-base';
+import { Icon, View, Text, Container } from 'native-base';
 
 import styles from './styles';
+import theme from '../../themes/base-theme';
+
 
 class Footer extends Component {
 
-	navigateTo(route) {
-        this.props.closeDrawer(); 
-        this.props.replaceOrPushRoute(route);
-    }
+	pushNewRoute(route) {
+    this.props.pushNewRoute(route);
+  }
 
 	render() {
 		return (
-			<View style={styles.footer}>
-				<TouchableOpacity onPress={() => this.navigateTo('calendar')}>
-					<Icon name='ios-calendar-outline' />
+			<View style={styles.footer} theme={theme}>
+				<TouchableOpacity onPress={() => this.pushNewRoute('dashboard')}>
+					<Icon name='ios-home' />
 				</TouchableOpacity>
-				<TouchableOpacity onPress={() => this.navigateTo('form')}>
-					<Icon name='ios-pie-outline' />
+				<TouchableOpacity onPress={() => this.pushNewRoute('care-locator')}>
+					<Icon name='ios-pin-outline' />
 				</TouchableOpacity>
-				<TouchableOpacity>
-					<Icon name='ios-add-circle-outline' />
+				<TouchableOpacity onPress={() => this.pushNewRoute('reminders')}>
+					<Icon name='ios-alarm-outline' />
 				</TouchableOpacity>
-				<TouchableOpacity onPress={() => this.navigateTo('contacts')}>
-					<Icon name='ios-person' />
+				<TouchableOpacity onPress={() => this.pushNewRoute('shop')}>
+					<Icon name='ios-cart-outline' />
 				</TouchableOpacity>
-				<TouchableOpacity onPress={() => this.navigateTo('spinners')}>
-					<Icon name='ios-time-outline' />
-				</TouchableOpacity>
+        <TouchableOpacity onPress={this.props.openDrawer}>
+          <Icon name='ios-more' />
+        </TouchableOpacity>
 			</View>
 		);
 	}
@@ -43,8 +43,8 @@ class Footer extends Component {
 
 function bindAction(dispatch) {
     return {
-    	closeDrawer: ()=>dispatch(closeDrawer()),
-        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route))
+      openDrawer: ()=>dispatch(openDrawer()),
+      pushNewRoute:(route)=>dispatch(pushNewRoute(route))
     }
 }
 
