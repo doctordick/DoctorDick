@@ -15,6 +15,7 @@ import { Container,
          View } from 'native-base';
 import theme from '../../themes/base-theme';
 import FooterComponent from './../footer';
+import hivTestingSurvey from './constant.js'
 
 class Survey extends Component {
 
@@ -22,7 +23,9 @@ class Survey extends Component {
         super(props);
         this.state = {
             swipeToClose: true,
-            selected: false
+            selected: false,
+            showSplash: true,
+            showQuestions: false
         };
     }
 
@@ -38,15 +41,47 @@ class Survey extends Component {
          this.props.pushNewRoute(route);
     }
 
+    componentWillMount() {
+        setTimeout(() => {
+            this.setState({
+                showSplash: false,
+                showQuestions: true
+            })
+        }, 1500)
+    }
+
+    generateResponseOptions() {
+        let context = this
+        // return hivTestingSurvey[0].options.map((option, index) => {
+        //     return (
+        //         <Button block style={{ marginTop: 20, marginLeft: 20, marginRight: 20, backgroundColor: '#800080' }} key={index}>
+        //             <Text style={{ color: '#FFFFFF'}}>
+        //             { option }
+        //             </Text>
+        //         </Button>
+        //     );
+        // });
+    }
+
     render() {
+        let splashMessage = this.state.showSplash ? 'Doctor Dick has a few questions for you...' : ''
+        let question = this.state.showQuestions ? hivTestingSurvey[0].question : ''
         return (
-            <Container theme={theme}>
+            <Container theme={theme} style={{backgroundColor: '#d8bfd8'}}>
                 <Header style={{ backgroundColor: '#800080' }}>
                     <Button transparent onPress={() => this.popRoute()}>
                         <Icon name='ios-arrow-back' style={{fontSize: 30, lineHeight: 32}} />
                     </Button>
-                    <Title>Survey</Title>
+                    <Title>HIV Testing</Title>
                 </Header>
+                <Content>
+                    <Text style={{color: '#000000'}}>
+                        { splashMessage }
+                    </Text>
+                    <Text style={{color: '#000000'}}>
+                        { question }
+                    </Text>
+                </Content>
                 <Footer>
                     <FooterComponent navigator={this.props.navigator} />
                 </Footer>
