@@ -24,7 +24,7 @@ class Footer extends Component {
 				<TouchableOpacity onPress={() => this.pushNewRoute('dashboard')}>
 					<Icon name='ios-home' />
 				</TouchableOpacity>
-				<TouchableOpacity onPress={() => this.pushNewRoute('care-locator')}>
+				<TouchableOpacity onPress={() => this.pushNewRoute('careLocator')}>
 					<Icon name='ios-pin-outline' />
 				</TouchableOpacity>
 				<TouchableOpacity onPress={() => this.pushNewRoute('reminders')}>

@@ -26,10 +26,10 @@ class Question extends Component {
     render() {
         return (
             <View style={styles.testRec}>
-                <Text style={{color: 'black', fontSize: 18, marginBottom: 10}}>{this.props.question}</Text>
+                <Text style={{color: 'black', fontSize: 18, marginBottom: 10, paddingLeft: 20, paddingRight: 20}}>{this.props.question}</Text>
                     {this.props.answers.map( (elem, index) => {
                         return (
-                            <Button block key={index} style={{backgroundColor: '#800080', marginBottom: 20, borderRadius: 0 }} onPress={this.props.next.bind(this, index)}>
+                            <Button block key={index} style={{backgroundColor: '#800080', marginBottom: 20, borderRadius: 0, marginRight: 40, marginLeft: 40 }} onPress={this.props.next.bind(this, index)}>
                                 <Text style={{color: 'white'}}>
                                 {elem.text}
                                 </Text>

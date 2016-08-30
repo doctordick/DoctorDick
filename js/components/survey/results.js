@@ -18,19 +18,19 @@ export class TestRec extends Component {
                 <Text style={{color: '#333', fontSize: 16, marginBottom: 20}}>
                     You should get tested for HIV.
                 </Text>
-                <Button block success style={{ marginBottom: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'care-locator')}>
+                <Button block success style={{ marginBottom: 20, marginLeft: 20, marginRight: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'careLocator')}>
                     <Icon style={{color: 'white'}} name='ios-pin-outline' />
                     <Text style={{color: 'white'}}>
                         Find a Testing Center
                     </Text>
                 </Button>
-                <Button block style={{ marginBottom: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'reminders')}>
+                <Button block style={{ marginBottom: 20, marginLeft: 20, marginRight: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'reminders')}>
                     <Icon style={{color: 'white'}} name='ios-alarm-outline' />
                     <Text style={{color: 'white'}}>
                         Set a Reminder
                     </Text>
                 </Button>
-                <Button block disabled style={{ marginBottom: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'shop')}>
+                <Button block disabled style={{ marginBottom: 20, marginLeft: 20, marginRight: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'shop')}>
                     <Text style={{color: 'white'}}>
                         Order a HIV Test <Text style={{fontStyle: 'italic'}}>(Coming Soon)</Text>
                     </Text>
@@ -49,10 +49,10 @@ export class ReferCare extends Component {
     render() {
         return (
             <View style={styles.testRec}>
-                <Text style={{color: '#333', fontSize: 16, marginBottom: 20}}>
+                <Text style={{color: '#333', fontSize: 16, marginBottom: 20, paddingLeft: 20, paddingRight: 20}}>
                     You should talk to a doctor or other healthcare provider about HIV treatment.
                 </Text>
-                <Button block success style={{ marginBottom: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'care-locator')}>
+                <Button block success style={{ marginBottom: 20, marginLeft: 20, marginRight: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'careLocator')}>
                     <Icon style={{color: 'white'}} name='ios-pin-outline' />
                     <Text style={{color: 'white'}}>
                         Find a Doctor or Other Healthcare Provider
@@ -72,16 +72,16 @@ export class FollowupRec extends Component {
     render() {
         return (
             <View style={styles.testRec}>
-                <Text style={{color: '#333', fontSize: 16, marginBottom: 20}}>
+                <Text style={{color: '#333', fontSize: 16, marginBottom: 20, paddingLeft: 20, paddingRight: 20}}>
                     An HIV test is recommended every three months for many guys, but some guys might want or need to get tested more frequently. Talk to your doctor or other healthcare provider if you have questions about how frequently you should get tested, or whether you need another HIV test now. 
                 </Text>
-                <Button block success style={{ marginBottom: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'care-locator')}>
+                <Button block success style={{ marginBottom: 20, marginLeft: 20, marginRight: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'careLocator')}>
                     <Icon style={{color: 'white'}} name='ios-pin-outline' />
                     <Text style={{color: 'white'}}>
                         Find a Testing Center
                     </Text>
                 </Button>
-                <Button block style={{ marginBottom: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'reminders')}>
+                <Button block style={{ marginBottom: 20,  marginLeft: 20, marginRight: 20, borderRadius: 0, paddingBottom: 10, paddingLeft: 20, paddingRight: 20 }} onPress={this.props.pushNewRoute.bind(this, 'reminders')}>
                     <Icon style={{color: 'white'}} name='ios-alarm-outline' />
                     <Text style={{color: 'white'}}>
                         Set a Reminder

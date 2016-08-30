@@ -62,7 +62,7 @@ class CareLocator extends Component {
     render() {
         return (
             <Container theme={theme} style={{backgroundColor:'#384850'}}>
-                <Header>
+                <Header style={{ backgroundColor: '#800080'}}>
                     <Button transparent onPress={() => this.popRoute()}>
                         <Icon name='ios-arrow-back' style={{fontSize: 30, lineHeight: 32}} />
                     </Button>
