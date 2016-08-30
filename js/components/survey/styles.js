@@ -10,7 +10,7 @@ module.exports = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'white',
+        backgroundColor: '#d8bfd8',
         width: null,
         height: null,
     },

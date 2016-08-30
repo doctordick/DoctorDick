@@ -132,7 +132,7 @@ class AppNavigator extends Component {
                 tapToClose={true}
                 acceptPan={false}
                 onClose={() => this.closeDrawer()}
-                openDrawerOffset={0}
+                openDrawerOffset={0.05}
                 panCloseMask={0.2}
                 negotiatePan={true}>
                 <StatusBar

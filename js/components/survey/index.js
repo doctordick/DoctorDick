@@ -35,15 +35,6 @@ class Survey extends Component {
         Linking.openURL(url).catch(err => console.error('An error occurred', err));
     }
 
-    nextState(answerIndex) {
-        let answer = hiv[this.state.questionIndex].answers[answerIndex]
-        if(answer.done) {
-            this.setState({ answer: answer.done, done: true });
-        } else if (answer.next) {
-            this.setState({ questionIndex: answer.next });
-        }
-    }
-
     previousState() {
         if(this.state.done){
             this.setState({ done: false });
@@ -62,6 +53,10 @@ class Survey extends Component {
         let answer = hiv[this.state.questionIndex].answers[answerIndex]
         if(answer.done) {
             this.setState({ answer: answer.done, done: true });
+        } else if(answer.next === 'hiv-info') {
+            Linking.openURL('https://www.aids.gov/hiv-aids-basics').catch(err => console.error('An error occurred', err));
+        } else if(answer.next === 'emergency') {
+            this.pushNewRoute('emergency');
         } else if (answer.next) {
             this.setState({ questionIndex: answer.next });
         }
