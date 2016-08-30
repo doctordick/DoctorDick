@@ -35,6 +35,7 @@ import Dashboard from './components/dashboard/';
 import Shop from './components/shop/';
 import FAQ from './components/faq/';
 import Survey from './components/survey/';
+import Reminders from './components/reminders/';
 
 Navigator.prototype.replaceWithAnimation = function (route) {
     const activeLength = this.state.presentedIndex + 1;
@@ -202,6 +203,8 @@ class AppNavigator extends Component {
                 return <FAQ navigator={navigator} />;
             case 'survey':
                 return <Survey navigator={navigator} />;
+            case 'reminders':
+                return <Reminders navigator={navigator} />;
             default:
                 return <RecommendationPage navigator={navigator} />;
         }
