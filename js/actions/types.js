@@ -1,10 +1,10 @@
 'use strict';
 
 export type RecommendationCode =
-| "TestRec"
-| "ReferCare"
-| "FollowupRec"
-| "ContactDoc"
+| "testRec"
+| "referCare"
+| "followupRec"
+| "contactDoc"
 | false;
 
 export type Action =

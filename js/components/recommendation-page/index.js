@@ -15,13 +15,6 @@ import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
-// hardcoded in for now, will eventually come from redux.
-const recommendationCodes = {
-  'HIV': 'TestRec',
-  'Other STDs': false,
-  'PrEP': false,
-  'Vaccines': false,
-}
 
 class RecommendationPage extends Component {
 
@@ -33,6 +26,7 @@ class RecommendationPage extends Component {
     }
 
     render() {
+        const recommendationCodes = this.props.recommendationCodes;
         return (
             <Container theme={theme} style={{backgroundColor:'#384850'}}>
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
@@ -78,4 +72,10 @@ function bindAction(dispatch) {
     }
 }
 
-export default connect(null, bindAction)(RecommendationPage);
+function mapStateToProps(state) {
+  return {
+    recommendationCodes: state.questionnaire.recommendationCodes
+  }
+}
+
+export default connect(mapStateToProps, bindAction)(RecommendationPage);
