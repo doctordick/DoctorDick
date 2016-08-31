@@ -64,25 +64,28 @@ class Login extends Component {
                         <Image source={require('../../../images/banana.png')}>
                         </Image>
                         <Text style={{ marginTop: 20, fontSize: 40, color: 'purple'}}>
-                            doctorDICK
+                            doctorDick
+                        </Text>
+                        <Text style={{ paddingLeft: 20, paddingRight: 20, marginTop: 20, fontSize: 16, color: '#000', fontWeight: '100', textAlign: 'center'}}>
+                            Doctor Dick helps you stay on top of your sexual health - so you can stay on top - or bottom - when it matters most
                         </Text>
                     </View>
                     <View style={styles.bg}>
                         <View style={{marginTop: 0}}>
-                        <Button block style={{backgroundColor: '#800080', marginBottom: 20, borderRadius: 0, width: 200 }} onPress={() => this.pushNewRoute('checkSymptoms')}>
-                            <Text style={{color: 'white'}}>
-                                Let's Get Started
-                            </Text>
-                        </Button>
+                            <Button block style={{backgroundColor: '#800080', marginBottom: 20, borderRadius: 0, width: 200 }} onPress={() => this.pushNewRoute('checkSymptoms')}>
+                                <Text style={{color: 'white'}}>
+                                    LET'S GET STARTED
+                                </Text>
+                            </Button>
                         </View>
                         <Button transparent style={{alignSelf: 'center'}} onPress={() => this.pushNewRoute('faq')}>
                             <Text style={{color: '#800080'}}>
-                                Learn More
+                                What is Doctor Dick?
                             </Text>
                         </Button>
                         <View style={styles.disclaimer}>
                             <Text style={ styles.disclaimerText }>
-                                By clicking on Let's Get Started, you agree to our
+                                By clicking on 'Let's Get Started', you agree to our
                                 <Text style={{ fontSize: 12, color: '#0000ee'}} onPress={this.openLegalsModal.bind(this)}> privacy policy and terms of use</Text>
                                  . These documents contain important information.
                             </Text>
