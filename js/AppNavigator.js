@@ -29,7 +29,6 @@ import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
 import RecommendationPage from './components/recommendation-page';
 import CareLocator from './components/care-locator';
-import CheckSymptoms from './components/check-symptoms/';
 import Emergency from './components/emergency/';
 import Dashboard from './components/dashboard/';
 import Shop from './components/shop/';
@@ -191,8 +190,6 @@ class AppNavigator extends Component {
                 return <RecommendationPage navigator={navigator} />;
             case 'careLocator':
                 return <CareLocator navigator={navigator} />;
-            case 'checkSymptoms':
-                return <CheckSymptoms navigator={navigator} />;
             case 'emergency':
                 return <Emergency navigator={navigator} />;
             case 'dashboard':

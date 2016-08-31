@@ -72,7 +72,7 @@ class Login extends Component {
                     </View>
                     <View style={styles.bg}>
                         <View style={{marginTop: 0}}>
-                            <Button block style={{backgroundColor: '#800080', marginBottom: 20, borderRadius: 0, width: 200 }} onPress={() => this.pushNewRoute('checkSymptoms')}>
+                            <Button block style={{backgroundColor: '#800080', marginBottom: 20, borderRadius: 0, width: 200 }} onPress={() => this.pushNewRoute('emergency')}>
                                 <Text style={{color: 'white'}}>
                                     LET'S GET STARTED
                                 </Text>

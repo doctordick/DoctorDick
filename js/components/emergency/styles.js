@@ -15,11 +15,12 @@ module.exports = StyleSheet.create({
         paddingTop: 20,
         backgroundColor: '#d8bfd8',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'center'
     },
     questionText: {
         color: '#696969',
-        fontSize: 16,
-        textAlign: 'center'
+        fontSize: 14,
+        textAlign: 'center',
+        marginTop: 25
     }
 });
