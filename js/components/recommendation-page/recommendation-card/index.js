@@ -7,6 +7,8 @@ import {Switch} from 'react-native';
 import {Text, View } from 'native-base';
 
 import styles from './styles';
+import recommendations from './recommendations.js';
+import FindTestingCenterButton from '../find-test-center-button';
 
 class RecommendationCard extends Component {
     constructor(props) {
@@ -17,18 +19,25 @@ class RecommendationCard extends Component {
     }
 
     render() {
-        return (
-          <View padder style={styles.card}>
-            <Text style={styles.title}>STD check every 3 - 6 months</Text>
+      const {text, findTestingCenter, setReminders, orderHomeKit} = recommendations[this.props.recommendationCode]
+
+      return (
+        <View padder style={styles.card}>
+          <Text style={styles.title}>{text}</Text>
+
+          { setReminders &&
             <View style={styles.reminderContainer}>
-              <Text style={styles.reminderLabel}>Get reminder:</Text>
+              <Text style={styles.reminderLabel}>Get reminders:</Text>
               <Switch style={styles.reminderSwitch}
                 onValueChange={value => this.setState({reminder: value})}
                 value={this.state.reminder}
               />
             </View>
-          </View>
-        )
+          }
+
+          { findTestingCenter && <FindTestingCenterButton />}
+        </View>
+      )
     }
 }
 

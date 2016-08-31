@@ -39,13 +39,7 @@ class RecommendationPage extends Component {
                     <Content padder style={{backgroundColor: 'transparent'}}>
                         <View padder>
                             <Text>Based on your questionnaire answers, the CDC recommends:</Text>
-                            <RecommendationCard />
-                            <Button rounded block style={{backgroundColor: '#fff', marginTop: 20}} textStyle={{color: '#00c497'}}
-                                onPress={() => {
-                                    this.navigateTo('careLocator')}
-                                }>
-                                Find Test Centers
-                            </Button>
+                            <RecommendationCard recommendationCode='TestRec' />
                         </View>
                     </Content>
                 </Image>
