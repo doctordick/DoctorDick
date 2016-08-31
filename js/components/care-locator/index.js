@@ -94,6 +94,9 @@ class CareLocator extends Component {
                                       `${center.locality}, ${center.region} ${center.postalCode}`
                                     ].join('\n')
                                     }</Text>
+                                    <Text onPress={() => Linking.openURL(center.link)}>
+                                        More Info
+                                    </Text>
                               </ListItem>
                             ))}
                         </List>
