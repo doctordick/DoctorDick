@@ -15,6 +15,14 @@ import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
+// hardcoded in for now, will eventually come from redux.
+const recommendationCodes = {
+  'HIV': 'TestRec',
+  'Other STDs': false,
+  'PrEP': false,
+  'Vaccines': false,
+}
+
 class RecommendationPage extends Component {
 
     popRoute() {
@@ -37,9 +45,21 @@ class RecommendationPage extends Component {
                     </Header>
 
                     <Content padder style={{backgroundColor: 'transparent'}}>
+                        {recommendationCodes.HIV &&
                         <View padder>
                             <Text>Based on your questionnaire answers, the CDC recommends:</Text>
-                            <RecommendationCard recommendationCode='TestRec' />
+                             <RecommendationCard recommendationCode={recommendationCodes.HIV}/>
+                        </View>}
+                        <View padder>
+                          <Text>
+                            Here is the medical history you have not filled out yet:
+                          </Text>
+                          {Object.keys(recommendationCodes)
+                            .filter(key => !recommendationCodes[key])
+                            .map(key => (
+                              <Button rounded block style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key}</Button>
+                            ))
+                          }
                         </View>
                     </Content>
                 </Image>
