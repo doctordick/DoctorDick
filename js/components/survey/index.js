@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Image, Platform, Alert, Linking } from 'react-native';
 import { connect } from 'react-redux';
 import { pushNewRoute, replaceRoute, popRoute } from '../../actions/route';
+import { reachDecision } from '../../actions/questionnaire';
 import { Container,
          Content,
          Text,
@@ -43,13 +44,14 @@ class Survey extends Component {
     nextState(answerIndex) {
         let answer = hiv[this.state.questionIndex].answers[answerIndex]
         if(answer.done) {
+            this.reachDecision(answer.done, 'HIV');
             this.setState({ answer: answer.done, done: true, progress: 1 });
         } else if(answer.next === 'hiv-info') {
             Linking.openURL('https://www.aids.gov/hiv-aids-basics').catch(err => console.error('An error occurred', err));
         } else if(answer.next === 'emergency') {
             this.pushNewRoute('emergency');
         } else if (answer.next) {
-            this.setState({ 
+            this.setState({
                 questionIndex: answer.next,
                 isDisclaimer: false,
                 goingForward: true
@@ -88,6 +90,10 @@ class Survey extends Component {
          this.props.pushNewRoute(route);
     }
 
+    reachDecision(decision, questionnaireType) {
+         this.props.reachDecision(decision, questionnaireType);
+    }
+
     renderQuestion(context) {
         return (<Question
                     question={hiv[context.state.questionIndex].question}
@@ -99,24 +105,24 @@ class Survey extends Component {
     renderAnswer(context) {
         switch(context.state.answer) {
             case 'referCare':
-                return (<ReferCare 
+                return (<ReferCare
                             pushNewRoute={this.pushNewRoute.bind(this)}
                             openLink={this.openLink.bind(this)}
                         ></ReferCare>);
                 break;
             case 'followupRec':
-                return (<FollowupRec 
+                return (<FollowupRec
                             pushNewRoute={this.pushNewRoute.bind(this)}
                             openLink={this.openLink.bind(this)}
                          ></FollowupRec>)
             case 'contactDoc':
-                return (<ContactDoc 
+                return (<ContactDoc
                             pushNewRoute={this.pushNewRoute.bind(this)}
                             openLink={this.openLink.bind(this)}
                          ></ContactDoc>)
             case 'testRec':
             default:
-                return (<TestRec 
+                return (<TestRec
                             pushNewRoute={this.pushNewRoute.bind(this)}
                             openLink={this.openLink.bind(this)}
                          ></TestRec>)
@@ -138,14 +144,14 @@ class Survey extends Component {
     renderProgressBar() {
         if(!this.state.isDisclaimer) {
             return (
-                <Progress.Bar 
+                <Progress.Bar
                     borderRadius={0}
                     color={'#800080'}
                     unfilledColor= {'#FFFFFF'}
                     style={{ marginTop: 40 }}
                     progress={this.state.progress}
                     width={300} />
-            )            
+            )
         }
     }
 
@@ -176,7 +182,8 @@ function bindActions(dispatch){
     return {
         replaceRoute:(route)=>dispatch(replaceRoute(route)),
         pushNewRoute:(route)=>dispatch(pushNewRoute(route)),
-        popRoute: () => dispatch(popRoute())
+        popRoute: () => dispatch(popRoute()),
+        reachDecision:(decision, questionnaireType)=>dispatch(reachDecision(decision, questionnaireType)),
     }
 }
 

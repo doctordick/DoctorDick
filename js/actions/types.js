@@ -1,5 +1,12 @@
 'use strict';
 
+export type RecommendationCode =
+| "TestRec"
+| "ReferCare"
+| "FollowupRec"
+| "ContactDoc"
+| false;
+
 export type Action =
   { type: 'PUSH_NEW_ROUTE', route: string }
     | { type: 'POP_ROUTE' }
@@ -8,6 +15,7 @@ export type Action =
     | { type: 'REPLACE_OR_PUSH_ROUTE', route: string }
     | { type: 'OPEN_DRAWER'}
     | { type: 'CLOSE_DRAWER'}
+    | { type: 'REACH_DECISION', decision: RecommendationCode, questionnaireType: string}
 
 export type Dispatch = (action:Action | ThunkAction | PromiseAction | Array<Action>) => any;
 export type GetState = () => Object;
