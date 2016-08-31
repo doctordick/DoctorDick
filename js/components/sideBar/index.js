@@ -35,10 +35,6 @@ class SideBar extends Component {
                         <Icon name='ios-help' />
                         <Text >FAQ</Text>
                     </ListItem>
-                    <ListItem button onPress={() => this.navigateTo('inbox')} iconLeft style={styles.links} >
-                        <Icon name='ios-share-outline' />
-                        <Text>Share</Text>
-                    </ListItem>
                     <ListItem button onPress={this.openLegalsModal.bind(this)} iconLeft style={styles.links} >
                         <Icon name='ios-paper-outline' />
                         <Text>Legals</Text>
