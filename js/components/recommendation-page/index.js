@@ -9,6 +9,8 @@ import { popRoute, replaceOrPushRoute } from '../../actions/route';
 
 import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer } from 'native-base';
 
+import RecommendationCard from './recommendation-card';
+
 import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
@@ -36,14 +38,13 @@ class RecommendationPage extends Component {
 
                     <Content padder style={{backgroundColor: 'transparent'}}>
                         <View padder>
+                            <Text>Based on your questionnaire answers, the CDC recommends:</Text>
+                            <RecommendationCard />
                             <Button rounded block style={{backgroundColor: '#fff', marginTop: 20}} textStyle={{color: '#00c497'}}
                                 onPress={() => {
                                     this.navigateTo('careLocator')}
                                 }>
                                 Find Test Centers
-                            </Button>
-                            <Button rounded block style={{backgroundColor: '#fff', marginTop: 20}} textStyle={{color: '#00c497'}}>
-                                Set Reminders
                             </Button>
                         </View>
                     </Content>
