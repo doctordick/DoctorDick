@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { connect } from 'react-redux';
 
-import { popRoute, replaceOrPushRoute } from '../../actions/route';
+import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
 
 
 import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer } from 'native-base';
@@ -23,6 +23,9 @@ class RecommendationPage extends Component {
     }
     navigateTo(route) {
         this.props.replaceOrPushRoute(route);
+    }
+    pushNewRoute(route) {
+         this.props.pushNewRoute(route);
     }
 
     render() {
@@ -51,7 +54,7 @@ class RecommendationPage extends Component {
                           {Object.keys(recommendationCodes)
                             .filter(key => !recommendationCodes[key])
                             .map(key => (
-                              <Button rounded block style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key}</Button>
+                              <Button rounded block onPress={() => this.pushNewRoute('survey')} style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key}</Button>
                             ))
                           }
                         </View>
@@ -68,6 +71,7 @@ class RecommendationPage extends Component {
 function bindAction(dispatch) {
     return {
         popRoute: () => dispatch(popRoute()),
+        pushNewRoute:(route)=>dispatch(pushNewRoute(route)),
         replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route))
     }
 }
