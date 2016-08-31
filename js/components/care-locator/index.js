@@ -122,7 +122,7 @@ class CareLocator extends Component {
                   }
                 </Content>
                 <Footer>
-                    <FooterComponent navigator={this.props.navigator} />
+                    <FooterComponent navigator={this.props.navigator} currentPage='careLocator'/>
                 </Footer>
             </Container>
         )

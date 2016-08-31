@@ -7,8 +7,9 @@ import { connect } from 'react-redux';
 import { popRoute, replaceOrPushRoute } from '../../actions/route';
 
 
-import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View } from 'native-base';
+import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer } from 'native-base';
 
+import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
@@ -47,6 +48,9 @@ class RecommendationPage extends Component {
                         </View>
                     </Content>
                 </Image>
+                <Footer>
+                    <FooterComponent navigator={this.props.navigator} currentPage='recommendationPage' />
+                </Footer>
             </Container>
         )
     }

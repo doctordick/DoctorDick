@@ -67,7 +67,7 @@ class Dashboard extends Component {
                     </Button>
                 </View>
                 <Footer>
-                    <FooterComponent navigator={this.props.navigator} />
+                    <FooterComponent navigator={this.props.navigator} currentPage='dashboard'/>
                 </Footer>
             </Container>
         )
