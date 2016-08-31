@@ -60,23 +60,13 @@ const faqs = [
   },
 
   {
-    question: "How does Doctor Dick protect my health information?",
-    answer: "Coming Soon..."
-  },
-
-  {
-    question: "How do reminders work?",
-    answer: "Coming Soon..."
-  },
-
-  {
-    question: "Will notifications on my phone show up with the app’s name “Doctor Dick”? What if I don’t want that?",
-    answer: "Coming Soon..."
+    question: "How does Doctor Dick protect my personal information?",
+    answer: "The Personal Information (including your HIV testing history and survey responses) that you enter into our system is not protected by HIPAA (the Health Insurance Portability and Accountability Act of 1996). HIPAA protects health information held by or on behalf of your health care provider or health plan. Doctor Dick, however, does not store your Personal Information. While we are very concerned with safeguarding your information and employ reasonable measures to do that, no method of transmission over the Internet is 100% secure. Therefore, we cannot guarantee its absolute security."
   },
 
   {
     question: "Can I use Doctor Dick on my other mobile phones, or on other devices linked to my phone?",
-    answer: "Coming Soon..."
+    answer: "No. All information provided to Doctor Dick stays on the device on which you installed Doctor Dick. You will not be able to access your account information on multiple devices. In the event you change mobile phones or reinstall the application on your device, you will not be able to recover your information, since we do not store your data."
   }
 ]
 
