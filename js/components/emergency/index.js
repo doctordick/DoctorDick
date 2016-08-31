@@ -48,9 +48,12 @@ class Emergency extends Component {
                 </Header>
                 <View style={styles.question}>
                     <Text style={styles.questionText}>
-                        Dr. Dick is meant only for people who are not having any current symptoms of a sexually transmitted disease, HIV infection, or any other illness. You said you are having a symptom of a medical problem.   You should contact your doctor or other healthcare provider for help with your symptoms. If you are having a medical or psychiatric emergency, call 911 or go to the nearest emergency room.
+                        Dr. Dick is meant only for people who are not having any current symptoms of a sexually transmitted disease, HIV infection, or any other illness. 
                     </Text>
-                    <Button block style={{backgroundColor: '#800080', marginBottom: 20, marginTop: 20, paddingBottom:10, borderRadius: 0 }} onPress={() => this.pushNewRoute('dashboard')}>
+                    <Text style={styles.questionText}>
+                        If you're currently experiencing symptoms of a sexually transmitted disease, HIV infection, or any other illness, including rash, sores on skin or in mouth, anal, or genital area, fever, chills, discharge from penis, pain with urination, rectal pain or discharge, you should contact your doctor or other healthcare provider for help with your symptoms. If you are having a medical or psychiatric emergency, call 911 or go to the nearest emergency room.
+                    </Text>
+                    <Button block style={{backgroundColor: '#800080', marginBottom: 20, marginTop: 40, paddingBottom:10, borderRadius: 0 }} onPress={() => this.pushNewRoute('dashboard')}>
                         <Text>
                             I Agree
                         </Text>
