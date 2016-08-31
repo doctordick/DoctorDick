@@ -7,8 +7,9 @@ import { connect } from 'react-redux';
 import { openDrawer } from '../../actions/drawer';
 import { popRoute } from '../../actions/route';
 
-import {Container, Header, Title, Content, Text, Icon, Button, List, ListItem, Spinner, Tabs, View} from 'native-base';
+import {Container, Header, Title, Content, Text, Icon, Button, List, ListItem, Spinner, Tabs, View, Footer} from 'native-base';
 
+import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
@@ -97,16 +98,16 @@ class CareLocator extends Component {
                             ))}
                         </List>
                         <View tabLabel='Map'>
-                            <MapView 
+                            <MapView
                                 style={{height:558, width: 380}}
                                 showsUserLocation
                                 region={{
                                     latitude: this.state.lat,
                                     longitude: this.state.long,
                                     latitudeDelta: .2,
-                                    longitudeDelta: .2 }} 
+                                    longitudeDelta: .2 }}
                                 annotations={(() => this.state.testCenters.map(center => ({
-                                    latitude: Number(center.point.lat), 
+                                    latitude: Number(center.point.lat),
                                     longitude: Number(center.point.long),
                                     title: center.title,
                                     subtitle: center.telephone,
@@ -114,12 +115,15 @@ class CareLocator extends Component {
                                     leftCalloutView: <Icon name='ios-navigate-outline' style={{color:'black'}} onPress={() => Linking.openURL(
                                         'http://maps.apple.com/?q='+ center.title+', '+center.streetAddress+', '+center.postalCode
                                     )} />
-                                })))()} 
+                                })))()}
                             />
                         </View>
                     </Tabs>
                   }
                 </Content>
+                <Footer>
+                    <FooterComponent navigator={this.props.navigator} />
+                </Footer>
             </Container>
         )
     }
