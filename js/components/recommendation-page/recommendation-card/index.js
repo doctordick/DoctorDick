@@ -20,7 +20,6 @@ class RecommendationCard extends Component {
             date: new Date(),
         }
     }
-
     render() {
       const {text, findTestingCenter, setReminders, orderHomeKit} = recommendations[this.props.recommendationCode]
 
@@ -39,7 +38,7 @@ class RecommendationCard extends Component {
           }
 
           <Collapsible collapsed={!this.state.reminder}>
-            <ReminderEditor />
+            <ReminderEditor modal={this.props.modal} date={this.props.date}/>
           </Collapsible>
 
           { findTestingCenter && <FindTestingCenterButton />}

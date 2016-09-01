@@ -9,14 +9,28 @@ import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route'
 
 import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer } from 'native-base';
 
+import Modal from 'react-native-modalbox';
 import RecommendationCard from './recommendation-card';
 
 import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
+import Calendar from '../calendar';
 
 
 class RecommendationPage extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        modal: null,
+        date: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90) 
+      }
+    }
+
+    componentDidMount(){
+      // this solves the race condition with this.refs.modal
+      this.setState({modal: this.refs.modal})
+    }
 
     popRoute() {
         this.props.popRoute();
@@ -28,10 +42,18 @@ class RecommendationPage extends Component {
          this.props.pushNewRoute(route);
     }
 
+    closeModal() {
+        this.refs.modal.close()
+    }
+
+    setDate(date){
+        this.setState({date});
+    }
+
     render() {
         const recommendations = this.props.recommendations;
         return (
-            <Container theme={theme} style={{backgroundColor:'#384850'}}>
+            <Container theme={theme} style={{backgroundColor:'#384850'}} >
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
                     <Header>
                         <Button transparent onPress={() => this.popRoute()}>
@@ -45,7 +67,11 @@ class RecommendationPage extends Component {
                         {recommendations.HIV.RecommendationCode &&
                         <View padder>
                             <Text>Based on your questionnaire answers, the CDC recommends:</Text>
-                             <RecommendationCard recommendationCode={recommendations.HIV.RecommendationCode}/>
+                            <RecommendationCard 
+                              recommendationCode={recommendations.HIV.RecommendationCode} 
+                              modal={this.state.modal}
+                              date={this.state.date}
+                            />
                         </View>}
                         <View padder>
                           <Text>
@@ -60,6 +86,18 @@ class RecommendationPage extends Component {
                             ))
                           }
                         </View>
+                        <Modal
+                          style={[styles.modal, styles.modal1]}
+                          backdrop={false} 
+                          ref={'modal'}
+                          swipeToClose={true} >
+                              <View style={styles.space}>
+                                  <Calendar date={this.state.date} setDate={this.setDate.bind(this)} />
+                                  <Button rounded onPress={this.closeModal.bind(this)} >
+                                      Save
+                                  </Button>
+                              </View>
+                         </Modal>
                     </Content>
                 </Image>
                 <Footer>

@@ -12,4 +12,13 @@ module.exports = StyleSheet.create({
     paddingLeft: 10,
     marginVertical: 5,
   },
+
+	// modal: {
+ //    justifyContent: 'center',
+ //    alignItems: 'center'
+	// },
+	modal1: {
+    height: 500
+	},
+
 });
