@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Image, Platform, Alert, Linking } from 'react-native';
 import { connect } from 'react-redux';
 import { pushNewRoute, replaceRoute, popRoute } from '../../actions/route';
-import { reachDecision } from '../../actions/questionnaire';
+import { reachDecision } from '../../actions/recommendations';
 import { Container,
          Content,
          Text,

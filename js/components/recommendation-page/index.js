@@ -29,7 +29,7 @@ class RecommendationPage extends Component {
     }
 
     render() {
-        const recommendationCodes = this.props.recommendationCodes;
+        const recommendations = this.props.recommendations;
         return (
             <Container theme={theme} style={{backgroundColor:'#384850'}}>
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
@@ -42,17 +42,17 @@ class RecommendationPage extends Component {
                     </Header>
 
                     <Content padder style={{backgroundColor: 'transparent'}}>
-                        {recommendationCodes.HIV &&
+                        {recommendations.HIV.RecommendationCode &&
                         <View padder>
                             <Text>Based on your questionnaire answers, the CDC recommends:</Text>
-                             <RecommendationCard recommendationCode={recommendationCodes.HIV}/>
+                             <RecommendationCard recommendationCode={recommendations.HIV.RecommendationCode}/>
                         </View>}
                         <View padder>
                           <Text>
                             Here is the medical history you have not filled out yet:
                           </Text>
-                          {Object.keys(recommendationCodes)
-                            .filter(key => !recommendationCodes[key])
+                          {Object.keys(recommendations)
+                            .filter(key => !recommendations[key].RecommendationCode)
                             .map(key => (
                               key === 'HIV' ? 
                                 <Button rounded block onPress={() => this.pushNewRoute('survey')} style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key}</Button>
@@ -80,7 +80,7 @@ function bindAction(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    recommendationCodes: state.questionnaire.recommendationCodes
+    recommendations: state.recommendations
   }
 }
 

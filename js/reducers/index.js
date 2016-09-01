@@ -4,10 +4,10 @@ import { combineReducers } from 'redux';
 
 import drawer from './drawer';
 import route from './route';
-import questionnaire from './questionnaire';
+import recommendations from './recommendations';
 
 export default combineReducers({
- 	drawer,
+  drawer,
   route,
-  questionnaire,
+  recommendations,
 })
