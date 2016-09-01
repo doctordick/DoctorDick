@@ -4,17 +4,20 @@ import React, { Component } from 'react';
 
 import {Switch} from 'react-native';
 
-import {Text, View } from 'native-base';
+import {Text, Content, View } from 'native-base';
 
 import styles from './styles';
 import recommendations from './recommendations.js';
 import FindTestingCenterButton from '../find-test-center-button';
+import Collapsible from 'react-native-collapsible';
+import ReminderEditor from './reminder-editor';
 
 class RecommendationCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
             reminder: false,
+            date: new Date(),
         }
     }
 
@@ -34,6 +37,10 @@ class RecommendationCard extends Component {
               />
             </View>
           }
+
+          <Collapsible collapsed={!this.state.reminder}>
+            <ReminderEditor />
+          </Collapsible>
 
           { findTestingCenter && <FindTestingCenterButton />}
         </View>
