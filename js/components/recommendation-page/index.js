@@ -54,9 +54,9 @@ class RecommendationPage extends Component {
                           {Object.keys(recommendations)
                             .filter(key => !recommendations[key].RecommendationCode)
                             .map(key => (
-                              key === 'HIV' ? 
+                              key === 'HIV' ?
                                 <Button rounded block onPress={() => this.pushNewRoute('survey')} style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key}</Button>
-                              : <Button disabled rounded block style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key+' - Coming Soon...'}</Button>  
+                              : <Button disabled rounded block style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key+' - Coming Soon...'}</Button>
                             ))
                           }
                         </View>
@@ -73,8 +73,8 @@ class RecommendationPage extends Component {
 function bindAction(dispatch) {
     return {
         popRoute: () => dispatch(popRoute()),
-        pushNewRoute:(route)=>dispatch(pushNewRoute(route)),
-        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route))
+        pushNewRoute: (route) => dispatch(pushNewRoute(route)),
+        replaceOrPushRoute: (route) => dispatch(replaceOrPushRoute(route))
     }
 }
 
