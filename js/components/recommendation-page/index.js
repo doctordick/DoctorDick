@@ -56,7 +56,7 @@ class RecommendationPage extends Component {
                             .map(key => (
                               key === 'HIV' ?
                                 <Button rounded block onPress={() => this.pushNewRoute('survey')} style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key}</Button>
-                              : <Button disabled rounded block style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key+' - Coming Soon...'}</Button>
+                              : <Button disabled rounded block style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} key={key}>{key+' - Coming Soon...'}</Button>
                             ))
                           }
                         </View>
