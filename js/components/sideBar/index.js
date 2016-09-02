@@ -10,7 +10,7 @@ import { View, Button, Title, Header, Text, Icon, List, ListItem, Content, Thumb
 
 import styles from './styles';
 import Modal from 'react-native-modalbox';
-import CONSTANTS from '../login/constants';
+import Privacy from '../privacy';
 
 class SideBar extends Component {
 
@@ -48,12 +48,7 @@ class SideBar extends Component {
 
                         <Title style={styles.modalHeaderTitle}>Legals</Title>
                     </Header>
-
-                    <View style={styles.space}>
-                        <Text style={{color: '#000'}}>
-                            {CONSTANTS.legals}
-                        </Text>
-                    </View>
+                    <Privacy />
                 </Modal>
             </Content>
         );

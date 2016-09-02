@@ -47,13 +47,30 @@ module.exports = StyleSheet.create({
         justifyContent: 'center',
     },
     modalHeader: {
-        position: 'absolute', 
-        top: 0, 
-        left: 0, 
+        position: 'absolute',
+        top: 0,
+        left: 0,
         right: 0,
         backgroundColor: '#800080'
     },
     modalHeaderTitle: {
         color: '#d8bfd8'
-    }
+    },
+
+    legalView: {
+        flex: 1,
+        marginTop: 100,
+
+    },
+    space: {
+        padding: 40,
+        flex: 1,
+        flexWrap: 'wrap',
+        // backgroundColor: '#d8bfd8',
+        flexDirection: 'column',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // width: null,
+        // height: null
+    },
 });

@@ -15,10 +15,10 @@ import { Container,
          Button,
          Icon,
          View } from 'native-base';
-import CONSTANTS from './constants';
 import Modal from 'react-native-modalbox';
 import login from './login-theme';
 import styles from './styles';
+import Privacy from './../privacy'
 
 class Login extends Component {
 
@@ -99,20 +99,13 @@ class Login extends Component {
 
                         <Title style={styles.modalHeaderTitle}>Legals</Title>
                     </Header>
-
-                    <View style={styles.space}>
-                        <Text style={{color: '#000'}}>
-                            {CONSTANTS.legals}
-                        </Text>
-                    </View>
+                        <Privacy />
                 </Modal>
                 </View>
             </Container>
         )
     }
 }
-
-
 
 function bindActions(dispatch){
     return {
