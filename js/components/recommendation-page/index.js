@@ -51,16 +51,7 @@ class RecommendationPage extends Component {
       this.setState({modal: this.refs.modal})
 
       RNCalendarReminders.authorizeEventStore((error, auth) => {
-        console.log('authorizing EventStore...');
-
-        RNCalendarReminders.saveReminder('testingReminder', {
-          location: '',
-          notes: 'Reminder from The Hoick Habit App for Habit: ',
-          startDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90),
-          alarms: [{
-            date: -1 // or absolute date
-          }]
-        });
+        console.log('authorized EventStore');
       });
     }
 
@@ -83,7 +74,15 @@ class RecommendationPage extends Component {
     }
 
     setDate(date) {
-        this.props.setReminderDate(date, 'HIV');
+      this.props.setReminderDate(date, 'HIV');
+      RNCalendarReminders.saveReminder('Doctor Dick Reminder', {
+        location: '',
+        notes: 'Doctor Dick says: Open the App and stay Healthy!',
+        startDate: date,
+        alarms: [{
+          date: date
+        }]
+      });
     }
 
     render() {
