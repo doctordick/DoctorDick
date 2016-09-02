@@ -96,7 +96,7 @@ class RecommendationPage extends Component {
                                       date={recommendations.HIV.NextReminder || new Date(Date.now() + 1000 * 60 * 60 * 24 * 90) }
                                       setDate={this.setDate.bind(this)}
                                   />
-                                  <Button rounded onPress={this.closeModal.bind(this)} >
+                                  <Button style={styles.saveButton} rounded onPress={this.closeModal.bind(this)} >
                                       Save
                                   </Button>
                               </View>

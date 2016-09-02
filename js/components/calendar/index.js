@@ -15,7 +15,7 @@ class Calendar extends Component {
         return (
             <Container theme={theme} style={{backgroundColor: '#384850'}}>
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
-                
+
                     <Content padder style={{backgroundColor: 'transparent'}} >
                         <CalendarPicker
                         selectedDate={this.props.date}
@@ -23,7 +23,7 @@ class Calendar extends Component {
                         textStyle={{color: '#fff'}}
                         selectedDayColor='#00c497'/>
 
-                        <Text style={{marginTop: 5, alignSelf: 'center'}} >
+                        <Text style={{marginBottom: 20, alignSelf: 'center'}} >
                             Date:  { this.props.date.toString().substr(4,12) }
                         </Text>
                     </Content>
