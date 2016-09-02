@@ -23,8 +23,8 @@ export default class SplashPage extends Component {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Image source={require('../../../images/banana.png')} style={{height: 150, width: 150}} />
-                <Text>
+                <Image source={require('../../../images/banana.png')} style={{height: 150, width: 158}} />
+                <Text style={{marginTop: 15}}>
                     Doctor Dick
                 </Text>
             </View>

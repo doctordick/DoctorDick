@@ -61,11 +61,10 @@ class Login extends Component {
             <Container>
                 <View style={styles.content} theme={login} scrollEnabled={this.state.scroll}>
                     <View style={styles.container}>
-                        <Image source={require('../../../images/banana.png')}>
+                        <Image style={{width: 200, height: 190}} source={require('../../../images/banana.png')}>
                         </Image>
-                        <Text style={{ marginTop: 20, fontSize: 40, color: 'purple'}}>
-                            doctorDick
-                        </Text>
+                        <Image style={{ marginTop: 20, marginBottom: 20,width: 250, height: 40 }} source={require('../../../images/doctorDick.png')}>
+                        </Image>
                         <Text style={{ paddingLeft: 20, paddingRight: 20, marginTop: 20, fontSize: 16, color: '#000', fontWeight: '100', textAlign: 'center'}}>
                             Doctor Dick helps you stay on top of your sexual health - so you can stay on top - or bottom - when it matters most
                         </Text>
