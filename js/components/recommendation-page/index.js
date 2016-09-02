@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, NativeAppEventEmitter } from 'react-native';
 import { connect } from 'react-redux';
 
 import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
@@ -20,19 +20,47 @@ import Calendar from '../calendar';
 import RNCalendarReminders from 'react-native-calendar-reminders';
 
 class RecommendationPage extends Component {
-    constructor(props){
+    constructor(props) {
       super(props);
       this.state = {
         modal: null,
       }
     }
 
-    componentDidMount(){
+    componentWillMount() {
+
+      this.remindersChangedListener = NativeAppEventEmitter.addListener('remindersChanged', reminders => {
+        console.log('remindersChanged', reminders)
+      });
+      this.reminderSaveSuccessListener = NativeAppEventEmitter.addListener('reminderSaveSuccess', reminderID => {
+        console.log('reminderSaveSuccess: ', reminderID)
+      });
+      this.reminderSaveErrorListener = NativeAppEventEmitter.addListener('reminderSaveError', error => {
+        console.log('reminderSaveError: ', error)
+      });
+    }
+
+    componentWillUnmount() {
+      this.remindersChangedListener.remove()
+      this.reminderSaveSuccessListener.remove()
+      this.reminderSaveErrorListener.remove()
+    }
+
+    componentDidMount() {
       // this solves the race condition with this.refs.modal
       this.setState({modal: this.refs.modal})
 
       RNCalendarReminders.authorizeEventStore((error, auth) => {
         console.log('authorizing EventStore...');
+
+        RNCalendarReminders.saveReminder('testingReminder', {
+          location: '',
+          notes: 'Reminder from The Hoick Habit App for Habit: ',
+          startDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90),
+          alarms: [{
+            date: -1 // or absolute date
+          }]
+        });
       });
     }
 

@@ -31,6 +31,7 @@
 		7415EB5AE90A46D88A9E5583 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 16533668E9E842C68AD39F73 /* libz.tbd */; };
 		75FDE202D60046B3991DD5F0 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD1177B9F8A248769E484151 /* MaterialIcons.ttf */; };
 		7B5E343A1D794D9A005F8FDD /* libRNCalendarReminders.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E34381D794B21005F8FDD /* libRNCalendarReminders.a */; };
+		7B5E343C1D79526D005F8FDD /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E343B1D79526D005F8FDD /* EventKit.framework */; };
 		7D7EEB2592F64746809108AE /* Arial Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7073EF2E6994A329101526A /* Arial Black.ttf */; };
 		80FEA306359449D19C7EBFBB /* Andale Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 519F82DDE779463881396E02 /* Andale Mono.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -181,6 +182,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		78C48B2780F149ADA131C564 /* Georgia.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Georgia.ttf; path = "../node_modules/native-base/Fonts/Georgia.ttf"; sourceTree = "<group>"; };
 		7B5E34281D794B21005F8FDD /* RNCalendarReminders.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCalendarReminders.xcodeproj; path = "../node_modules/react-native-calendar-reminders/RNCalendarReminders.xcodeproj"; sourceTree = "<group>"; };
+		7B5E343B1D79526D005F8FDD /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		823E1C35956E4331B184B733 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		87019DA9ECCB4203A381AE24 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5E343C1D79526D005F8FDD /* EventKit.framework in Frameworks */,
 				7B5E343A1D794D9A005F8FDD /* libRNCalendarReminders.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -441,6 +444,7 @@
 		FD1049353C164FCF9A0ADD86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B5E343B1D79526D005F8FDD /* EventKit.framework */,
 				16533668E9E842C68AD39F73 /* libz.tbd */,
 			);
 			name = Frameworks;
