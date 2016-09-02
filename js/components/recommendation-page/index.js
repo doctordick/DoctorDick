@@ -5,6 +5,7 @@ import { Image } from 'react-native';
 import { connect } from 'react-redux';
 
 import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
+import { setReminderDate } from '../../actions/recommendations';
 
 
 import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer } from 'native-base';
@@ -23,7 +24,6 @@ class RecommendationPage extends Component {
       super(props);
       this.state = {
         modal: null,
-        date: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90) 
       }
     }
 
@@ -47,7 +47,7 @@ class RecommendationPage extends Component {
     }
 
     setDate(date){
-        this.setState({date});
+        this.props.setReminderDate(date, 'HIV');
     }
 
     render() {
@@ -67,10 +67,10 @@ class RecommendationPage extends Component {
                         {recommendations.HIV.RecommendationCode &&
                         <View padder>
                             <Text>Based on your questionnaire answers, the CDC recommends:</Text>
-                            <RecommendationCard 
-                              recommendationCode={recommendations.HIV.RecommendationCode} 
+                            <RecommendationCard
+                              recommendationCode={recommendations.HIV.RecommendationCode}
                               modal={this.state.modal}
-                              date={this.state.date}
+                              date={recommendations.HIV.NextReminder || '    Pick a day'}
                             />
                         </View>}
                         <View padder>
@@ -88,11 +88,14 @@ class RecommendationPage extends Component {
                         </View>
                         <Modal
                           style={[styles.modal, styles.modal1]}
-                          backdrop={false} 
+                          backdrop={false}
                           ref={'modal'}
                           swipeToClose={true} >
                               <View style={styles.space}>
-                                  <Calendar date={this.state.date} setDate={this.setDate.bind(this)} />
+                                  <Calendar
+                                      date={recommendations.HIV.NextReminder || new Date(Date.now() + 1000 * 60 * 60 * 24 * 90) }
+                                      setDate={this.setDate.bind(this)}
+                                  />
                                   <Button rounded onPress={this.closeModal.bind(this)} >
                                       Save
                                   </Button>
@@ -112,7 +115,8 @@ function bindAction(dispatch) {
     return {
         popRoute: () => dispatch(popRoute()),
         pushNewRoute: (route) => dispatch(pushNewRoute(route)),
-        replaceOrPushRoute: (route) => dispatch(replaceOrPushRoute(route))
+        replaceOrPushRoute: (route) => dispatch(replaceOrPushRoute(route)),
+        setReminderDate: (date, questionnaireType) => dispatch(setReminderDate(date, questionnaireType))
     }
 }
 

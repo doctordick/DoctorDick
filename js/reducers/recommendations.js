@@ -2,16 +2,13 @@
 'use strict';
 
 import type {Action, RecommendationCode} from '../actions/types';
-import { REACH_DECISION } from '../actions/recommendations';
+import { REACH_DECISION, SET_REMINDER_DATE } from '../actions/recommendations';
 import { REHYDRATE } from 'redux-persist/constants'
 
 export type Recommendation = {
   RecommendationCode: RecommendationCode,
-  Reminders: {
-    enabled: Boolean,
-    nextReminder: Date,
-    frequency: Number
-  }
+  RemindersEnabled: Boolean,
+  NextReminder: Date,
 }
 
 export type State = {
@@ -25,35 +22,23 @@ export type State = {
 const initialState = {
   'HIV': {
     RecommendationCode: false,
-    Reminders: {
-      enabled: false,
-      nextReminder: null,
-      frequency: null
-    } 
+    RemindersEnabled: false,
+    NextReminder: null,
   },
   'Other STDs': {
     RecommendationCode: false,
-    Reminders: {
-      enabled: false,
-      nextReminder: null,
-      frequency: null
-    } 
+    RemindersEnabled: false,
+    NextReminder: null,
   },
   'PrEP': {
     RecommendationCode: false,
-    Reminders: {
-      enabled: false,
-      nextReminder: null,
-      frequency: null
-    } 
+    RemindersEnabled: false,
+    NextReminder: null,
   },
   'Vaccines': {
     RecommendationCode: false,
-    Reminders: {
-      enabled: false,
-      nextReminder: null,
-      frequency: null
-    } 
+    RemindersEnabled: false,
+    NextReminder: null,
   },
 };
 
@@ -63,8 +48,20 @@ export default function (state:State = initialState, action:Action): State {
 
   if (action.type === REACH_DECISION) {
     const newRecommendation = {
-      ...state[action.questionnaireType], 
+      ...state[action.questionnaireType],
       RecommendationCode: action.decision,
+    }
+
+    return {
+      ...state,
+      [action.questionnaireType]: newRecommendation,
+    }
+  }
+
+  if (action.type === SET_REMINDER_DATE) {
+    const newRecommendation = {
+      ...state[action.questionnaireType],
+      NextReminder: action.date,
     }
 
     return {
@@ -75,6 +72,13 @@ export default function (state:State = initialState, action:Action): State {
 
   if (action.type === REHYDRATE) {
     const savedData = action['payload']['recommendations'] || state;
+
+    // fix NextReminder cast as string when app is closed
+    if (savedData.HIV.NextReminder) {
+      savedData.HIV.NextReminder = new Date(savedData.HIV.NextReminder);
+    }
+
+
     return {
       ...savedData
     }

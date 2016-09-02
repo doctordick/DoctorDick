@@ -11,7 +11,6 @@ import styles from './styles';
 var CalendarPicker = require('react-native-calendar-picker'), CalendarPicker2;
 
 class Calendar extends Component {
-
     render() {
         return (
             <Container theme={theme} style={{backgroundColor: '#384850'}}>

@@ -16,6 +16,7 @@ export type Action =
     | { type: 'OPEN_DRAWER'}
     | { type: 'CLOSE_DRAWER'}
     | { type: 'REACH_DECISION', decision: RecommendationCode, questionnaireType: string}
+    | { type: 'SET_REMINDER_DATE', date: Date, questionnaireType: string}
 
 export type Dispatch = (action:Action | ThunkAction | PromiseAction | Array<Action>) => any;
 export type GetState = () => Object;
