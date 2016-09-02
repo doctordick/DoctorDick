@@ -5,7 +5,7 @@ import { Image, NativeAppEventEmitter } from 'react-native';
 import { connect } from 'react-redux';
 
 import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
-import { toggleReminder, setReminderDate } from '../../actions/recommendations';
+import { toggleReminder, setReminderDate, createNewIOSReminder } from '../../actions/recommendations';
 
 
 import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer } from 'native-base';
@@ -28,12 +28,14 @@ class RecommendationPage extends Component {
     }
 
     componentWillMount() {
-
       this.remindersChangedListener = NativeAppEventEmitter.addListener('remindersChanged', reminders => {
         console.log('remindersChanged', reminders)
       });
       this.reminderSaveSuccessListener = NativeAppEventEmitter.addListener('reminderSaveSuccess', reminderID => {
         console.log('reminderSaveSuccess: ', reminderID)
+        if (reminderID !== this.props.recommendations.HIV.ReminderID) {
+          this.props.createNewIOSReminder(reminderID, 'HIV');
+        }
       });
       this.reminderSaveErrorListener = NativeAppEventEmitter.addListener('reminderSaveError', error => {
         console.log('reminderSaveError: ', error)
@@ -75,14 +77,25 @@ class RecommendationPage extends Component {
 
     setDate(date) {
       this.props.setReminderDate(date, 'HIV');
-      RNCalendarReminders.saveReminder('Doctor Dick Reminder', {
-        location: '',
-        notes: 'Doctor Dick says: Open the App and stay Healthy!',
-        startDate: date,
-        alarms: [{
-          date: date
-        }]
-      });
+
+      // check if we have IOS reminder already, if so edit it, if not create new.
+      if (this.props.recommendations.HIV.ReminderID) {
+        RNCalendarReminders.updateReminder(this.props.recommendations.HIV.ReminderID, {
+          startDate: date,
+          alarms: [{
+            date: date
+          }]
+        });
+      } else {
+        RNCalendarReminders.saveReminder('Doctor Dick Reminder', {
+          location: '',
+          notes: 'Doctor Dick says: Open the App and stay Healthy!',
+          startDate: date,
+          alarms: [{
+            date: date
+          }]
+        });
+      }
     }
 
     render() {
@@ -155,6 +168,7 @@ function bindAction(dispatch) {
         replaceOrPushRoute: (route) => dispatch(replaceOrPushRoute(route)),
         toggleReminder: (questionnaireType) => dispatch(toggleReminder(questionnaireType)),
         setReminderDate: (date, questionnaireType) => dispatch(setReminderDate(date, questionnaireType)),
+        createNewIOSReminder: (reminderID, questionnaireType) => dispatch(createNewIOSReminder(reminderID, questionnaireType)),
     }
 }
 

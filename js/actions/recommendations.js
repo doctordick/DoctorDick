@@ -5,6 +5,7 @@ import type {Action, RecommendationCode} from './types'
 export const REACH_DECISION = "REACH_DECISION";
 export const TOGGLE_REMINDER = "TOGGLE_REMINDER";
 export const SET_REMINDER_DATE = "SET_REMINDER_DATE";
+export const CREATE_NEW_IOS_REMINDER = "CREATE_NEW_IOS_REMINDER";
 
 export function reachDecision(decision:RecommendationCode, questionnaireType:string):Action {
   return {
@@ -25,6 +26,14 @@ export function setReminderDate(date:Date, questionnaireType:string):Action {
   return {
     type: SET_REMINDER_DATE,
     date,
+    questionnaireType,
+  }
+}
+
+export function createNewIOSReminder(reminderID:string, questionnaireType:string):Action {
+  return {
+    type: CREATE_NEW_IOS_REMINDER,
+    reminderID,
     questionnaireType,
   }
 }

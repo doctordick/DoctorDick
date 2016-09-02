@@ -2,13 +2,14 @@
 'use strict';
 
 import type {Action, RecommendationCode} from '../actions/types';
-import { REACH_DECISION, TOGGLE_REMINDER, SET_REMINDER_DATE } from '../actions/recommendations';
+import { REACH_DECISION, TOGGLE_REMINDER, SET_REMINDER_DATE, CREATE_NEW_IOS_REMINDER } from '../actions/recommendations';
 import { REHYDRATE } from 'redux-persist/constants'
 
 export type Recommendation = {
   RecommendationCode: RecommendationCode,
   ReminderEnabled: Boolean,
   NextReminder: Date,
+  ReminderID: String,
 }
 
 export type State = {
@@ -24,21 +25,25 @@ const initialState = {
     RecommendationCode: false,
     ReminderEnabled: false,
     NextReminder: null,
+    ReminderID: null,
   },
   'Other STDs': {
     RecommendationCode: false,
     ReminderEnabled: false,
     NextReminder: null,
+    ReminderID: null,
   },
   'PrEP': {
     RecommendationCode: false,
     ReminderEnabled: false,
     NextReminder: null,
+    ReminderID: null,
   },
   'Vaccines': {
     RecommendationCode: false,
     ReminderEnabled: false,
     NextReminder: null,
+    ReminderID: null,
   },
 };
 
@@ -74,6 +79,12 @@ export default function (state:State = initialState, action:Action): State {
       ...state,
       [action.questionnaireType]: newRecommendation,
     }
+  }
+
+  if (action.type === CREATE_NEW_IOS_REMINDER) {
+    const newState = { ...state }
+    newState[action.questionnaireType].ReminderID = action.reminderID
+    return newState
   }
 
   if (action.type === REHYDRATE) {
