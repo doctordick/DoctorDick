@@ -2,12 +2,12 @@
 'use strict';
 
 import type {Action, RecommendationCode} from '../actions/types';
-import { REACH_DECISION, SET_REMINDER_DATE } from '../actions/recommendations';
+import { REACH_DECISION, TOGGLE_REMINDER, SET_REMINDER_DATE } from '../actions/recommendations';
 import { REHYDRATE } from 'redux-persist/constants'
 
 export type Recommendation = {
   RecommendationCode: RecommendationCode,
-  RemindersEnabled: Boolean,
+  ReminderEnabled: Boolean,
   NextReminder: Date,
 }
 
@@ -22,22 +22,22 @@ export type State = {
 const initialState = {
   'HIV': {
     RecommendationCode: false,
-    RemindersEnabled: false,
+    ReminderEnabled: false,
     NextReminder: null,
   },
   'Other STDs': {
     RecommendationCode: false,
-    RemindersEnabled: false,
+    ReminderEnabled: false,
     NextReminder: null,
   },
   'PrEP': {
     RecommendationCode: false,
-    RemindersEnabled: false,
+    ReminderEnabled: false,
     NextReminder: null,
   },
   'Vaccines': {
     RecommendationCode: false,
-    RemindersEnabled: false,
+    ReminderEnabled: false,
     NextReminder: null,
   },
 };
@@ -56,6 +56,12 @@ export default function (state:State = initialState, action:Action): State {
       ...state,
       [action.questionnaireType]: newRecommendation,
     }
+  }
+
+  if (action.type === TOGGLE_REMINDER) {
+    const newState = { ...state }
+    newState[action.questionnaireType].ReminderEnabled = !newState[action.questionnaireType].ReminderEnabled
+    return newState
   }
 
   if (action.type === SET_REMINDER_DATE) {

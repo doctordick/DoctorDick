@@ -13,9 +13,5 @@ module.exports = StyleSheet.create({
     marginVertical: 5,
   },
 
-  modal: {
-    backgroundColor: '#384850',
-    justifyContent: 'center',
-    alignItems: 'center'
-	},
+
 });

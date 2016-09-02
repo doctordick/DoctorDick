@@ -13,13 +13,6 @@ import Collapsible from 'react-native-collapsible';
 import ReminderEditor from './reminder-editor';
 
 class RecommendationCard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            reminder: false,
-            date: new Date(),
-        }
-    }
     render() {
       const {text, findTestingCenter, setReminders, orderHomeKit} = recommendations[this.props.recommendationCode]
 
@@ -31,13 +24,13 @@ class RecommendationCard extends Component {
             <View style={styles.reminderContainer}>
               <Text style={styles.reminderLabel}>Get reminders:</Text>
               <Switch style={styles.reminderSwitch}
-                onValueChange={value => this.setState({reminder: value})}
-                value={this.state.reminder}
+                onValueChange={() => this.props.toggleReminder()}
+                value={this.props.reminder}
               />
             </View>
           }
 
-          <Collapsible collapsed={!this.state.reminder}>
+          <Collapsible collapsed={!this.props.reminder}>
             <ReminderEditor modal={this.props.modal} date={this.props.date}/>
           </Collapsible>
 

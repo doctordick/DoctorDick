@@ -5,7 +5,7 @@ import { Image } from 'react-native';
 import { connect } from 'react-redux';
 
 import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
-import { setReminderDate } from '../../actions/recommendations';
+import { toggleReminder, setReminderDate } from '../../actions/recommendations';
 
 
 import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer } from 'native-base';
@@ -46,7 +46,11 @@ class RecommendationPage extends Component {
         this.refs.modal.close()
     }
 
-    setDate(date){
+    toggleReminder() {
+      this.props.toggleReminder('HIV');
+    }
+
+    setDate(date) {
         this.props.setReminderDate(date, 'HIV');
     }
 
@@ -69,8 +73,10 @@ class RecommendationPage extends Component {
                             <Text>Based on your questionnaire answers, the CDC recommends:</Text>
                             <RecommendationCard
                               recommendationCode={recommendations.HIV.RecommendationCode}
-                              modal={this.state.modal}
+                              reminder={recommendations.HIV.ReminderEnabled}
+                              toggleReminder={this.toggleReminder.bind(this)}
                               date={recommendations.HIV.NextReminder || '    Pick a day'}
+                              modal={this.state.modal}
                             />
                         </View>}
                         <View padder>
@@ -116,7 +122,8 @@ function bindAction(dispatch) {
         popRoute: () => dispatch(popRoute()),
         pushNewRoute: (route) => dispatch(pushNewRoute(route)),
         replaceOrPushRoute: (route) => dispatch(replaceOrPushRoute(route)),
-        setReminderDate: (date, questionnaireType) => dispatch(setReminderDate(date, questionnaireType))
+        toggleReminder: (questionnaireType) => dispatch(toggleReminder(questionnaireType)),
+        setReminderDate: (date, questionnaireType) => dispatch(setReminderDate(date, questionnaireType)),
     }
 }
 
