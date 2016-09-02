@@ -146,7 +146,7 @@ class Survey extends Component {
             return (
                 <Progress.Bar
                     borderRadius={0}
-                    color={'#800080'}
+                    color={'#000'}
                     unfilledColor= {'#FFFFFF'}
                     style={{ marginTop: 40 }}
                     progress={this.state.progress}
@@ -158,9 +158,9 @@ class Survey extends Component {
     render() {
         return (
             <Container theme={theme}>
-                <Header style={{ backgroundColor: '#800080' }}>
+                <Header style={styles.header}>
                     <Button transparent onPress={this.previousState.bind(this)}>
-                        <Icon name='ios-arrow-back' style={{fontSize: 30, lineHeight: 32}} />
+                        <Icon name='ios-arrow-back' style={styles.backButton} />
                     </Button>
                     <Title>HIV Testing</Title>
                 </Header>

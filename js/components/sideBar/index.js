@@ -43,7 +43,7 @@ class SideBar extends Component {
                  <Modal navigator={this.props.navigator} style={[styles.modal, styles.legalsModal]} backdrop={false} ref={'legalsModal'}  swipeToClose={false} >
                      <Header style={styles.modalHeader}>
                         <Button transparent onPress={this.closeLegalsModal.bind(this)}>
-                            <Icon name="ios-arrow-back" style={{fontSize: 30, lineHeight: 32, color: '#d8bfd8'}} />
+                            <Icon name="ios-arrow-back" style={{fontSize: 30, lineHeight: 32, color: '#000'}} />
                         </Button>
 
                         <Title style={styles.modalHeaderTitle}>Legals</Title>

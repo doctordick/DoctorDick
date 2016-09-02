@@ -46,7 +46,7 @@ class FAQ extends Component {
     _renderHeader(section, i, isActive) {
         return (
             <Animatable.View duration={50} style={[styles.faq, isActive ? styles.active : styles.inactive]} transition="backgroundColor">
-                    <Text style={[styles.faqText, styles.faqQuestion]}>{section.question}</Text>
+                    <Text style={[styles.faqText, styles.faqQuestion, isActive ? styles.selected : styles.notSelected]}>{section.question}</Text>
             </Animatable.View>
         );
     }
@@ -62,9 +62,9 @@ class FAQ extends Component {
     render() {
         return (
             <Container theme={theme}>
-                <Header style={{ backgroundColor: '#800080'}} >
+                <Header style={styles.header} >
                     <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name='ios-arrow-back' style={{fontSize: 30, lineHeight: 32}} />
+                        <Icon name='ios-arrow-back' style={styles.backButton} />
                     </Button>
                     <Title>FAQ</Title>
                 </Header>

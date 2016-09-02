@@ -15,32 +15,37 @@ module.exports = StyleSheet.create({
     card: {
       backgroundColor: '#EEE',
       paddingVertical: 10,
-      paddingHorizontal: 10,
-      marginVertical: 10,
-      borderRadius: 4,
+      paddingHorizontal: 25,
+      marginBottom: 170, 
+      borderRadius: 0,
       shadowColor: '#000',
-      shadowOffset: {width: 0, height: 2},
+      shadowOffset: {
+        width: 0, height: 3
+      },
       shadowOpacity: 0.6,
       shadowRadius: 2,
     },
     title: {
       color: 'black',
       fontSize: 17,
-      fontWeight: 'bold',
+      fontWeight: '300',
       textAlign: 'center',
+      lineHeight: 25
     },
     reminderContainer: {
       flexDirection: 'row',
-      justifyContent: 'center',
+      flex: 1,
+      justifyContent: 'space-between',
       alignItems: 'center',
-      marginTop: 5,
+      marginTop: 15,
+      marginBottom: 5,
     },
     reminderLabel: {
+      marginLeft: 10,
       color: 'black',
-      marginLeft: 70,
-      marginRight: 20,
+      width: 150,
     },
     reminderSwitch: {
-      flex: 1,
+      marginRight: 10
     },
 });

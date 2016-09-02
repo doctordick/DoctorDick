@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 module.exports = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#d8bfd8',
+        backgroundColor: '#FFF',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
@@ -13,24 +13,30 @@ module.exports = StyleSheet.create({
         height: null
     },
     faq: {
-        borderTopColor: '#8E388E',
+        borderTopColor: '#000',
         borderTopWidth: 0.5,
         borderStyle: 'solid'
     },
     faqText: {
-        color: '#8E388E',
-        fontSize: 12,
-        paddingTop: 5,
-        paddingBottom: 5,
+        color: '#000',
+        fontSize: 16,
+        paddingTop: 15,
+        paddingBottom: 15,
         paddingLeft: 20,
         paddingRight: 20
     },
     faqQuestion: {
+        fontWeight: '300'
+    },
+    selected: {
         fontWeight: 'bold'
     },
     faqAnswer: {
-        fontWeight: '300',
-        paddingBottom: 10,
+        fontWeight: '200',
+        paddingBottom: 20,
         paddingTop: 0
+    },
+    header: { 
+        backgroundColor: '#000'
     }
 });

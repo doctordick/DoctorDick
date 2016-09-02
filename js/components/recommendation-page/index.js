@@ -104,17 +104,17 @@ class RecommendationPage extends Component {
     render() {
         const recommendations = this.props.recommendations;
         return (
-            <Container theme={theme} style={{backgroundColor:'#384850'}} >
+            <Container theme={theme} style={styles.container} >
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
-                    <Header>
+                    <Header style={styles.header}>
                         <Button transparent onPress={() => this.popRoute()}>
-                            <Icon name='ios-arrow-back' style={{fontSize: 30, lineHeight: 32}} />
+                            <Icon name='ios-arrow-back' style={styles.backButton} />
                         </Button>
 
-                        <Title>Recommendations</Title>
+                        <Title style={{ color: '#000'}}>Recommendations</Title>
                     </Header>
 
-                    <Content padder style={{backgroundColor: 'transparent'}}>
+                    <Content padder>
                         {recommendations.HIV.RecommendationCode &&
                         <View padder>
                             <Text>Based on your questionnaire answers, the CDC recommends:</Text>
@@ -127,15 +127,15 @@ class RecommendationPage extends Component {
                             />
                         </View>}
                         <View padder>
-                          <Text>
+                          <Text style={{color: '#000'}}>
                             Here is the medical history you have not filled out yet:
                           </Text>
                           {Object.keys(recommendations)
                             .filter(key => !recommendations[key].RecommendationCode)
                             .map(key => (
                               key === 'HIV' ?
-                                <Button rounded block onPress={() => this.pushNewRoute('survey')} style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}} key={key}>{key}</Button>
-                              : <Button disabled rounded block style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} key={key}>{key+' - Coming Soon...'}</Button>
+                                <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}} key={key}>{key}</Button>
+                              : <Button disabled block style={styles.recommendationOption} key={key}>{key+' - Coming Soon...'}</Button>
                             ))
                           }
                         </View>

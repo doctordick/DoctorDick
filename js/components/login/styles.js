@@ -9,7 +9,7 @@ var height = Dimensions.get('window').height;
 module.exports = StyleSheet.create({
     content: {
         flex: 1,
-        backgroundColor: '#d8bfd8',
+        backgroundColor: '#FFF',
     },
     container: {
         flex: 2,
@@ -22,7 +22,7 @@ module.exports = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#d8bfd8',
+        backgroundColor: '#FFF',
         paddingLeft: 20,
         paddingRight: 20,
     },
@@ -51,10 +51,10 @@ module.exports = StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        backgroundColor: '#800080'
+        backgroundColor: '#000'
     },
     modalHeaderTitle: {
-        color: '#d8bfd8'
+        color: '#FFF'
     },
 
     legalView: {
@@ -66,11 +66,53 @@ module.exports = StyleSheet.create({
         padding: 40,
         flex: 1,
         flexWrap: 'wrap',
-        // backgroundColor: '#d8bfd8',
-        flexDirection: 'column',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // width: null,
-        // height: null
+        flexDirection: 'column'
     },
+    logoTitle: {
+        marginTop: 20,
+        marginBottom: 20,
+        width: 250,
+        height: 40
+    },
+
+    logoImage: {
+        width: 200,
+        height: 190 
+    },
+
+    slogan: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        marginTop: 20,
+        fontSize: 20,
+        color: '#000',
+        fontWeight: '200',
+        textAlign: 'center'
+    },
+
+    buttonContainer: {
+        marginTop: 0
+    },
+
+    button: {
+        backgroundColor: '#eee',
+        marginBottom: 20,
+        borderRadius: 0,
+        width: 200
+    },
+    transButton: {
+        alignSelf: 'center'
+    },
+    buttonBlock: {
+        color: '#FFF'
+    },
+    disclaimerTextLink: { 
+        fontSize: 12,
+        color: '#0000ee'
+    },
+    modalBackButton: {
+        fontSize: 30,
+        lineHeight: 32,
+        color: '#FFF'
+    }
 });

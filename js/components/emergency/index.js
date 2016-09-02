@@ -40,11 +40,11 @@ class Emergency extends Component {
     render() {
         return (
             <Container theme={theme}>
-                <Header style={{ backgroundColor: '#800080' }}>
+                <Header style={styles.header}>
                     <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name='ios-arrow-back' style={{fontSize: 30, lineHeight: 32}} />
+                        <Icon name='ios-arrow-back' style={{color: '#000', fontSize: 30, lineHeight: 32}} />
                     </Button>
-                    <Title>Emergency</Title>
+                    <Title style={{color: '#000'}}>Emergency</Title>
                 </Header>
                 <View style={styles.question}>
                     <Text style={styles.questionText}>
@@ -53,7 +53,7 @@ class Emergency extends Component {
                     <Text style={styles.questionText}>
                         If you're currently experiencing symptoms of a sexually transmitted disease, HIV infection, or any other illness, including rash, sores on skin or in mouth, anal, or genital area, fever, chills, discharge from penis, pain with urination, rectal pain or discharge, you should contact your doctor or other healthcare provider for help with your symptoms. If you are having a medical or psychiatric emergency, call 911 or go to the nearest emergency room.
                     </Text>
-                    <Button block style={{backgroundColor: '#800080', marginBottom: 20, marginTop: 40, paddingBottom:10, borderRadius: 0 }} onPress={() => this.pushNewRoute('recommendationPage')}>
+                    <Button block style={styles.buttonBlock} onPress={() => this.pushNewRoute('recommendationPage')}>
                         <Text>
                             I Agree
                         </Text>

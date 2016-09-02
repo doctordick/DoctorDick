@@ -62,16 +62,16 @@ class CareLocator extends Component {
 
     render() {
         return (
-            <Container theme={theme} style={{backgroundColor:'#384850'}}>
-                <Header style={{ backgroundColor: '#800080'}}>
+            <Container theme={theme} style={styles.container}>
+                <Header style={styles.header}>
                     <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name='ios-arrow-back' style={{fontSize: 30, lineHeight: 32}} />
+                        <Icon name='ios-arrow-back' style={{color: '#000', fontSize: 30, lineHeight: 32}} />
                     </Button>
 
-                    <Title>Testing Centers</Title>
+                    <Title style={{color: '#000'}}>Testing Centers</Title>
 
                     <Button transparent onPress={this.props.openDrawer}>
-                        <Icon name='ios-menu' style={{fontSize: 30, lineHeight: 32}} />
+                        <Icon name='ios-menu' style={{color: '#000', fontSize: 30, lineHeight: 32}} />
                     </Button>
                 </Header>
 
@@ -80,7 +80,7 @@ class CareLocator extends Component {
                     <Spinner /> :
 
                     <Tabs>
-                        <List tabLabel="List">
+                        <List tabBgColor={{backgroundColor:'#000'}} tabLabel="List">
                             {this.state.testCenters.map((center, index) => (
                               <ListItem iconLeft key={index} style={{width:360}}>
                                   <Icon name='ios-medkit'/>
@@ -100,7 +100,7 @@ class CareLocator extends Component {
                               </ListItem>
                             ))}
                         </List>
-                        <View tabLabel='Map'>
+                        <View tabBgColor={{backgroundColor:'#000'}} tabLabel='Map'>
                             <MapView
                                 style={{height:558, width: 380}}
                                 showsUserLocation

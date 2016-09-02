@@ -13,7 +13,7 @@ module.exports = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 20,
-        backgroundColor: '#d8bfd8',
+        backgroundColor: '#FFF',
         flexDirection: 'column',
         alignItems: 'center'
     },
@@ -21,6 +21,19 @@ module.exports = StyleSheet.create({
         color: '#696969',
         fontSize: 14,
         textAlign: 'center',
-        marginTop: 25
+        marginTop: 25,
+        fontWeight: '300'
+    },
+    header: { 
+        backgroundColor: '#fff',
+        borderBottomColor: '#000',
+        borderBottomWidth: 0.5
+    },
+    buttonBlock: {
+        backgroundColor: '#000',
+        marginBottom: 20,
+        marginTop: 40,
+        paddingBottom:10,
+        borderRadius: 0 
     }
 });

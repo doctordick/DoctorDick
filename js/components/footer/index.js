@@ -22,13 +22,13 @@ class Footer extends Component {
 		return (
 			<View style={styles.footer} theme={theme}>
 				<TouchableOpacity onPress={() => this.pushNewRoute('recommendationPage')}>
-					<Icon name={'ios-home'+(this.props.currentPage !== 'careLocator' ? '' : '-outline')} />
+					<Icon style={styles.icon} name={'ios-home'+(this.props.currentPage !== 'careLocator' ? '' : '-outline')} />
 				</TouchableOpacity>
 				<TouchableOpacity onPress={() => this.pushNewRoute('careLocator')}>
-					<Icon name={'ios-pin'+(this.props.currentPage === 'careLocator' ? '' : '-outline')} />
+					<Icon style={styles.icon} name={'ios-pin'+(this.props.currentPage === 'careLocator' ? '' : '-outline')} />
 				</TouchableOpacity>
         <TouchableOpacity onPress={this.props.openDrawer}>
-          <Icon name='ios-more' />
+          <Icon style={styles.icon} name='ios-more' />
         </TouchableOpacity>
 			</View>
 		);

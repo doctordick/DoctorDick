@@ -61,31 +61,27 @@ class Login extends Component {
             <Container>
                 <View style={styles.content} theme={login} scrollEnabled={this.state.scroll}>
                     <View style={styles.container}>
-                        <Image style={{width: 200, height: 190}} source={require('../../../images/banana.png')}>
+                        <Image style={styles.logoImage} source={require('../../../images/banana.png')}>
                         </Image>
-                        <Image style={{ marginTop: 20, marginBottom: 20,width: 250, height: 40 }} source={require('../../../images/doctorDick.png')}>
+                        <Image style={styles.logoTitle} source={require('../../../images/doctorDick.png')}>
                         </Image>
-                        <Text style={{ paddingLeft: 20, paddingRight: 20, marginTop: 20, fontSize: 16, color: '#000', fontWeight: '100', textAlign: 'center'}}>
-                            Doctor Dick helps you stay on top of your sexual health - so you can stay on top - or bottom - when it matters most
+                        <Text style={styles.slogan}>
+                            Our Dick helps keep yours healthy
                         </Text>
                     </View>
                     <View style={styles.bg}>
-                        <View style={{marginTop: 0}}>
-                            <Button block style={{backgroundColor: '#800080', marginBottom: 20, borderRadius: 0, width: 200 }} onPress={() => this.pushNewRoute('emergency')}>
-                                <Text style={{color: 'white'}}>
+                        <View style={styles.buttonContainer}>
+                            <Button textStyle={{color: '#000'}} block style={styles.button} onPress={() => this.pushNewRoute('emergency')}>
                                     LET'S GET STARTED
-                                </Text>
                             </Button>
                         </View>
-                        <Button transparent style={{alignSelf: 'center'}} onPress={() => this.pushNewRoute('faq')}>
-                            <Text style={{color: '#800080'}}>
-                                What is Doctor Dick?
-                            </Text>
+                        <Button textStyle={{color: '#0000EE'}} transparent style={styles.transButton} onPress={() => this.pushNewRoute('faq')}>
+                            What is Doctor Dick?
                         </Button>
                         <View style={styles.disclaimer}>
                             <Text style={ styles.disclaimerText }>
                                 By clicking on 'Let's Get Started', you agree to our
-                                <Text style={{ fontSize: 12, color: '#0000ee'}} onPress={this.openLegalsModal.bind(this)}> privacy policy and terms of use</Text>
+                                <Text style={styles.disclaimerTextLink} onPress={this.openLegalsModal.bind(this)}> privacy policy and terms of use</Text>
                                  . These documents contain important information.
                             </Text>
                         </View>
@@ -93,7 +89,7 @@ class Login extends Component {
                  <Modal navigator={this.props.navigator} style={[styles.modal, styles.legalsModal]} backdrop={false} ref={'legalsModal'}  swipeToClose={false} >
                      <Header style={styles.modalHeader}>
                         <Button transparent onPress={this.closeLegalsModal.bind(this)}>
-                            <Icon name="ios-arrow-back" style={{fontSize: 30, lineHeight: 32, color: '#d8bfd8'}} />
+                            <Icon name="ios-arrow-back" style={styles.modalBackButton} />
                         </Button>
 
                         <Title style={styles.modalHeaderTitle}>Legals</Title>

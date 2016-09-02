@@ -22,7 +22,7 @@ class RecommendationCard extends Component {
 
           { setReminders &&
             <View style={styles.reminderContainer}>
-              <Text style={styles.reminderLabel}>Get reminders:</Text>
+              <Text style={styles.reminderLabel}>SET REMINDERS:</Text>
               <Switch style={styles.reminderSwitch}
                 onValueChange={() => this.props.toggleReminder()}
                 value={this.props.reminder}
