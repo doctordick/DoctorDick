@@ -65,6 +65,10 @@ export default function (state:State = initialState, action:Action): State {
 
   if (action.type === TOGGLE_REMINDER) {
     const newState = { ...state }
+    if (newState[action.questionnaireType].ReminderID && newState[action.questionnaireType].ReminderEnabled) {
+      newState[action.questionnaireType].ReminderID = null;
+      newState[action.questionnaireType].NextReminder = null;
+    }
     newState[action.questionnaireType].ReminderEnabled = !newState[action.questionnaireType].ReminderEnabled
     return newState
   }

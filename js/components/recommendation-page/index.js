@@ -72,6 +72,9 @@ class RecommendationPage extends Component {
     }
 
     toggleReminder() {
+      if (this.props.recommendations.HIV.ReminderID && this.props.recommendations.HIV.ReminderEnabled) {
+        RNCalendarReminders.removeReminder(this.props.recommendations.HIV.ReminderID);
+      }
       this.props.toggleReminder('HIV');
     }
 
