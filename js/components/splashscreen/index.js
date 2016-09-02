@@ -14,7 +14,7 @@ export default class SplashPage extends Component {
             });
         }, 1500);
     }
-    
+
     render () {
         return (
             <View style={{

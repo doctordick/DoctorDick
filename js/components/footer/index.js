@@ -21,14 +21,11 @@ class Footer extends Component {
 	render() {
 		return (
 			<View style={styles.footer} theme={theme}>
-				<TouchableOpacity onPress={() => this.pushNewRoute('dashboard')}>
-					<Icon name={'ios-home'+(this.props.currentPage === 'dashboard' ? '' : '-outline')} />
+				<TouchableOpacity onPress={() => this.pushNewRoute('recommendationPage')}>
+					<Icon name={'ios-home'+(this.props.currentPage !== 'careLocator' ? '' : '-outline')} />
 				</TouchableOpacity>
 				<TouchableOpacity onPress={() => this.pushNewRoute('careLocator')}>
 					<Icon name={'ios-pin'+(this.props.currentPage === 'careLocator' ? '' : '-outline')} />
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => this.pushNewRoute('recommendationPage')}>
-					<Icon name={'ios-alarm'+(this.props.currentPage === 'recommendationPage' ? '' : '-outline')} />
 				</TouchableOpacity>
         <TouchableOpacity onPress={this.props.openDrawer}>
           <Icon name='ios-more' />
