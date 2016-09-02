@@ -17,7 +17,7 @@ import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
 import Calendar from '../calendar';
-
+import RNCalendarReminders from 'react-native-calendar-reminders';
 
 class RecommendationPage extends Component {
     constructor(props){
@@ -30,6 +30,10 @@ class RecommendationPage extends Component {
     componentDidMount(){
       // this solves the race condition with this.refs.modal
       this.setState({modal: this.refs.modal})
+
+      RNCalendarReminders.authorizeEventStore((error, auth) => {
+        console.log('authorizing EventStore...');
+      });
     }
 
     popRoute() {
