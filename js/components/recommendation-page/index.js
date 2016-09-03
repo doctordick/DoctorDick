@@ -84,18 +84,18 @@ class RecommendationPage extends Component {
       // check if we have IOS reminder already, if so edit it, if not create new.
       if (this.props.recommendations.HIV.ReminderID) {
         RNCalendarReminders.updateReminder(this.props.recommendations.HIV.ReminderID, {
-          startDate: date,
+          startDate: date.getTime(),
           alarms: [{
-            date: date
+            date: date.getTime()
           }]
         });
       } else {
         RNCalendarReminders.saveReminder('Doctor Dick Reminder', {
           location: '',
           notes: 'Doctor Dick says: Open the App and stay Healthy!',
-          startDate: date,
+          startDate: date.getTime(),
           alarms: [{
-            date: date
+            date: date.getTime()
           }]
         });
       }
