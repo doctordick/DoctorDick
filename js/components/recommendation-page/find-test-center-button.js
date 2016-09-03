@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { popRoute, replaceOrPushRoute } from '../../actions/route';
 
 import {Button} from 'native-base';
+import styles from './styles';
 
 
 class FindTestingCenterButton extends Component {
@@ -16,7 +17,7 @@ class FindTestingCenterButton extends Component {
 
   render() {
     return (
-      <Button rounded block style={{marginTop: 20, marginHorizontal: 10, marginBottom: 10}} textStyle={{color: '#eee'}}
+      <Button block style={styles.findTestingCenterButton} textStyle={{color: '#eee'}}
       onPress={() => {
         this.navigateTo('careLocator')}
       }>

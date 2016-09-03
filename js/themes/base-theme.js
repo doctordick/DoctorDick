@@ -81,9 +81,9 @@ module.exports = {
 
     radioBtnSize: (Platform.OS === 'ios') ? 25 : 23,
 
-    tabBgColor: "#00c497",
+    tabBgColor: "#fff",
     tabFontSize: 15,
-	tabTextColor: "#fff",
+	tabTextColor: "#000",
 
     btnDisabledBg: '#b5b5b5',
     btnDisabledClr: '#f1f1f1',

@@ -26,13 +26,11 @@ class Question extends Component {
     render() {
         return (
             <View style={styles.testRec}>
-                <Text style={{color: 'black', fontSize: 18, marginBottom: 10, paddingLeft: 20, paddingRight: 20}}>{this.props.question}</Text>
+                <Text style={styles.surveyQuestion}>{this.props.question}</Text>
                     {this.props.answers.map( (elem, index) => {
                         return (
-                            <Button block key={index} style={{backgroundColor: '#800080', marginBottom: 20, borderRadius: 0, marginRight: 40, marginLeft: 40 }} onPress={this.props.next.bind(this, index)}>
-                                <Text style={{color: 'white'}}>
+                            <Button block textStyle={{fontWeight: '300', color: '#FFF'}} key={index} style={styles.buttonBlock} onPress={this.props.next.bind(this, index)}>
                                 {elem.text}
-                                </Text>
                             </Button>
                         )
                     })}

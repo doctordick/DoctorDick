@@ -10,12 +10,35 @@ module.exports = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#d8bfd8',
+        backgroundColor: '#FFF',
         width: null,
         height: null,
     },
     text: {
         marginBottom: 10,
-        fontSize: 18
+        fontSize: 16,
+        color: '#696969'
+    },
+    header: { 
+        backgroundColor: '#000' 
+    },
+    backButton: {
+        fontSize: 30,
+        lineHeight: 32
+    },
+    surveyQuestion: {
+        fontWeight: '300',
+        color: '#696969',
+        fontSize: 16,
+        marginBottom: 40,
+        paddingLeft: 20,
+        paddingRight: 20,
+        textAlign: 'center'},
+    buttonBlock: {
+        backgroundColor: '#000',
+        marginBottom: 20,
+        borderRadius: 0,
+        marginRight: 20,
+        marginLeft: 20 
     }
 });
