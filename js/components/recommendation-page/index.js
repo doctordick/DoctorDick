@@ -164,7 +164,7 @@ class RecommendationPage extends Component {
     }
 }
 
-function bindAction(dispatch) {
+function mapActionsToProps(dispatch) {
     return {
         popRoute: () => dispatch(popRoute()),
         pushNewRoute: (route) => dispatch(pushNewRoute(route)),
@@ -181,4 +181,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, bindAction)(RecommendationPage);
+export default connect(mapStateToProps, mapActionsToProps)(RecommendationPage);

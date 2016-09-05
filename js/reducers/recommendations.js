@@ -48,41 +48,31 @@ const initialState = {
 };
 
 
-
 export default function (state:State = initialState, action:Action): State {
 
   if (action.type === REACH_DECISION) {
-    const newRecommendation = {
-      ...state[action.questionnaireType],
-      RecommendationCode: action.decision,
-    }
-
-    return {
-      ...state,
-      [action.questionnaireType]: newRecommendation,
-    }
+    const newState = { ...state }
+    newState[action.questionnaireType].RecommendationCode = action.decision
+    return newState
   }
 
   if (action.type === TOGGLE_REMINDER) {
     const newState = { ...state }
+
+    // Are you turning off reminders, and you had a Reminder ID stored? then clear old reminders out
     if (newState[action.questionnaireType].ReminderID && newState[action.questionnaireType].ReminderEnabled) {
       newState[action.questionnaireType].ReminderID = null;
       newState[action.questionnaireType].NextReminder = null;
     }
+
     newState[action.questionnaireType].ReminderEnabled = !newState[action.questionnaireType].ReminderEnabled
     return newState
   }
 
   if (action.type === SET_REMINDER_DATE) {
-    const newRecommendation = {
-      ...state[action.questionnaireType],
-      NextReminder: action.date,
-    }
-
-    return {
-      ...state,
-      [action.questionnaireType]: newRecommendation,
-    }
+    const newState = { ...state }
+    newState[action.questionnaireType].NextReminder = action.date
+    return newState
   }
 
   if (action.type === CREATE_NEW_IOS_REMINDER) {
@@ -98,7 +88,6 @@ export default function (state:State = initialState, action:Action): State {
     if (savedData.HIV.NextReminder) {
       savedData.HIV.NextReminder = new Date(savedData.HIV.NextReminder);
     }
-
 
     return {
       ...savedData
