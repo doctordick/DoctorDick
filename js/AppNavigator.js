@@ -12,26 +12,15 @@ import { Drawer } from 'native-base';
 import Navigator from 'Navigator';
 import Login from './components/login/';
 import SplashPage from './components/splashscreen/';
-import Home from './components/home/';
-import SignUp from './components/sign-up/';
-import Compose from './components/compose/';
-import Lists from './components/lists/';
-import Icons from './components/icons/';
-import ProgressBar from './components/progressbar/';
-import Spinner from './components/spinner/';
-import Calendar from './components/calendar/';
-import Form from './components/form/';
-import Modal from './components/modal/';
 import SideBar from './components/sideBar';
-import { statusBarColor } from './themes/base-theme';
 import RecommendationPage from './components/recommendation-page';
 import CareLocator from './components/care-locator';
 import Emergency from './components/emergency/';
 import Dashboard from './components/dashboard/';
-import Shop from './components/shop/';
 import FAQ from './components/faq/';
 import Survey from './components/survey/';
-import Reminders from './components/reminders/';
+
+import { statusBarColor } from './themes/base-theme';
 
 Navigator.prototype.replaceWithAnimation = function (route) {
     const activeLength = this.state.presentedIndex + 1;
@@ -157,32 +146,6 @@ class AppNavigator extends Component {
                 return <SplashPage navigator={navigator} />;
             case 'login':
                 return <Login navigator={navigator} />;
-            case 'home':
-                return <Home navigator={navigator} />;
-            case 'inbox':
-                return <Inbox navigator={navigator} />;
-            case 'compose':
-                return <Compose navigator={navigator} />;
-            case 'signUp':
-                return <SignUp navigator={navigator} />;
-            case 'mail':
-                return <Mail navigator={navigator} />;
-            case 'lists':
-                return <Lists navigator={navigator} />;
-            case 'icons':
-                return <Icons navigator={navigator} />;
-            case 'progressBar':
-                return <ProgressBar navigator={navigator} />;
-            case 'spinners':
-                return <Spinner navigator={navigator} />;
-            case 'contacts':
-                return <Contacts navigator={navigator} />;
-            case 'calendar':
-                return <Calendar navigator={navigator} />;
-            case 'form':
-                return <Form navigator={navigator} />;
-            case 'modal':
-                return <Modal navigator={navigator} />;
             case 'recommendationPage':
                 return <RecommendationPage navigator={navigator} />;
             case 'careLocator':
@@ -191,14 +154,10 @@ class AppNavigator extends Component {
                 return <Emergency navigator={navigator} />;
             case 'dashboard':
                 return <Dashboard navigator={navigator} />;
-            case 'shop':
-                return <Shop navigator={navigator} />;
             case 'faq':
                 return <FAQ navigator={navigator} />;
             case 'survey':
                 return <Survey navigator={navigator} />;
-            case 'reminders':
-                return <Reminders navigator={navigator} />;
             default:
                 return <RecommendationPage navigator={navigator} />;
         }
