@@ -8,7 +8,7 @@ export default {
   },
 
   'referCare': {
-    text: 'You should talk to a doctor or other healthcare provider about HIV treatment.',
+    text: 'You should see a doctor or other healthcare provider about HIV treatment.',
     findTestingCenter: true,
     setReminders: false,
     orderHomeKit: false,
@@ -22,7 +22,7 @@ export default {
   },
 
   'contactDoc': {
-    text: 'You said you are seeing a doctor or other healthcare provider for HIV treatment. That’s great.\nYou should contact your doctor or other healthcare provider if you have any questions about HIV treatment or about your health in general.',
+    text: 'You should keep seeing your doctor for HIV care.\nOr use the HIV care locator service to find other HIV doctors.',
     findTestingCenter: false,
     setReminders: false,
     orderHomeKit: false,
