@@ -50,17 +50,17 @@ class Dashboard extends Component {
                             HIV Testing
                         </Text>
                     </Button>
-                    <Button block disabled style={{marginBottom: 20, paddingBottom:10, borderRadius: 0 }} onPress={() => this.navigateTo('emergency')}>
+                    <Button block disabled style={{marginBottom: 20, paddingBottom:10, borderRadius: 0 }}>
                         <Text>
                             STD Testing <Text style={{fontStyle: 'italic'}}>(Coming Soon)</Text>
                         </Text>
                     </Button>
-                    <Button block disabled style={{marginBottom: 20, paddingBottom:10, borderRadius: 0 }} onPress={() => this.navigateTo('emergency')}>
+                    <Button block disabled style={{marginBottom: 20, paddingBottom:10, borderRadius: 0 }}>
                         <Text>
                             PrEp <Text style={{fontStyle: 'italic'}}>(Coming Soon)</Text>
                         </Text>
                     </Button>
-                    <Button block disabled style={{marginBottom: 20, paddingBottom:10, borderRadius: 0 }} onPress={() => this.navigateTo('emergency')}>
+                    <Button block disabled style={{marginBottom: 20, paddingBottom:10, borderRadius: 0 }}>
                         <Text>
                             Sexual Health Related Vaccines <Text style={{fontStyle: 'italic'}}>(Coming Soon)</Text>
                         </Text>

@@ -15,7 +15,7 @@ import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
 import RecommendationPage from './components/recommendation-page';
 import CareLocator from './components/care-locator';
-import Emergency from './components/emergency/';
+import Disclaimer from './components/disclaimer/';
 import Dashboard from './components/dashboard/';
 import FAQ from './components/faq/';
 import Survey from './components/survey/';
@@ -150,8 +150,8 @@ class AppNavigator extends Component {
                 return <RecommendationPage navigator={navigator} />;
             case 'careLocator':
                 return <CareLocator navigator={navigator} />;
-            case 'emergency':
-                return <Emergency navigator={navigator} />;
+            case 'disclaimer':
+                return <Disclaimer navigator={navigator} />;
             case 'dashboard':
                 return <Dashboard navigator={navigator} />;
             case 'faq':

@@ -48,8 +48,8 @@ class Survey extends Component {
             this.setState({ answer: answer.done, done: true, progress: 1 });
         } else if(answer.next === 'hiv-info') {
             Linking.openURL('https://www.aids.gov/hiv-aids-basics').catch(err => console.error('An error occurred', err));
-        } else if(answer.next === 'emergency') {
-            this.pushNewRoute('emergency');
+        } else if(answer.next === 'disclaimer') {
+            this.pushNewRoute('disclaimer');
         } else if (answer.next) {
             this.setState({
                 questionIndex: answer.next,
