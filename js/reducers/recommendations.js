@@ -16,7 +16,7 @@ export type State = {
   'HIV': Recommendation,
   'Other STDs': Recommendation,
   'PrEP': Recommendation,
-  'Vaccines': Recommendation,
+  'Vaccinations for Sexual Health': Recommendation,
 }
 
 
@@ -39,7 +39,7 @@ const initialState = {
     NextReminder: null,
     ReminderID: null,
   },
-  'Vaccines': {
+  'Vaccinations for Sexual Health': {
     RecommendationCode: false,
     ReminderEnabled: false,
     NextReminder: null,

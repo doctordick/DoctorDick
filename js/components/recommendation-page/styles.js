@@ -37,7 +37,7 @@ module.exports = StyleSheet.create({
         marginTop: 20,
         marginHorizontal: 10,
         marginBottom: 10,
-        borderRadius: 0,
+        borderRadius: 0
     },
     recommendationOptionEnabled: {
         backgroundColor: '#000'      

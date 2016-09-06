@@ -62,7 +62,7 @@ class Dashboard extends Component {
                     </Button>
                     <Button block disabled style={{marginBottom: 20, paddingBottom:10, borderRadius: 0 }}>
                         <Text>
-                            Sexual Health Related Vaccines <Text style={{fontStyle: 'italic'}}>(Coming Soon)</Text>
+                            Vaccinations for Sexual Health <Text style={{fontStyle: 'italic'}}>(Coming Soon)</Text>
                         </Text>
                     </Button>
                 </View>

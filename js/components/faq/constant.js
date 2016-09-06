@@ -1,7 +1,7 @@
 const faqs = [
   {
     question: "What’s Doctor Dick? ",
-    answer: "Doctor Dick is a tool that gay guys can use to stay on top of their sexual health. Doctor Dick can gay guys  know which HIV and/or STD tests they need, which vaccines related to sexual health they need, and whether they should consider PrEP.  "
+    answer: "Doctor Dick is a tool that gay guys can use to stay on top of their sexual health. Doctor Dick can gay guys  know which HIV and/or STD tests they need, which vaccinations related to sexual health they need, and whether they should consider PrEP.  "
   },
 
   {
@@ -16,7 +16,7 @@ const faqs = [
 
   {
     question: "When should someone use Doctor Dick?",
-    answer: "Use Doctor Dick when you’re feeling healthy, in order to know how you can best stay that way. Doctor Dick can help you know when you should get tested, when to get vaccines, and whether you should consider PrEP. "
+    answer: "Use Doctor Dick when you’re feeling healthy, in order to know how you can best stay that way. Doctor Dick can help you know when you should get tested, when to get vaccinations for sexual health, and whether you should consider PrEP. "
   },
 
   {
@@ -36,7 +36,7 @@ const faqs = [
 
   {
     question: "How does it work?",
-    answer: "Doctor Dick asks you questions about your medical history and sexual behaviors. Using that information, Doctor Dick provides customized recommendations related to sexual health in four areas: HIV testing, sexually transmitted disease (STD) testing, vaccines, and PrEP. Doctor Dick also allows you to search for clinics where you can get the sexual health services you need. Finally, Doctor Dick allows you to set reminders, so that you remember when next to go back for tests, vaccines, or other services. "
+    answer: "Doctor Dick asks you questions about your medical history and sexual behaviors. Using that information, Doctor Dick provides customized recommendations related to sexual health in four areas: HIV testing, sexually transmitted disease (STD) testing, vaccinations for sexual health, and PrEP. Doctor Dick also allows you to search for clinics where you can get the sexual health services you need. Finally, Doctor Dick allows you to set reminders, so that you remember when next to go back for tests, vaccinations for sexual health, or other services. "
   },
 
   {
@@ -46,12 +46,12 @@ const faqs = [
 
   {
     question: "Why are there four different areas that Doctor Dick asks about? ",
-    answer: "There are four different areas — HIV testing, STD testing, vaccines, and PrEP — because recommendations in these areas are different for gay men. Some don’t apply to all guys, but you might not know until you answer some questions. Be sure to go through all four areas."
+    answer: "There are four different areas — HIV testing, STD testing, vaccinations for sexual health, and PrEP — because recommendations in these areas are different for gay men. Some don’t apply to all guys, but you might not know until you answer some questions. Be sure to go through all four areas."
   },
 
   {
     question: "Will Doctor Dick tell me everything I need to know about my health?",
-    answer: "No. Doctor Dick is focused on sexual health — specifically, HIV testing, STD testing, vaccines, and PrEP. Doctor Dick doesn’t cover other aspects of health, like getting your blood pressure or cholesterol checked, getting a colonoscopy, or other health issues that aren’t related to sexual health. Like everyone else, gay guys have health needs that go beyond sexual health. Ask your doctor not only about your sexual health needs but about your general health needs too. "
+    answer: "No. Doctor Dick is focused on sexual health — specifically, HIV testing, STD testing, vaccinations for sexual health, and PrEP. Doctor Dick doesn’t cover other aspects of health, like getting your blood pressure or cholesterol checked, getting a colonoscopy, or other health issues that aren’t related to sexual health. Like everyone else, gay guys have health needs that go beyond sexual health. Ask your doctor not only about your sexual health needs but about your general health needs too. "
   },
 
   {
