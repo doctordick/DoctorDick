@@ -126,8 +126,17 @@ class RecommendationPage extends Component {
                               modal={this.state.modal}
                             />
                         </View>}
+                        <Card style={styles.cardRetake}>
+                          <CardItem header>
+                            <Text style={{color: '#000'}}>
+                            I'd like to retake the following survey:
+                            </Text>
+                          </CardItem>
+                          <CardItem>
+                            <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}}>HIV</Button>
+                          </CardItem>
+                        </Card>
                         <Card style={styles.card}>
-                          <View padder>
                             <CardItem>
                               <Text style={{color: '#000'}}>
                                 Here is the medical history you have not filled out yet:
@@ -145,7 +154,6 @@ class RecommendationPage extends Component {
                                   </CardItem>
                               ))
                             }
-                          </View>
                         </Card>
                         <Modal
                           style={[styles.modal, styles.modal1]}
