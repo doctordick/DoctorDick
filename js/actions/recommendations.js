@@ -6,8 +6,6 @@ export const REACH_DECISION = "REACH_DECISION";
 export const TOGGLE_REMINDER = "TOGGLE_REMINDER";
 export const SET_REMINDER_DATE = "SET_REMINDER_DATE";
 export const CREATE_NEW_IOS_REMINDER = "CREATE_NEW_IOS_REMINDER";
-import RNCalendarReminders from 'react-native-calendar-reminders';
-
 
 export function reachDecision(decision:RecommendationCode, questionnaireType:string):Action {
   return {
@@ -18,9 +16,6 @@ export function reachDecision(decision:RecommendationCode, questionnaireType:str
 }
 
 export function toggleReminder(questionnaireType:string):Action {
-  RNCalendarReminders.authorizeEventStore((error, auth) => {
-    console.log('authorized EventStore');
-  });
   return {
     type: TOGGLE_REMINDER,
     questionnaireType
