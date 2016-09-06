@@ -51,10 +51,6 @@ class RecommendationPage extends Component {
     componentDidMount() {
       // this solves the race condition with this.refs.modal
       this.setState({modal: this.refs.modal})
-
-      RNCalendarReminders.authorizeEventStore((error, auth) => {
-        console.log('authorized EventStore');
-      });
     }
 
     popRoute() {
