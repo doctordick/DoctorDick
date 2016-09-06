@@ -67,12 +67,7 @@ class CareLocator extends Component {
                     <Button transparent onPress={() => this.popRoute()}>
                         <Icon name='ios-arrow-back' style={{color: '#000', fontSize: 30, lineHeight: 32}} />
                     </Button>
-
                     <Title style={{color: '#000'}}>Testing Centers</Title>
-
-                    <Button transparent onPress={this.props.openDrawer}>
-                        <Icon name='ios-menu' style={{color: '#000', fontSize: 30, lineHeight: 32}} />
-                    </Button>
                 </Header>
 
                 <Content style={{backgroundColor: 'transparent'}}>
