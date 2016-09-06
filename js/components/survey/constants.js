@@ -8,7 +8,7 @@ const hiv = {
       text: 'Disagree',
       next: 'disclaimer' 
     }, {
-      text: 'What\'s high-risk exposure?',
+      text: 'What\'s High-Risk Exposure?',
       next: 'hiv-info'
     }]
   },

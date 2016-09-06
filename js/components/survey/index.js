@@ -21,6 +21,7 @@ import { TestRec, ReferCare, FollowupRec, ContactDoc } from './results';
 import hiv from './constants';
 import styles from './styles';
 import * as Progress from 'react-native-progress';
+import Modal from 'react-native-modalbox';
 
 
 class Survey extends Component {
@@ -41,13 +42,20 @@ class Survey extends Component {
         Linking.openURL(url).catch(err => console.error('An error occurred', err));
     }
 
+    openHighRiskExposureModal() {
+        this.refs.highRiskExposureModal.open()
+    }
+    closeHighRiskExposureModal() {
+        this.refs.highRiskExposureModal.close()
+    }
+
     nextState(answerIndex) {
         let answer = hiv[this.state.questionIndex].answers[answerIndex]
         if(answer.done) {
             this.reachDecision(answer.done, 'HIV');
             this.setState({ answer: answer.done, done: true, progress: 1 });
         } else if(answer.next === 'hiv-info') {
-            Linking.openURL('https://www.aids.gov/hiv-aids-basics').catch(err => console.error('An error occurred', err));
+            this.openHighRiskExposureModal();
         } else if(answer.next === 'disclaimer') {
             this.pushNewRoute('disclaimer');
         } else if (answer.next) {
@@ -158,19 +166,47 @@ class Survey extends Component {
     render() {
         return (
             <Container theme={theme}>
-                <Header style={styles.header}>
-                    <Button transparent onPress={this.previousState.bind(this)}>
-                        <Icon name='ios-arrow-back' style={styles.backButton} />
-                    </Button>
-                    <Title>HIV Testing</Title>
-                </Header>
-                <View style={styles.testRec}>
-                    { this.renderProgressBar() }
-                    { this.renderView() }
+                <View>
+                    <Header style={styles.header}>
+                        <Button transparent onPress={this.previousState.bind(this)}>
+                            <Icon name='ios-arrow-back' style={styles.backButton} />
+                        </Button>
+                        <Title>HIV Testing</Title>
+                    </Header>
+                    <View style={styles.testRec}>
+                        { this.renderProgressBar() }
+                        { this.renderView() }
+                    </View>
+                    <Footer>
+                        <FooterComponent navigator={this.props.navigator} />
+                    </Footer>
+                     <Modal navigator={this.props.navigator} style={[styles.modal, styles.highRiskExposureModal]} backdrop={false} ref={'highRiskExposureModal'}  swipeToClose={false} >
+                        <Content>
+                             <Header style={styles.modalHeader}>
+                                <Button transparent onPress={this.closeHighRiskExposureModal.bind(this)}>
+                                    <Icon name="ios-arrow-back" style={{fontSize: 30, lineHeight: 32, color: '#000'}} />
+                                </Button>
+
+                                <Title style={styles.modalHeaderTitle}>What's High Risk Exposure?</Title>
+                            </Header>
+                            <Text style={[styles.highRiskExposureModalText, styles.modalTextMargin]}> 
+                            If you’re HIV-negative or don’t know your HIV status, and in the last 72 hours you 
+                            </Text>
+                            <Text style={styles.highRiskExposureModalText}>
+                            (1) think you may have been exposed to HIV during sex (for example, if the condom broke), 
+                            </Text>
+                            <Text style={styles.highRiskExposureModalText}>
+                            (2) shared needles and works to prepare drugs (for example, cotton, cookers, water), or
+                            </Text>
+                            <Text style={styles.highRiskExposureModalText}>
+                            (3) were sexually assaulted, 
+                            </Text>
+                            <Text style={styles.highRiskExposureModalText}>
+                            talk to your health care provider or an emergency room doctor <Text style={styles.link} onPress={() => this.openLink('http://www.cdc.gov/hiv/basics/pep.html')}>about PEP</Text> right away.
+                            </Text>
+                        </Content>
+                    </Modal>
                 </View>
-                <Footer>
-                    <FooterComponent navigator={this.props.navigator} />
-                </Footer>
             </Container>
         )
     }
