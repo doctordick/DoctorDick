@@ -112,7 +112,8 @@ class CareLocator extends Component {
                                     animateDrop: true,
                                     leftCalloutView: <Icon name='ios-navigate-outline' style={{color:'black'}} onPress={() => Linking.openURL(
                                         'http://maps.apple.com/?q='+ center.title+', '+center.streetAddress+', '+center.postalCode
-                                    )} />
+                                    )} />,
+                                    rightCalloutView: <Icon name='ios-information-outline' style={{color: 'black', fontSize: 40}} onPress={() => Linking.openURL(center.link)} />
                                 })))()}
                             />
                         </View>

@@ -60,7 +60,7 @@ module.exports = StyleSheet.create({
       },
       shadowOpacity: 0.6,
       shadowRadius: 2,
-      height: 180
+      height: 250,
     },
     cardRetake: {
       backgroundColor: '#EEE',
