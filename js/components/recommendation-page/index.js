@@ -8,7 +8,7 @@ import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route'
 import { toggleReminder, setReminderDate, createNewIOSReminder } from '../../actions/recommendations';
 
 
-import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer } from 'native-base';
+import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer, Card, CardItem } from 'native-base';
 
 import Modal from 'react-native-modalbox';
 import RecommendationCard from './recommendation-card';
@@ -126,19 +126,27 @@ class RecommendationPage extends Component {
                               modal={this.state.modal}
                             />
                         </View>}
-                        <View padder>
-                          <Text style={{color: '#000'}}>
-                            Here is the medical history you have not filled out yet:
-                          </Text>
-                          {Object.keys(recommendations)
-                            .filter(key => !recommendations[key].RecommendationCode)
-                            .map(key => (
-                              key === 'HIV' ?
-                                <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}} key={key}>{key}</Button>
-                              : <Button disabled block textStyle={{fontSize: 13}} style={styles.recommendationOption} key={key}>{key+' - Coming Soon...'}</Button>
-                            ))
-                          }
-                        </View>
+                        <Card style={styles.card}>
+                          <View padder>
+                            <CardItem>
+                              <Text style={{color: '#000'}}>
+                                Here is the medical history you have not filled out yet:
+                              </Text>
+                            </CardItem>
+                            {Object.keys(recommendations)
+                              .filter(key => !recommendations[key].RecommendationCode)
+                              .map(key => (
+                                key === 'HIV' ?
+                                  <CardItem>
+                                    <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}} key={key}>{key}</Button>
+                                  </CardItem>
+                                : <CardItem>
+                                    <Button disabled block textStyle={{fontSize: 13}} style={styles.recommendationOption} key={key}>{key+' - Coming Soon...'}</Button>
+                                  </CardItem>
+                              ))
+                            }
+                          </View>
+                        </Card>
                         <Modal
                           style={[styles.modal, styles.modal1]}
                           backdrop={false}

@@ -37,7 +37,8 @@ module.exports = StyleSheet.create({
         marginTop: 20,
         marginHorizontal: 10,
         marginBottom: 10,
-        borderRadius: 0
+        borderRadius: 0,
+        backgroundColor: 'transparent'
     },
     recommendationOptionEnabled: {
         backgroundColor: '#000'      
@@ -48,6 +49,17 @@ module.exports = StyleSheet.create({
       marginHorizontal: 10,
       marginBottom: 10,
       borderRadius: 50
-    }
+    },
+    card: {
+      backgroundColor: '#EEE',
+      borderRadius: 0,
+      borderColor: '#EEE',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0, height: 3
+      },
+      shadowOpacity: 0.6,
+      shadowRadius: 2,
+    },
 
 });
