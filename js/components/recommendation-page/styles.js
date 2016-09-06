@@ -41,7 +41,7 @@ module.exports = StyleSheet.create({
         backgroundColor: 'transparent'
     },
     recommendationOptionEnabled: {
-        backgroundColor: '#000'      
+        backgroundColor: '#000'
     },
     findTestingCenterButton: {
       backgroundColor: '#000',
@@ -72,7 +72,7 @@ module.exports = StyleSheet.create({
       },
       shadowOpacity: 0.6,
       shadowRadius: 2,
-      height: 0,
+      height: 100,
       marginTop: 200
     }
 
