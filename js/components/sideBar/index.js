@@ -39,6 +39,10 @@ class SideBar extends Component {
                         <Icon style={{ color: '#444' }} name='ios-paper-outline' />
                         <Text style={{ color: '#444' }}>Legals</Text>
                     </ListItem>
+                    <ListItem button onPress={() => this.navigateTo('feedback')} iconLeft style={styles.links} >
+                        <Icon style={{ color: '#444' }} name='ios-chatboxes-outline' />
+                        <Text style={{ color: '#444' }}>Feedback</Text>
+                    </ListItem>
                 </List>
                  <Modal navigator={this.props.navigator} style={[styles.modal, styles.legalsModal]} backdrop={false} ref={'legalsModal'}  swipeToClose={false} >
                      <Header style={styles.modalHeader}>

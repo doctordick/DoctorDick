@@ -10,15 +10,15 @@ import { popRoute } from './actions/route';
 
 import { Drawer } from 'native-base';
 import Navigator from 'Navigator';
-import Login from './components/login/';
-import SplashPage from './components/splashscreen/';
+import Login from './components/login';
+import SplashPage from './components/splashscreen';
 import SideBar from './components/sideBar';
 import RecommendationPage from './components/recommendation-page';
 import CareLocator from './components/care-locator';
-import Disclaimer from './components/disclaimer/';
-import Dashboard from './components/dashboard/';
-import FAQ from './components/faq/';
-import Survey from './components/survey/';
+import Disclaimer from './components/disclaimer';
+import FAQ from './components/faq';
+import Survey from './components/survey';
+import Feedback from './components/feedback';
 
 import { statusBarColor } from './themes/base-theme';
 
@@ -149,12 +149,12 @@ class AppNavigator extends Component {
                 return <CareLocator navigator={navigator} />;
             case 'disclaimer':
                 return <Disclaimer navigator={navigator} />;
-            case 'dashboard':
-                return <Dashboard navigator={navigator} />;
             case 'faq':
                 return <FAQ navigator={navigator} />;
             case 'survey':
                 return <Survey navigator={navigator} />;
+            case 'feedback':
+                return <Feedback navigator={navigator} />;
             default:
                 return <RecommendationPage navigator={navigator} />;
         }

@@ -22,7 +22,7 @@ class Footer extends Component {
 		return (
 			<View style={styles.footer} theme={theme}>
 				<TouchableOpacity onPress={this.props.currentPage !== 'recommendationPage' ? () => this.pushNewRoute('recommendationPage') : null}>
-					<Icon style={styles.icon} name={'ios-home'+(this.props.currentPage !== 'careLocator' ? '' : '-outline')} />
+					<Icon style={styles.icon} name={'ios-medkit'+(this.props.currentPage !== 'careLocator' ? '' : '-outline')} />
 					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 12 }}>Rec.</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'careLocator' ? () => this.pushNewRoute('careLocator') : null}>
