@@ -23,6 +23,7 @@ module.exports = StyleSheet.create({
 	icon: {
 		paddingLeft: 50, 
 		paddingRight: 50,
+		marginBottom: -10,
 		color: '#000'
 	}
 });

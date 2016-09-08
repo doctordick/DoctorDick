@@ -38,7 +38,7 @@ module.exports = StyleSheet.create({
         marginHorizontal: 10,
         marginBottom: 10,
         borderRadius: 0,
-        backgroundColor: 'transparent'
+        // backgroundColor: 'transparent'
     },
     recommendationOptionEnabled: {
         backgroundColor: '#000'

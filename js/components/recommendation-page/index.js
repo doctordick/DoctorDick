@@ -145,11 +145,11 @@ class RecommendationPage extends Component {
                               .filter(key => !recommendations[key].RecommendationCode)
                               .map(key => (
                                 key === 'HIV' ?
-                                  <CardItem>
-                                    <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}} key={key}>{key}</Button>
+                                  <CardItem key={key}>
+                                    <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}}>{key}</Button>
                                   </CardItem>
-                                : <CardItem>
-                                    <Button disabled block textStyle={{fontSize: 13}} style={styles.recommendationOption} key={key}>{key+' - Coming Soon...'}</Button>
+                                : <CardItem key={key}>
+                                    <Button disabled block textStyle={{fontSize: 13}} style={styles.recommendationOption}>{key+' - Coming Soon...'}</Button>
                                   </CardItem>
                               ))
                             }
