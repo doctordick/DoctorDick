@@ -110,42 +110,17 @@ class Survey extends Component {
                 />)
     }
 
-    renderAnswer(context) {
-        switch(context.state.answer) {
-            case 'referCare':
-                return (<ReferCare
-                            pushNewRoute={this.pushNewRoute.bind(this)}
-                            openLink={this.openLink.bind(this)}
-                        ></ReferCare>);
-                break;
-            case 'followupRec':
-                return (<FollowupRec
-                            pushNewRoute={this.pushNewRoute.bind(this)}
-                            openLink={this.openLink.bind(this)}
-                         ></FollowupRec>)
-            case 'contactDoc':
-                return (<ContactDoc
-                            pushNewRoute={this.pushNewRoute.bind(this)}
-                            openLink={this.openLink.bind(this)}
-                         ></ContactDoc>)
-            case 'testRec':
-            default:
-                return (<TestRec
-                            pushNewRoute={this.pushNewRoute.bind(this)}
-                            openLink={this.openLink.bind(this)}
-                         ></TestRec>)
-        }
-    }
-
     renderView () {
         if(this.state.goingForward && !this.state.isDisclaimer) {
             this.state.progress += 1/3;
         }
 
-        if(this.state.done) {
-            return this.renderAnswer(this);
-        } else {
+        if(!this.state.done) {
             return this.renderQuestion(this);
+        } else {
+            setTimeout(() => {
+                this.pushNewRoute('recommendationPage');
+            }, 0)
         }
     }
 

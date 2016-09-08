@@ -2,9 +2,9 @@
 
 import React, { Component } from 'react';
 
-import {Switch} from 'react-native';
+import {Switch, Linking} from 'react-native';
 
-import {Text, Content, View } from 'native-base';
+import {Text, Content, View, Button } from 'native-base';
 
 import styles from './styles';
 import recommendations from './recommendations.js';
@@ -13,6 +13,10 @@ import Collapsible from 'react-native-collapsible';
 import ReminderEditor from './reminder-editor';
 
 class RecommendationCard extends Component {
+    openLink(url) {
+        Linking.openURL(url).catch(err => console.error('An error occurred', err));
+    }
+
     render() {
       const {text, findTestingCenter, setReminders, orderHomeKit} = recommendations[this.props.recommendationCode]
 
@@ -35,6 +39,9 @@ class RecommendationCard extends Component {
           </Collapsible>
 
           { findTestingCenter && <FindTestingCenterButton />}
+          <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'https://www.aids.gov/hiv-aids-basics')}>
+              More Information About HIV
+          </Button>
         </View>
       )
     }
