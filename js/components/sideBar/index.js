@@ -28,16 +28,16 @@ class SideBar extends Component {
 
     render(){
         return (
-            <Content style={{backgroundColor: '#363d46'}} >
+            <Content style={{backgroundColor: '#999999'}} >
                 <Thumbnail size={150} square style={{alignSelf: 'center', marginTop: 50, marginBottom: 15, resizeMode: 'contain'}} source={require('../../../images/banana.png')} />
                 <List  foregroundColor={'white'} >
                     <ListItem button onPress={() => this.navigateTo('faq')} iconLeft style={styles.links} >
-                        <Icon name='ios-help' />
-                        <Text >FAQ</Text>
+                        <Icon style={{ color: '#444' }} name='ios-help' />
+                        <Text style={{ color: '#444' }}>FAQ</Text>
                     </ListItem>
                     <ListItem button onPress={this.openLegalsModal.bind(this)} iconLeft style={styles.links} >
-                        <Icon name='ios-paper-outline' />
-                        <Text>Legals</Text>
+                        <Icon style={{ color: '#444' }} name='ios-paper-outline' />
+                        <Text style={{ color: '#444' }}>Legals</Text>
                     </ListItem>
                 </List>
                  <Modal navigator={this.props.navigator} style={[styles.modal, styles.legalsModal]} backdrop={false} ref={'legalsModal'}  swipeToClose={false} >

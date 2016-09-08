@@ -62,8 +62,6 @@ const reducerCreate = params=>{
     }
 };
 
-const drawerStyle  = { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3};
-
 class AppNavigator extends Component {
 
     constructor(props){
@@ -123,7 +121,6 @@ class AppNavigator extends Component {
                 negotiatePan={true}>
                 <StatusBar
                     backgroundColor={statusBarColor}
-                    barStyle='light-content'
                 />
                 <Navigator
                     ref={(ref) => this._navigator = ref}
