@@ -16,10 +16,10 @@ class ReminderEditor extends Component {
   render() {
     return (
       <View>
-        <Text style={{color: 'black'}}>Next reminder:</Text>
-        <TouchableOpacity onPress={()=>this.openModal()}>
-          <Text style={styles.nextDatePicker}>{ this.props.date.toString().substr(4,12) }</Text>
-        </TouchableOpacity>
+        <Text style={{textAlign: 'center', fontSize: 20, color: 'black', fontWeight: 'bold'}}>Your next reminder: { this.props.date.toString().substr(4,12) }</Text>
+        <Button block style={{ marginTop: 10, backgroundColor: '#000'}} textStyle={{color: '#FFF'}} onPress={()=>this.openModal()}>
+          Change Reminder Date
+        </Button>
       </View>
     )
   }
