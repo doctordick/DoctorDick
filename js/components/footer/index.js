@@ -26,11 +26,11 @@ class Footer extends Component {
 					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 10 }}>Home</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'recommendationPage' ? () => this.pushNewRoute('recommendationPage') : null}>
-					<Icon style={styles.icon} name={'ios-medkit'+(this.props.currentPage !== 'careLocator' ? '' : '-outline')} />
+					<Icon style={styles.icon} name={'ios-medkit'+(this.props.currentPage === 'recommendationPage' ? '' : '-outline')} />
 					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 10 }}>Recs</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'reminders' ? () => this.pushNewRoute('reminders') : null}>
-					<Icon style={styles.icon} name={'ios-alarm'+(this.props.currentPage !== 'reminders' ? '' : '-outline')} />
+					<Icon style={styles.icon} name={'ios-alarm'+(this.props.currentPage === 'reminders' ? '' : '-outline')} />
 					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 10 }}>Reminders</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'careLocator' ? () => this.pushNewRoute('careLocator') : null}>
