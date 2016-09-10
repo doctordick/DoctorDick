@@ -21,8 +21,8 @@ module.exports = StyleSheet.create({
 		borderTopWidth: 0.5
 	},
 	icon: {
-		paddingLeft: 50, 
-		paddingRight: 50,
+		paddingLeft: 30, 
+		paddingRight: 30,
 		marginBottom: -10,
 		color: '#000'
 	}
