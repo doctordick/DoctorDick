@@ -19,6 +19,7 @@ import Disclaimer from './components/disclaimer';
 import FAQ from './components/faq';
 import Survey from './components/survey';
 import Feedback from './components/feedback';
+import Home from './components/home';
 
 import { statusBarColor } from './themes/base-theme';
 
@@ -143,6 +144,8 @@ class AppNavigator extends Component {
                 return <SplashPage navigator={navigator} />;
             case 'login':
                 return <Login navigator={navigator} />;
+            case 'home':
+                return <Home navigator={navigator} />;
             case 'recommendationPage':
                 return <RecommendationPage navigator={navigator} />;
             case 'careLocator':

@@ -22,7 +22,7 @@ class Footer extends Component {
 		return (
 			<View style={styles.footer} theme={theme}>
 				<TouchableOpacity onPress={this.props.currentPage !== 'home' ? () => this.pushNewRoute('home') : null}>
-					<Icon style={styles.icon} name={'ios-home'+(this.props.currentPage !== 'home' ? '' : '-outline')} />
+					<Icon style={styles.icon} name={'ios-home'+(this.props.currentPage === 'home' ? '' : '-outline')} />
 					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 10 }}>Home</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'recommendationPage' ? () => this.pushNewRoute('recommendationPage') : null}>
