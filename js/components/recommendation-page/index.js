@@ -24,6 +24,7 @@ class RecommendationPage extends Component {
       super(props);
       this.state = {
         modal: null,
+        defaultDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90)
       }
     }
 
@@ -70,7 +71,11 @@ class RecommendationPage extends Component {
     toggleReminder() {
       RNCalendarReminders.authorizeEventStore((error, auth) => {
         console.log('authorized EventStore');
+        if(!this.props.recommendations.HIV.reminderID && this.props.recommendations.HIV.ReminderEnabled && this.props.recommendations.HIV.RecommendationCode) {
+          this.setDate(this.state.defaultDate);
+        }
       });
+
       if (this.props.recommendations.HIV.ReminderID && this.props.recommendations.HIV.ReminderEnabled) {
         RNCalendarReminders.removeReminder(this.props.recommendations.HIV.ReminderID);
       }
@@ -102,7 +107,6 @@ class RecommendationPage extends Component {
 
     render() {
         const recommendations = this.props.recommendations;
-        let defaultDate = new Date(Date.now() + 1000 * 60 * 60 * 24 * 90);
         return (
             <Container theme={theme} style={styles.container} >
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
@@ -122,7 +126,7 @@ class RecommendationPage extends Component {
                               recommendationCode={recommendations.HIV.RecommendationCode}
                               reminder={recommendations.HIV.ReminderEnabled}
                               toggleReminder={this.toggleReminder.bind(this)}
-                              date={recommendations.HIV.NextReminder || defaultDate}
+                              date={recommendations.HIV.NextReminder || this.state.defaultDate}
                               modal={this.state.modal}
                             />
                         </View>}
@@ -162,11 +166,11 @@ class RecommendationPage extends Component {
                           swipeToClose={true} >
                               <View style={styles.space}>
                                   <Calendar
-                                      date={recommendations.HIV.NextReminder || defaultDate }
+                                      date={recommendations.HIV.NextReminder || this.state.defaultDate }
                                       setDate={this.setDate.bind(this)}
                                   />
                                   <Text style={{textAlign: 'center'}}>
-                                    { defaultDate.toString().substr(4,12) } is 90 days from today.
+                                    { this.state.defaultDate.toString().substr(4,12) } is 90 days from today.
                                   </Text>
                                   <Button style={styles.saveButton} rounded onPress={this.closeModal.bind(this)} >
                                       Save

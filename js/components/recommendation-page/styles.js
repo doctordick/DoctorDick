@@ -37,8 +37,7 @@ module.exports = StyleSheet.create({
         marginTop: 20,
         marginHorizontal: 10,
         marginBottom: 10,
-        borderRadius: 0,
-        // backgroundColor: 'transparent'
+        borderRadius: 0
     },
     recommendationOptionEnabled: {
         backgroundColor: '#000'
@@ -73,7 +72,7 @@ module.exports = StyleSheet.create({
       shadowOpacity: 0.6,
       shadowRadius: 2,
       height: 100,
-      marginTop: 200
+      marginTop: 350
     }
 
 });
