@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { Image, Platform } from 'react-native';
+import { Image, Platform, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { pushNewRoute, replaceRoute } from '../../actions/route';
 import {openDrawer} from '../../actions/drawer';
@@ -57,33 +57,39 @@ class Login extends Component {
     }
 
     render() {
+        var height = Dimensions.get('window').height;
+        var width = Dimensions.get('window').width;
+
         return (
             <Container>
                 <View style={styles.content} theme={login} scrollEnabled={this.state.scroll}>
                     <View style={styles.container}>
-                        <Image style={styles.logoImage} source={require('../../../images/banana.png')}>
+                        <Image style={{ flex: 1, resizeMode: 'cover', height: height, width: width }} source={require('../../../images/gay-men-holding-hands.jpg')}>
                         </Image>
-                        <Image style={styles.logoTitle} source={require('../../../images/doctorDick.png')}>
-                        </Image>
-                        <Text style={styles.slogan}>
-                            Our Dick helps keep yours healthy
-                        </Text>
                     </View>
-                    <View style={styles.bg}>
-                        <View style={styles.buttonContainer}>
-                            <Button textStyle={{color: '#000'}} block style={styles.button} onPress={() => this.pushNewRoute('disclaimer')}>
+                    <View style={styles.containerAbsolute}>
+                        { /* <Image source={require('../../../images/doctorDick.png')}>
+                         </Image> */}
+                        <View>
+                            <Text style={styles.title}>Doctor Dick</Text>
+                            <Text style={styles.slogan}>
+                                 Our Dick helps keep yours healthy
+                            </Text>
+                        </View>
+                        <View style={{backgroundColor: 'rgba(255, 255, 255, 0.85)', marginBottom: -40 }}>
+                            <Button rounded textStyle={{color: '#fff', fontWeight: '500', fontFamily: 'Avenir'}} block style={styles.button} onPress={() => this.pushNewRoute('disclaimer')}>
                                     LET'S GET STARTED
                             </Button>
-                        </View>
-                        <Button textStyle={{color: '#0000EE'}} transparent style={styles.transButton} onPress={() => this.pushNewRoute('faq')}>
-                            What is Doctor Dick?
-                        </Button>
-                        <View style={styles.disclaimer}>
-                            <Text style={ styles.disclaimerText }>
-                                By clicking on 'Let's Get Started', you agree to our
-                                <Text style={styles.disclaimerTextLink} onPress={this.openLegalsModal.bind(this)}> privacy policy and terms of use</Text>
-                                 . These documents contain important information.
-                            </Text>
+                            <Button textStyle={{color: '#0000EE', fontFamily: 'Avenir'}} transparent style={styles.transButton} onPress={() => this.pushNewRoute('faq')}>
+                                What is Doctor Dick?
+                            </Button>
+                            <View style={styles.disclaimer}>
+                                <Text style={ styles.disclaimerText }>
+                                    By clicking on 'Let's Get Started', you agree to our
+                                    <Text style={styles.disclaimerTextLink} onPress={this.openLegalsModal.bind(this)}> privacy policy and terms of use</Text>
+                                     . These documents contain important information.
+                                </Text>
+                            </View>
                         </View>
                     </View>
                  <Modal navigator={this.props.navigator} style={[styles.modal, styles.legalsModal]} backdrop={false} ref={'legalsModal'}  swipeToClose={false} >
@@ -101,7 +107,6 @@ class Login extends Component {
         )
     }
 }
-
 function bindActions(dispatch){
     return {
         replaceRoute:(route)=>dispatch(replaceRoute(route)),

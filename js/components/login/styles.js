@@ -7,35 +7,21 @@ var { StyleSheet, Dimensions } = React;
 var deviceHeight = Dimensions.get('window').height;
 var height = Dimensions.get('window').height;
 module.exports = StyleSheet.create({
-    content: {
-        flex: 1,
-        backgroundColor: '#FFF',
-    },
-    container: {
-        flex: 2,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    bg: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#FFF',
-        paddingLeft: 20,
-        paddingRight: 20,
-    },
     disclaimer: {
         borderTopColor: '#A9A9A9',
         borderTopWidth: 1,
         borderStyle: 'solid',
-        paddingTop: 10
+        marginTop: 5,
+        paddingTop: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingBottom: 20
     },
     disclaimerText: {
-        color: '#696969',
+        color: '#444',
         fontSize: 12,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Avenir'
     },
     modal: {
         justifyContent: 'center',
@@ -54,6 +40,7 @@ module.exports = StyleSheet.create({
         backgroundColor: '#000'
     },
     modalHeaderTitle: {
+        fontFamily: 'Avenir',
         color: '#FFF'
     },
 
@@ -62,52 +49,48 @@ module.exports = StyleSheet.create({
         marginTop: 100,
 
     },
-    space: {
-        padding: 40,
-        flex: 1,
-        flexWrap: 'wrap',
-        flexDirection: 'column'
-    },
-    logoTitle: {
-        marginTop: 20,
-        marginBottom: 20,
-        width: 250,
-        height: 40
-    },
-
-    logoImage: {
-        width: 200,
-        height: 190 
+    containerAbsolute: {
+        position: 'absolute',
+        top: 200,
+        bottom: 100,
+        paddingLeft: 20,
+        paddingRight: 20,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
 
     slogan: {
-        paddingLeft: 20,
-        paddingRight: 20,
-        marginTop: 20,
+        marginTop: 10,
         fontSize: 20,
-        color: '#000',
-        fontWeight: '200',
+        color: '#fff',
+        fontFamily: 'Avenir',
+        fontWeight: '300',
         textAlign: 'center'
     },
 
-    buttonContainer: {
-        marginTop: 0
+    title: {
+        fontSize: 60,
+        fontFamily: 'Avenir',
+        color: '#fff',
+        fontWeight: '500',
+        textAlign: 'center'
     },
 
+
     button: {
-        backgroundColor: '#eee',
-        marginBottom: 20,
-        borderRadius: 0,
-        width: 200
+        backgroundColor: '#6699CC',
+        marginBottom: 5,
+        marginTop: 20,
+        marginLeft: 20,
+        marginRight: 20,
     },
     transButton: {
         alignSelf: 'center'
     },
-    buttonBlock: {
-        color: '#FFF'
-    },
-    disclaimerTextLink: { 
+    disclaimerTextLink: {
         fontSize: 12,
+        fontFamily: 'Avenir',
         color: '#0000ee'
     },
     modalBackButton: {
