@@ -21,6 +21,9 @@ module.exports = StyleSheet.create({
         color: '#444',
         fontSize: 12,
         textAlign: 'center',
+        fontFamily: 'Avenir',
+        fontWeight: '300',
+        lineHeight: 18,
         fontFamily: 'Avenir'
     },
     modal: {
@@ -91,6 +94,8 @@ module.exports = StyleSheet.create({
     disclaimerTextLink: {
         fontSize: 12,
         fontFamily: 'Avenir',
+        fontWeight: '300',
+        lineHeight: 18,
         color: '#0000ee'
     },
     modalBackButton: {
