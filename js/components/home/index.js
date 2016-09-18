@@ -46,9 +46,16 @@ class Home extends Component {
                     <Title style={{color: '#000'}}>Home</Title>
                 </Header>
                 <Content>
-                    <Text style={{color:'#000'}}>
-                        Content
-                    </Text>
+                    <View style={{ flex: 1, flexDirection: 'column', justifyContent:'center', alignItems: 'center'}}>
+                        <View>
+                            <Text style={{fontFamily: 'Avenir', color:'#000', textAlign:'center'}}>
+                                Getting started is easy!
+                            </Text>
+                            <Text style={{fontFamily: 'Avenir', color:'#000', textAlign:'center'}}>
+                                First, take a quick survey so Dr. Dick can make recommendations about HIV survey for you.
+                            </Text>
+                        </View>
+                    </View>
                 </Content>
                 <Footer>
                     <FooterComponent navigator={this.props.navigator} currentPage='home' />

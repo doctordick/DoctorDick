@@ -53,7 +53,7 @@ class Disclaimer extends Component {
                     <Text style={styles.questionText}>
                         If you're currently experiencing symptoms of a sexually transmitted disease, HIV infection, or any other illness, including rash, sores on skin or in mouth, anal, or genital area, fever, chills, discharge from penis, pain with urination, rectal pain or discharge, you should contact your doctor or other healthcare provider for help with your symptoms. If you are having a medical or psychiatric emergency, call 911 or go to the nearest emergency room.
                     </Text>
-                    <Button block style={styles.buttonBlock} onPress={() => this.pushNewRoute('recommendationPage')}>
+                    <Button block style={styles.buttonBlock} onPress={() => this.pushNewRoute('home')}>
                         <Text>
                             I Agree
                         </Text>
