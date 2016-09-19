@@ -68,12 +68,10 @@ class Login extends Component {
                         </Image>
                     </View>
                     <View style={styles.containerAbsolute}>
-                        { /* <Image source={require('../../../images/doctorDick.png')}>
-                         </Image> */}
                         <View>
-                            <Text style={styles.title}>Doctor Dick</Text>
+                            <Text style={styles.title}>Doctor D</Text>
                             <Text style={styles.slogan}>
-                                 Our Dick helps keep yours healthy
+                                 Empowering guys to stay on top of their sexual health
                             </Text>
                         </View>
                         <View style={{backgroundColor: 'rgba(255, 255, 255, 0.85)', marginBottom: -40 }}>
@@ -81,7 +79,7 @@ class Login extends Component {
                                     LET'S GET STARTED
                             </Button>
                             <Button textStyle={{color: '#0000EE', fontFamily: 'Avenir'}} transparent style={styles.transButton} onPress={() => this.pushNewRoute('faq')}>
-                                What is Doctor Dick?
+                                What is Doctor D?
                             </Button>
                             <View style={styles.disclaimer}>
                                 <Text style={ styles.disclaimerText }>
