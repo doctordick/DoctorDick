@@ -3,6 +3,7 @@
 import type {Action} from './types'
 
 export const PUSH_NEW_ROUTE = "PUSH_NEW_ROUTE";
+export const PUSH_NEW_ROUTE_PARAMS = "PUSH_NEW_ROUTE_PARAMS";
 export const REPLACE_ROUTE = "REPLACE_ROUTE";
 export const REPLACE_OR_PUSH_ROUTE = "REPLACE_OR_PUSH_ROUTE";
 export const POP_ROUTE = "POP_ROUTE";
@@ -19,6 +20,14 @@ export function pushNewRoute(route:string):Action {
   return {
     type: PUSH_NEW_ROUTE,
     route: route
+  }
+}
+
+export function pushNewRouteParams(route:string, params:object):Action {
+  return {
+    type: PUSH_NEW_ROUTE_PARAMS,
+    route: route,
+    params: params
   }
 }
 

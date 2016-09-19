@@ -30,10 +30,8 @@ module.exports = StyleSheet.create({
         borderBottomWidth: 0.5
     },
     buttonBlock: {
-        backgroundColor: '#000',
+        width: 200,
         marginBottom: 20,
-        marginTop: 40,
-        paddingBottom:10,
-        borderRadius: 0 
+        marginTop: 40
     }
 });

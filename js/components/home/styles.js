@@ -3,37 +3,40 @@
 import { StyleSheet } from "react-native";
 
 module.exports = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: null,
-        height: null,
-    },
-    question: {
-        flex: 1,
-        paddingLeft: 20,
-        paddingRight: 20,
-        paddingTop: 20,
-        backgroundColor: '#FFF',
-        flexDirection: 'column',
-        alignItems: 'center'
-    },
-    questionText: {
-        color: '#696969',
-        fontSize: 14,
-        textAlign: 'center',
-        marginTop: 25,
-        fontWeight: '300'
-    },
-    header: { 
+    header: {
         backgroundColor: '#fff',
         borderBottomColor: '#000',
         borderBottomWidth: 0.5
     },
     buttonBlock: {
-        backgroundColor: '#000',
+        flex: 0,
+        flexDirection: 'column',
+        marginTop: 20,
         marginBottom: 20,
-        marginTop: 40,
-        paddingBottom:10,
-        borderRadius: 0 
-    }
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: null, 
+        width: null
+    },
+    button: {
+        marginTop: 10,
+        width: 200
+    },
+    content: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: 20,
+        paddingRight: 20,
+        height: null, 
+        width: null,
+    },
+    linkText: {
+        marginTop: 10,
+        textDecorationLine: 'underline',
+        fontWeight: '300',
+        lineHeight: 18,
+        color: '#0000ee'
+    },
 });

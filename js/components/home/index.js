@@ -1,9 +1,9 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { Image, Platform } from 'react-native';
+import { Image, Platform, Linking } from 'react-native';
 import { connect } from 'react-redux';
-import { pushNewRoute, replaceRoute, popRoute } from '../../actions/route';
+import { pushNewRoute, replaceRoute, popRoute, pushNewRouteParams } from '../../actions/route';
 import { Container,
          Content,
          Text,
@@ -11,6 +11,7 @@ import { Container,
          Title,
          Button,
          Icon,
+         textStyle,
          View,
          Footer } from 'native-base';
 import FooterComponent from './../footer';
@@ -36,7 +37,11 @@ class Home extends Component {
     }
 
     pushNewRoute(route) {
-         this.props.pushNewRoute(route);
+        this.props.pushNewRoute(route);
+    }
+
+    pushNewRouteParams(route, params) {
+         this.props.pushNewRouteParams(route, params);
     }
 
     render() {
@@ -45,18 +50,21 @@ class Home extends Component {
                 <Header style={styles.header}>
                     <Title style={{color: '#000'}}>Home</Title>
                 </Header>
-                <Content>
-                    <View style={{ flex: 1, flexDirection: 'column', justifyContent:'center', alignItems: 'center'}}>
-                        <View>
-                            <Text style={{fontFamily: 'Avenir', color:'#000', textAlign:'center'}}>
-                                Getting started is easy!
-                            </Text>
-                            <Text style={{fontFamily: 'Avenir', color:'#000', textAlign:'center'}}>
-                                First, take a quick survey so Dr. Dick can make recommendations about HIV survey for you.
-                            </Text>
-                        </View>
+                <View style={styles.content}>
+                    <Text style={{ color:'#000', textAlign:'center'}}>
+                        Getting started is easy!
+                        {"\n\n"}
+                        First, take a quick survey so Doctor D can make recommendations about HIV survey for you.
+                    </Text>
+                    <View style={styles.buttonBlock}>
+                        <Button rounded textStyle={{color: '#fff', fontWeight: '500'}} style={styles.button} onPress={() => this.pushNewRoute('survey')}>
+                            Take Survey
+                        </Button>
                     </View>
-                </Content>
+                    <Text style={styles.linkText} onPress={() => this.pushNewRouteParams('survey', { question: 4 })}>
+                        Or tap here if you're HIV-positive
+                    </Text>
+                </View>
                 <Footer>
                     <FooterComponent navigator={this.props.navigator} currentPage='home' />
                 </Footer>
@@ -70,6 +78,7 @@ class Home extends Component {
 function bindActions(dispatch){
     return {
         replaceRoute:(route)=>dispatch(replaceRoute(route)),
+        pushNewRouteParams:(route, params)=>dispatch(pushNewRouteParams(route, params)),
         pushNewRoute:(route)=>dispatch(pushNewRoute(route)),
         popRoute: () => dispatch(popRoute())
     }

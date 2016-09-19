@@ -17,7 +17,6 @@ import { Container,
 import theme from '../../themes/base-theme';
 import FooterComponent from './../footer';
 import Question from './question';
-import { TestRec, ReferCare, FollowupRec, ContactDoc } from './results';
 import hiv from './constants';
 import styles from './styles';
 import * as Progress from 'react-native-progress';
@@ -28,9 +27,11 @@ class Survey extends Component {
 
     constructor(props) {
         super(props);
+        let routeStack = this.props.navigator.state.routeStack;
         this.state = {
-            questionIndex: 0,
+            questionIndex: routeStack[routeStack.length - 1].question || 0,
             done: false,
+            HIVpositive: !!routeStack[routeStack.length - 1].question,
             answer: 'testRec',
             isDisclaimer: true,
             progress: 0,
@@ -79,7 +80,7 @@ class Survey extends Component {
         }
         if(this.state.done){
             this.setState({ done: false });
-        } else if(this.state.questionIndex === 0) {
+        } else if(this.state.questionIndex === 0 || this.state.HIVpositive) {
             this.popRoute()
         } else {
             this.setState({ questionIndex: hiv[this.state.questionIndex].previous || this.state.questionIndex - 1 });

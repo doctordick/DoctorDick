@@ -10,14 +10,14 @@ module.exports = {
     brandWarning: "#f0ad4e",
     brandSidebar: "#252A30",
 
-    fontFamily: (Platform.OS === 'ios' ) ? 'HelveticaNeue' : 'Roboto',
-    btnFontFamily: (Platform.OS === 'ios' ) ? 'HelveticaNeue' : 'Roboto_medium',
+    fontFamily: (Platform.OS === 'ios' ) ? 'Avenir' : 'Roboto',
+    btnFontFamily: (Platform.OS === 'ios' ) ? 'Avenir' : 'Roboto_medium',
     iconFamily: 'Ionicons',
 
     subtitleColor: '#8e8e93',
 
     inverseTextColor: "#000",
-    textColor: "#fff",
+    textColor: "#000",
 
     fontSizeBase: 15,
     titleFontSize: (Platform.OS === 'ios' ) ? 17 : 19,

@@ -9,9 +9,9 @@ import { Container,
          Icon,
          View } from 'native-base';
 import { connect } from 'react-redux';
-import theme from '../../themes/base-theme';
+import theme from '../../../themes/base-theme';
 import { Image, Platform, Alert } from 'react-native';
-import { pushNewRoute, replaceRoute, popRoute } from '../../actions/route';
+import { pushNewRoute, replaceRoute, popRoute } from '../../../actions/route';
 import styles from './styles';
 
 class Question extends Component {
