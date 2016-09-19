@@ -23,8 +23,6 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            swipeToClose: true,
-            selected: false
         };
     }
 
@@ -45,7 +43,32 @@ class Home extends Component {
     }
 
     renderView() {
-        if(false) {
+        if(this.props.recommendations.HIV.RecommendationCode) {
+            return (
+                <View style={styles.content}>
+                    <Image style={{height: 250, width: 250}} source={require('../../../images/doctor.png')}>
+                    </Image>
+                    <Text style={{ color:'#000', textAlign:'center', fontSize: 20, fontWeight: '500', marginBottom: 20}}>
+                        How can Doctor D help you today?
+                    </Text>
+                    <View style={styles.buttonBlockLong}>
+                        <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
+                            HOW CAN I PROTECT MYSELF?
+                        </Button>
+                    </View>
+                    <View style={styles.buttonBlockLong}>
+                        <Button success block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('remindersPage')}>
+                            REMIND ME TO GET TESTED
+                        </Button>
+                    </View>
+                    <View style={styles.buttonBlockLong}>
+                        <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('careLocator')}>
+                            HELP ME FIND HIV TESTING LOCATIONS
+                        </Button>
+                    </View>
+                </View>
+            )
+        } else {
             return (
                 <View style={styles.content}>
                     <Text style={{ color:'#000', textAlign:'center'}}>
@@ -63,29 +86,6 @@ class Home extends Component {
                     </Text>
                 </View>
             )
-        } else {
-            return (
-                <View style={styles.content}>
-                    <Text style={{ color:'#000', textAlign:'center', fontSize: 20, fontWeight: '500', marginBottom: 20}}>
-                        How can Doctor D help you today?
-                    </Text>
-                    <View style={styles.buttonBlockLong}>
-                        <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
-                            HOW CAN I PROTECT MYSELF?
-                        </Button>
-                    </View>
-                    <View style={styles.buttonBlockLong}>
-                        <Button success block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
-                            REMIND ME TO GET TESTED
-                        </Button>
-                    </View>
-                    <View style={styles.buttonBlockLong}>
-                        <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
-                            HELP ME FIND HIV TESTING LOCATIONS
-                        </Button>
-                    </View>
-                </View>
-            )
         }
     }
 
@@ -93,7 +93,7 @@ class Home extends Component {
         return (
             <Container theme={theme}>
                 <Header style={styles.header}>
-                    <Title style={{color: '#000'}}>Home</Title>
+                    <Title style={{color: '#000'}}>HOME</Title>
                 </Header>
                 {this.renderView()}
                 <Footer>
@@ -106,7 +106,7 @@ class Home extends Component {
 
 
 
-function bindActions(dispatch){
+function mapActionsToProps(dispatch){
     return {
         replaceRoute:(route)=>dispatch(replaceRoute(route)),
         pushNewRouteParams:(route, params)=>dispatch(pushNewRouteParams(route, params)),
@@ -115,4 +115,10 @@ function bindActions(dispatch){
     }
 }
 
-export default connect(null, bindActions)(Home);
+function mapStateToProps(state) {
+  return {
+    recommendations: state.recommendations
+  }
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Home);

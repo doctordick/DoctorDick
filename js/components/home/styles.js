@@ -15,7 +15,7 @@ module.exports = StyleSheet.create({
         marginBottom: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        height: null, 
+        height: null,
         width: null
     },
     buttonBlock: {
@@ -25,7 +25,7 @@ module.exports = StyleSheet.create({
         marginBottom: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        height: null, 
+        height: null,
         width: null
     },
     button: {
@@ -43,7 +43,7 @@ module.exports = StyleSheet.create({
         alignItems: 'center',
         paddingLeft: 20,
         paddingRight: 20,
-        height: null, 
+        height: null,
         width: null,
     },
     linkText: {
