@@ -123,6 +123,7 @@ class RemindersPage extends Component {
                         <View padder>
                             <Text>Based on your questionnaire answers, the CDC recommends:</Text>
                             <RemindersCard
+                              label="HIV"
                               recommendationCode={recommendations.HIV.RecommendationCode}
                               reminder={recommendations.HIV.ReminderEnabled}
                               toggleReminder={this.toggleReminder.bind(this)}
@@ -130,35 +131,6 @@ class RemindersPage extends Component {
                               modal={this.state.modal}
                             />
                         </View>}
-                        <Card style={styles.cardRetake}>
-                          <CardItem header>
-                            <Text style={{color: '#000'}}>
-                            I'd like to retake the following survey:
-                            </Text>
-                          </CardItem>
-                          <CardItem>
-                            <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}}>HIV</Button>
-                          </CardItem>
-                        </Card>
-                        <Card style={styles.card}>
-                            <CardItem>
-                              <Text style={{color: '#000'}}>
-                                Here is the medical history you have not filled out yet:
-                              </Text>
-                            </CardItem>
-                            {Object.keys(recommendations)
-                              .filter(key => !recommendations[key].RecommendationCode)
-                              .map(key => (
-                                key === 'HIV' ?
-                                  <CardItem key={key}>
-                                    <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}}>{key}</Button>
-                                  </CardItem>
-                                : <CardItem key={key}>
-                                    <Button disabled block textStyle={{fontSize: 13}} style={styles.recommendationOption}>{key+' - Coming Soon...'}</Button>
-                                  </CardItem>
-                              ))
-                            }
-                        </Card>
                         <Modal
                           style={[styles.modal, styles.modal1]}
                           backdrop={false}

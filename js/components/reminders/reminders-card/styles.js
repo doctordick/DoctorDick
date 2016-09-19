@@ -16,7 +16,6 @@ module.exports = StyleSheet.create({
       backgroundColor: '#EEE',
       paddingVertical: 10,
       paddingHorizontal: 25,
-      marginBottom: 170,
       borderRadius: 0,
       shadowColor: '#000',
       shadowOffset: {
@@ -28,9 +27,8 @@ module.exports = StyleSheet.create({
     title: {
       color: 'black',
       fontSize: 17,
-      fontWeight: '300',
-      textAlign: 'center',
-      lineHeight: 25
+      textAlign: 'justify',
+      lineHeight: 25,
     },
     reminderContainer: {
       flexDirection: 'row',
@@ -47,5 +45,29 @@ module.exports = StyleSheet.create({
     },
     reminderSwitch: {
       marginRight: 10
+    },
+    cardHeader: {
+      backgroundColor: 'black',
+      padding: 20,
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    headerText: {
+      fontSize: 18,
+    },
+    saveButton: {
+      backgroundColor: 'green',
+      borderRadius: 0,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0, height: 3
+      },
+      shadowOpacity: 0.6,
+      shadowRadius: 2,
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'stretch',
     },
 });
