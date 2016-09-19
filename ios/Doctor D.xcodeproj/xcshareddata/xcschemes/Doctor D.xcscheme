@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                BuildableName = "Doctor Dick.app"
-               BlueprintName = "Doctor Dick"
-               ReferencedContainer = "container:Doctor Dick.xcodeproj">
+               BlueprintName = "Doctor D"
+               ReferencedContainer = "container:Doctor D.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "Doctor Dick.xctest"
-               BlueprintName = "Doctor DickTests"
-               ReferencedContainer = "container:Doctor Dick.xcodeproj">
+               BuildableName = "Doctor D.xctest"
+               BlueprintName = "Doctor DTests"
+               ReferencedContainer = "container:Doctor D.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "Doctor Dick.xctest"
-               BlueprintName = "Doctor DickTests"
-               ReferencedContainer = "container:Doctor Dick.xcodeproj">
+               BuildableName = "Doctor D.xctest"
+               BlueprintName = "Doctor DTests"
+               ReferencedContainer = "container:Doctor D.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "Doctor Dick.app"
-            BlueprintName = "Doctor Dick"
-            ReferencedContainer = "container:Doctor Dick.xcodeproj">
+            BlueprintName = "Doctor D"
+            ReferencedContainer = "container:Doctor D.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "Doctor Dick.app"
-            BlueprintName = "Doctor Dick"
-            ReferencedContainer = "container:Doctor Dick.xcodeproj">
+            BlueprintName = "Doctor D"
+            ReferencedContainer = "container:Doctor D.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -100,8 +100,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "Doctor Dick.app"
-            BlueprintName = "Doctor Dick"
-            ReferencedContainer = "container:Doctor Dick.xcodeproj">
+            BlueprintName = "Doctor D"
+            ReferencedContainer = "container:Doctor D.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
