@@ -44,12 +44,9 @@ class Home extends Component {
          this.props.pushNewRouteParams(route, params);
     }
 
-    render() {
-        return (
-            <Container theme={theme}>
-                <Header style={styles.header}>
-                    <Title style={{color: '#000'}}>Home</Title>
-                </Header>
+    renderView() {
+        if(false) {
+            return (
                 <View style={styles.content}>
                     <Text style={{ color:'#000', textAlign:'center'}}>
                         Getting started is easy!
@@ -65,6 +62,40 @@ class Home extends Component {
                         Or tap here if you're HIV-positive
                     </Text>
                 </View>
+            )
+        } else {
+            return (
+                <View style={styles.content}>
+                    <Text style={{ color:'#000', textAlign:'center', fontSize: 20, fontWeight: '500', marginBottom: 20}}>
+                        How can Doctor D help you today?
+                    </Text>
+                    <View style={styles.buttonBlockLong}>
+                        <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
+                            HOW CAN I PROTECT MYSELF?
+                        </Button>
+                    </View>
+                    <View style={styles.buttonBlockLong}>
+                        <Button success block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
+                            REMIND ME TO GET TESTED
+                        </Button>
+                    </View>
+                    <View style={styles.buttonBlockLong}>
+                        <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
+                            HELP ME FIND HIV TESTING LOCATIONS
+                        </Button>
+                    </View>
+                </View>
+            )
+        }
+    }
+
+    render() {
+        return (
+            <Container theme={theme}>
+                <Header style={styles.header}>
+                    <Title style={{color: '#000'}}>Home</Title>
+                </Header>
+                {this.renderView()}
                 <Footer>
                     <FooterComponent navigator={this.props.navigator} currentPage='home' />
                 </Footer>

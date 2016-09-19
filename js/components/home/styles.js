@@ -8,6 +8,16 @@ module.exports = StyleSheet.create({
         borderBottomColor: '#000',
         borderBottomWidth: 0.5
     },
+    buttonBlockLong: {
+        flex: 0,
+        flexDirection: 'column',
+        marginTop: 10,
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: null, 
+        width: null
+    },
     buttonBlock: {
         flex: 0,
         flexDirection: 'column',
@@ -21,6 +31,10 @@ module.exports = StyleSheet.create({
     button: {
         marginTop: 10,
         width: 200
+    },
+    buttonLong:{
+        width: 300,
+        borderRadius: 0
     },
     content: {
         flex: 1,
