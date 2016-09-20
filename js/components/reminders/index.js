@@ -115,7 +115,7 @@ class RemindersPage extends Component {
                             <Icon name='ios-arrow-back' style={styles.backButton} />
                         </Button>
 
-                        <Title style={{ color: '#000'}}>My Reminders</Title>
+                        <Title style={{ color: '#000'}}>MY REMINDERS</Title>
                     </Header>
 
                     <Content padder>
