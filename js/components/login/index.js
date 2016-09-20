@@ -83,7 +83,7 @@ class Login extends Component {
                             </Button>
                             <View style={styles.disclaimer}>
                                 <Text style={ styles.disclaimerText }>
-                                    By clicking on 'Let's Get Started', you agree to our
+                                    By clicking on 'LET'S GET STARTED', you agree to our
                                     <Text style={styles.disclaimerTextLink} onPress={this.openLegalsModal.bind(this)}> privacy policy and terms of use</Text>
                                      . These documents contain important information.
                                 </Text>
@@ -96,7 +96,7 @@ class Login extends Component {
                             <Icon name="ios-arrow-back" style={styles.modalBackButton} />
                         </Button>
 
-                        <Title style={styles.modalHeaderTitle}>Legals</Title>
+                        <Title style={styles.modalHeaderTitle}>LEGALS</Title>
                     </Header>
                         <Privacy />
                 </Modal>
