@@ -115,13 +115,12 @@ class RecommendationPage extends Component {
                             <Icon name='ios-arrow-back' style={styles.backButton} />
                         </Button>
 
-                        <Title style={{ color: '#000'}}>Recommendations</Title>
+                        <Title style={{ color: '#000'}}>MY RECOMMENDATIONS</Title>
                     </Header>
 
                     <Content padder>
                         {recommendations.HIV.RecommendationCode &&
                         <View padder>
-                            <Text>Based on your questionnaire answers, the CDC recommends:</Text>
                             <RecommendationCard
                               recommendationCode={recommendations.HIV.RecommendationCode}
                               reminder={recommendations.HIV.ReminderEnabled}
@@ -130,53 +129,6 @@ class RecommendationPage extends Component {
                               modal={this.state.modal}
                             />
                         </View>}
-                        <Card style={styles.cardRetake}>
-                          <CardItem header>
-                            <Text style={{color: '#000'}}>
-                            I'd like to retake the following survey:
-                            </Text>
-                          </CardItem>
-                          <CardItem>
-                            <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}}>HIV</Button>
-                          </CardItem>
-                        </Card>
-                        <Card style={styles.card}>
-                            <CardItem>
-                              <Text style={{color: '#000'}}>
-                                Here is the medical history you have not filled out yet:
-                              </Text>
-                            </CardItem>
-                            {Object.keys(recommendations)
-                              .filter(key => !recommendations[key].RecommendationCode)
-                              .map(key => (
-                                key === 'HIV' ?
-                                  <CardItem key={key}>
-                                    <Button block onPress={() => this.pushNewRoute('survey')} style={[styles.recommendationOption, styles.recommendationOptionEnabled]} textStyle={{color: '#eee'}}>{key}</Button>
-                                  </CardItem>
-                                : <CardItem key={key}>
-                                    <Button disabled block textStyle={{fontSize: 13}} style={styles.recommendationOption}>{key+' - Coming Soon...'}</Button>
-                                  </CardItem>
-                              ))
-                            }
-                        </Card>
-                        <Modal
-                          style={[styles.modal, styles.modal1]}
-                          backdrop={false}
-                          ref={'modal'}
-                          swipeToClose={true} >
-                              <View style={styles.space}>
-                                  <Calendar
-                                      date={recommendations.HIV.NextReminder || this.state.defaultDate }
-                                      setDate={this.setDate.bind(this)}
-                                  />
-                                  <Text style={{textAlign: 'center'}}>
-                                    { this.state.defaultDate.toString().substr(4,12) } is 90 days from today.
-                                  </Text>
-                                  <Button style={styles.saveButton} rounded onPress={this.closeModal.bind(this)} >
-                                      Save
-                                  </Button>
-                              </View>
-                         </Modal>
                     </Content>
                 </Image>
                 <Footer>

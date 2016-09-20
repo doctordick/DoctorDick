@@ -48,4 +48,11 @@ module.exports = StyleSheet.create({
     reminderSwitch: {
       marginRight: 10
     },
+    setReminderButton: {
+      backgroundColor: '#000',
+      marginTop: 20,
+      marginHorizontal: 10,
+      marginBottom: 10,
+      borderRadius: 50
+    },
 });
