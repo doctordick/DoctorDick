@@ -53,7 +53,7 @@ class Home extends Component {
                     </Text>
                     <View style={styles.buttonBlockLong}>
                         <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
-                            HOW CAN I PROTECT MYSELF?
+                            SHOULD I GET AN HIV TEST?
                         </Button>
                     </View>
                     <View style={styles.buttonBlockLong}>
@@ -74,7 +74,7 @@ class Home extends Component {
                     <Text style={{ color:'#000', textAlign:'center'}}>
                         Getting started is easy!
                         {"\n\n"}
-                        First, take a quick survey so Doctor D can make recommendations about HIV survey for you.
+                        First, answer a few questions so Doctor D can make recommendations about HIV testing for you.
                     </Text>
                     <View style={styles.buttonBlock}>
                         <Button rounded textStyle={{color: '#fff', fontWeight: '500'}} style={styles.button} onPress={() => this.pushNewRoute('survey')}>

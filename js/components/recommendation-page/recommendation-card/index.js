@@ -34,7 +34,7 @@ class RecommendationCard extends Component {
               <Text>HIV TESTING</Text>
             </CardItem>
             <CardItem>
-              <Text>Based on your most recent HIV testing survey, here are Doctor D's recommendations for you:</Text>
+              <Text>Based on your most recent answers, here are Doctor D's recommendations for you</Text>
             </CardItem>
             <CardItem>
               <Text style={{ fontWeight: 'bold'}}>{summary}</Text>
