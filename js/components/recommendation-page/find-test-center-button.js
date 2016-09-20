@@ -21,7 +21,7 @@ class FindTestingCenterButton extends Component {
       onPress={() => {
         this.navigateTo('careLocator')}
       }>
-      Find Test Centers
+      {this.props.title}
       </Button>
     )
   }
