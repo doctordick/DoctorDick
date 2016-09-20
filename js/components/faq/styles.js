@@ -12,6 +12,14 @@ module.exports = StyleSheet.create({
         width: null,
         height: null
     },
+    containerBottom: {
+        backgroundColor: '#FFF',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: null,
+        height: null
+    },
     faq: {
         borderTopColor: '#000',
         borderTopWidth: 0.5,
