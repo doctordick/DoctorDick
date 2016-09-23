@@ -97,8 +97,8 @@ class CareLocator extends Component {
                             {this.state.testCenters.map((center, index) => (
                               <ListItem key={index} style={{ width: 380, paddingLeft: 30, backgroundColor: 'white'}}>
                                 <Text>
-                                  <Text style={{ color: '#000',  fontWeight: '500', fontSize: 16 }}>{center.title + '\n'}</Text>
-                                  <Text style={{ color: '#000', fontWeight: '300' }} onPress={() => Linking.openURL(
+                                  <Text style={{ color: '#696969',  fontWeight: '500', fontSize: 16 }}>{center.title + '\n'}</Text>
+                                  <Text style={{ color: '#696969', fontWeight: '300' }} onPress={() => Linking.openURL(
                                         'http://maps.apple.com/?q='+ center.title+', '+center.streetAddress+', '+center.postalCode
                                     )}>{[
                                       center.telephone,

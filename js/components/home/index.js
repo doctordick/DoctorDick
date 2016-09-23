@@ -71,7 +71,7 @@ class Home extends Component {
         } else {
             return (
                 <View style={styles.content}>
-                    <Text style={{ color:'#000', textAlign:'center', fontWeight: '300', paddingLeft: 30, paddingRight: 30}}>
+                    <Text style={{ color:'#555', textAlign:'center', fontWeight: '300', paddingLeft: 30, paddingRight: 30}}>
                         Getting started is easy!
                         {"\n\n"}
                         First, answer a few questions so Doctor D can make recommendations about HIV testing for you.

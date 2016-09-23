@@ -21,9 +21,9 @@ module.exports = StyleSheet.create({
         alignItems: 'center',
         marginRight: 20,
         marginLeft: 20,
-        shadowOpacity: 0,
         width: 175,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        shadowOpacity: 0
     },
 
 });
