@@ -13,10 +13,14 @@ export type Recommendation = {
   ReminderID: String,
 }
 
+export type PrEP = {
+  RecommendationCode: RecommendationCode
+}
+
 export type State = {
   'HIV': Recommendation,
   'Other STDs': Recommendation,
-  'PrEP': Recommendation,
+  'PrEP': PrEP,
   'Vaccinations for Sexual Health': Recommendation,
 }
 
@@ -37,11 +41,7 @@ const initialState = {
     ReminderID: null,
   },
   'PrEP': {
-    RecommendationCode: false,
-    ReminderEnabled: false,
-    NextReminder: null,
-    LastTestDate: null,
-    ReminderID: null,
+    RecommendationCode: false
   },
   'Vaccinations for Sexual Health': {
     RecommendationCode: false,

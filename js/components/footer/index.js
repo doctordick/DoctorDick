@@ -27,9 +27,9 @@ class Footer extends Component {
 					<Icon style={this.isActive('home') ? styles.activeIcon : styles.icon} name={'ios-home'+(this.props.currentPage === 'home' ? '' : '-outline')} />
 					<Text style={this.isActive('home') ? styles.activeText : styles.iconText}>HOME</Text>
 				</TouchableOpacity>
-				<TouchableOpacity onPress={this.props.currentPage !== 'recommendationPage' ? () => this.pushNewRoute('recommendationPage') : null}>
-					<Icon style={this.isActive('recommendationPage') ? styles.activeIcon : styles.icon} name={'ios-medkit'+(this.props.currentPage === 'recommendationPage' ? '' : '-outline')} />
-					<Text style={this.isActive('recommendationPage') ? styles.activeText : styles.iconText}>RECS</Text>
+				<TouchableOpacity onPress={this.props.currentPage !== 'viewRecs' ? () => this.pushNewRoute('viewRecs') : null}>
+					<Icon style={this.isActive('viewRecs') ? styles.activeIcon : styles.icon} name={'ios-medkit'+(this.props.currentPage === 'viewRecs' ? '' : '-outline')} />
+					<Text style={this.isActive('viewRecs') ? styles.activeText : styles.iconText}>RECS</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'remindersPage' ? () => this.pushNewRoute('remindersPage') : null}>
 					<Icon style={this.isActive('remindersPage') ? styles.activeIcon : styles.icon} name={'ios-alarm'+(this.props.currentPage === 'remindersPage' ? '' : '-outline')} />

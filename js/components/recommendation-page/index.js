@@ -112,9 +112,8 @@ class RecommendationPage extends Component {
         return (
             <Container theme={theme} style={styles.container} >
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
-                    <CustomHeader title={"MY RECOMMENDATIONS"} showBackButton={true} />
+                    <CustomHeader title={"HIV RECOMMENDATIONS"} showBackButton={true} />
                     <Content padder>
-
                         {recommendations.HIV.RecommendationCode &&
                         <View padder>
                             <RecommendationCard

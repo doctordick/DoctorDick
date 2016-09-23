@@ -32,7 +32,9 @@ module.exports = StyleSheet.create({
         alignItems: 'center',
         marginRight: 20,
         marginLeft: 20,
-        shadowOpacity: 0
+        shadowOpacity: 0,
+        width: 200,
+        alignSelf: 'center'
     },
 
 });

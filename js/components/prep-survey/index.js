@@ -32,7 +32,6 @@ class PrepSurvey extends Component {
         this.state = {
             questionIndex: routeStack[routeStack.length - 1].question || 0,
             done: false,
-            HIVpositive: !!routeStack[routeStack.length - 1].question,
             answer: 'testRec',
             isDisclaimer: true,
             progress: 0,
@@ -121,7 +120,7 @@ class PrepSurvey extends Component {
             return this.renderQuestion(this);
         } else {
             setTimeout(() => {
-                this.pushNewRoute('recommendationPage');
+                this.pushNewRoute('prepRecommendationPage');
             }, 0)
         }
     }

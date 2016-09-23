@@ -5,6 +5,11 @@ export type RecommendationCode =
 | "referCare"
 | "followupRec"
 | "contactDoc"
+| "stopOne"
+| "stopTwo"
+| "stopThree"
+| "stopFour"
+| "stopFive"
 | false;
 
 export type Action =

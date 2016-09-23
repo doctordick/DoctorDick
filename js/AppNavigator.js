@@ -22,7 +22,9 @@ import Feedback from './components/feedback';
 import Home from './components/home';
 import RemindersPage from './components/reminders';
 import FindServices from './components/find-services';
+import ViewRecs from './components/view-recs';
 import PrepLocator from './components/prep-locator';
+import PrepRecommendationPage from './components/prep-recommendation-page';
 import PrepSurvey from './components/prep-survey';
 
 import { statusBarColor } from './themes/base-theme';
@@ -155,6 +157,8 @@ class AppNavigator extends Component {
                 return <RemindersPage navigator={navigator} />;
             case 'recommendationPage':
                 return <RecommendationPage navigator={navigator} />;
+            case 'prepRecommendationPage':
+                return <PrepRecommendationPage navigator={navigator} />;
             case 'careLocator':
                 return <CareLocator navigator={navigator} />;
             case 'disclaimer':
@@ -167,6 +171,8 @@ class AppNavigator extends Component {
                 return <Feedback navigator={navigator} />;
             case 'findServices':
                 return <FindServices navigator={navigator} />;
+            case 'viewRecs':
+                return <ViewRecs navigator={navigator} />;
             case 'prepLocator':
                 return <PrepLocator navigator={navigator} />;
             case 'prepSurvey':
