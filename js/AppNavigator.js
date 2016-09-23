@@ -23,6 +23,7 @@ import Home from './components/home';
 import RemindersPage from './components/reminders';
 import FindServices from './components/find-services';
 import PrepLocator from './components/prep-locator';
+import PrepSurvey from './components/prep-survey';
 
 import { statusBarColor } from './themes/base-theme';
 
@@ -168,6 +169,8 @@ class AppNavigator extends Component {
                 return <FindServices navigator={navigator} />;
             case 'prepLocator':
                 return <PrepLocator navigator={navigator} />;
+            case 'prepSurvey':
+                return <PrepSurvey navigator={navigator} />;
             default:
                 return <RecommendationPage navigator={navigator} />;
         }

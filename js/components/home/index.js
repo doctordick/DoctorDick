@@ -52,6 +52,11 @@ class Home extends Component {
                         How can Doctor D help you today?
                     </Text>
                     <View style={styles.buttonBlockLong}>
+                        <Button block textStyle={{color: '#5cb85c', fontWeight: '600', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('prepSurvey')}>
+                            SHOULD I GET PrEP?
+                        </Button>
+                    </View>
+                    <View style={styles.buttonBlockLong}>
                         <Button block textStyle={{color: '#5cb85c', fontWeight: '600', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
                             SHOULD I GET AN HIV TEST?
                         </Button>

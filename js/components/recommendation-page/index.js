@@ -114,9 +114,11 @@ class RecommendationPage extends Component {
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
                     <CustomHeader title={"MY RECOMMENDATIONS"} showBackButton={true} />
                     <Content padder>
+
                         {recommendations.HIV.RecommendationCode &&
                         <View padder>
                             <RecommendationCard
+                              recommendationFor={'HIV'}
                               recommendationCode={recommendations.HIV.RecommendationCode}
                               reminder={recommendations.HIV.ReminderEnabled}
                               toggleReminder={this.toggleReminder.bind(this)}
