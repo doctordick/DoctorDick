@@ -21,6 +21,7 @@ import hiv from './constants';
 import styles from './styles';
 import * as Progress from 'react-native-progress';
 import Modal from 'react-native-modalbox';
+import CustomHeader from '../custom-header'
 
 
 class Survey extends Component {
@@ -143,12 +144,7 @@ class Survey extends Component {
         return (
             <Container theme={theme}>
                 <View>
-                    <Header style={styles.header}>
-                        <Button transparent onPress={this.previousState.bind(this)}>
-                            <Icon name='ios-arrow-back' style={styles.backButton} />
-                        </Button>
-                        <Title>HIV Testing</Title>
-                    </Header>
+                    <CustomHeader title={"HIV TESTING"} showBackButton={true} />
                     <View style={styles.testRec}>
                         { this.renderProgressBar() }
                         { this.renderView() }
@@ -158,13 +154,7 @@ class Survey extends Component {
                     </Footer>
                      <Modal navigator={this.props.navigator} style={[styles.modal, styles.highRiskExposureModal]} backdrop={false} ref={'highRiskExposureModal'}  swipeToClose={false} >
                         <Content>
-                             <Header style={styles.modalHeader}>
-                                <Button transparent onPress={this.closeHighRiskExposureModal.bind(this)}>
-                                    <Icon name="ios-arrow-back" style={{fontSize: 30, lineHeight: 32, color: '#000'}} />
-                                </Button>
-
-                                <Title style={styles.modalHeaderTitle}>What's High Risk Exposure?</Title>
-                            </Header>
+                            <CustomHeader title={"What's High Risk Exposure?"} showBackButton={true}/>
                             <Text style={[styles.highRiskExposureModalText, styles.modalTextMargin]}> 
                             If you’re HIV-negative or don’t know your HIV status, and in the last 72 hours you 
                             </Text>

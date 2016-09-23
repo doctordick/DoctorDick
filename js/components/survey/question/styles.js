@@ -22,11 +22,16 @@ module.exports = StyleSheet.create({
         textAlign: 'center'
     },
     buttonBlock: {
-        backgroundColor: '#000',
+        borderColor: '#517aa3',
+        borderWidth: 1,
+        backgroundColor: '#fff',
         marginBottom: 20,
         borderRadius: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
         marginRight: 20,
-        marginLeft: 20 
+        marginLeft: 20,
+        shadowOpacity: 0
     },
 
 });

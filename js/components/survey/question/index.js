@@ -29,7 +29,7 @@ class Question extends Component {
                 <Text style={styles.surveyQuestion}>{this.props.question}</Text>
                     {this.props.answers.map( (elem, index) => {
                         return (
-                            <Button block textStyle={{fontWeight: '300', color: '#FFF'}} key={index} style={styles.buttonBlock} onPress={this.props.next.bind(this, index)}>
+                            <Button block textStyle={{fontWeight: '500', fontSize: 12, color: '#517aa3'}} key={index} style={styles.buttonBlock} onPress={this.props.next.bind(this, index)}>
                                 {elem.text}
                             </Button>
                         )

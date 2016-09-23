@@ -2,52 +2,52 @@ const hiv = {
   0: {
     question: "I am a man over 18 years of age who has sex with men. I have no current symptoms of a sexually transmitted disease, HIV infection, or any other illness, including rash, sores on skin or in mouth, anal, or genital area, fever, chills, discharge from penis, pain with urination, rectal pain or discharge. Also, I am not worried about having had a high-risk HIV exposure within the past 72 hours.",
     answers: [{
-      text: 'Agree',
+      text: 'AGREE',
       next: 1
     }, {
-      text: 'Disagree',
+      text: 'DISAGREE',
       next: 'disclaimer' 
     }, {
-      text: 'What\'s High-Risk Exposure?',
+      text: 'WHAT\'S HIGH-RISK EXPOSURE?',
       next: 'hiv-info'
     }]
   },
   1: {
     question: "Have you ever had an HIV test?",
     answers: [{
-      text: 'Yes',
+      text: 'YES',
       next: 2
     }, {
-      text: 'No',
+      text: 'NO',
       done: 'testRec'
     }, {
-      text: 'Not sure',
+      text: 'NOT SURE',
       done: 'testRec'
     }]
   },
   2: {
     question: "What was the result of your last test?",
     answers: [{
-      text: 'Negative (no HIV)',
+      text: 'NEGATIVE (NO HIV)',
       next: 3
     }, {
-      text: 'Positive (HIV)',
+      text: 'POSITIVE (HIV)',
       next: 4
     }, {
-      text: 'Not sure or don\'t remember',
+      text: 'NOT SURE',
       done: 'testRec'
     }]
   },
   3: {
     question: "When was your last HIV test?",
     answers: [{
-      text: 'Less than 3 months ago',
+      text: 'LESS THAN 3 MONTHS AGO',
       done: 'followupRec'
     }, {
-      text: 'More than 3 months ago',
+      text: 'MORE THAN 3 MONTHS AGO',
       done: 'testRec'
     }, {
-      text: 'Not sure or don\'t remember',
+      text: 'NOT SURE',
       done: 'testRec'
     }]
   },
@@ -55,10 +55,10 @@ const hiv = {
     question: "Are you seeing a doctor for HIV?",
     previous: 2,
     answers: [{
-      text: 'Yes',
+      text: 'YES',
       done: 'contactDoc'
     }, {
-      text: 'No',
+      text: 'NO',
       done: 'referCare'
     }]
   },

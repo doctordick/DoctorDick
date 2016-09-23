@@ -48,21 +48,21 @@ class Home extends Component {
                 <View style={styles.content}>
                     <Image style={{height: 250, width: 250}} source={require('../../../images/doctor.png')}>
                     </Image>
-                    <Text style={{ color:'#000', textAlign:'center', fontSize: 20, fontWeight: '500', marginBottom: 20}}>
+                    <Text style={{ color:'#555', textAlign:'center', fontSize: 20, fontWeight: '300', marginBottom: 20}}>
                         How can Doctor D help you today?
                     </Text>
                     <View style={styles.buttonBlockLong}>
-                        <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
+                        <Button block textStyle={{color: '#5cb85c', fontWeight: '600', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('survey')}>
                             SHOULD I GET AN HIV TEST?
                         </Button>
                     </View>
                     <View style={styles.buttonBlockLong}>
-                        <Button success block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('remindersPage')}>
+                        <Button block textStyle={{color: '#5cb85c', fontWeight: '600', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('remindersPage')}>
                             REMIND ME TO GET TESTED
                         </Button>
                     </View>
                     <View style={styles.buttonBlockLong}>
-                        <Button block textStyle={{color: '#fff', fontWeight: '500', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('careLocator')}>
+                        <Button block textStyle={{color: '#5cb85c', fontWeight: '600', fontSize: 12}} style={styles.buttonLong} onPress={() => this.pushNewRoute('careLocator')}>
                             HELP ME FIND HIV TESTING LOCATIONS
                         </Button>
                     </View>

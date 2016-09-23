@@ -29,7 +29,11 @@ module.exports = StyleSheet.create({
     },
     buttonLong:{
         width: 300,
-        borderRadius: 0
+        borderColor: '#5cb85c',
+        borderWidth: 1,
+        backgroundColor: '#fff',
+        borderRadius: 0,
+        shadowOpacity: 0
     },
     content: {
         flex: 1,
