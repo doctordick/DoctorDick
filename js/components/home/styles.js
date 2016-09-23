@@ -3,11 +3,6 @@
 import { StyleSheet } from "react-native";
 
 module.exports = StyleSheet.create({
-    header: {
-        backgroundColor: '#fff',
-        borderBottomColor: '#000',
-        borderBottomWidth: 0.5
-    },
     buttonBlockLong: {
         flex: 0,
         flexDirection: 'column',

@@ -12,6 +12,7 @@ import {Container, Header, Title, Content, Text, Icon, Button, List, ListItem, S
 import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
+import CustomHeader from '../custom-header'
 
 class CareLocator extends Component {
 
@@ -63,39 +64,14 @@ class CareLocator extends Component {
     render() {
         return (
             <Container theme={theme} style={styles.container}>
-                <Header style={styles.header}>
-                    <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name='ios-arrow-back' style={{color: '#000', fontSize: 30, lineHeight: 32}} />
-                    </Button>
-                    <Title style={{color: '#000'}}>HIV TESTING SITES</Title>
-                </Header>
 
                 <Content style={{backgroundColor: 'transparent'}}>
+                    <CustomHeader title={"HIV TESTING SITES"} showBackButton={true} />
                   { this.state.testCenters.length === 0 ?
                     <Spinner /> :
 
                     <Tabs>
-                        <List tabBgColor={{backgroundColor:'#000'}} tabLabel="List">
-                            {this.state.testCenters.map((center, index) => (
-                              <ListItem iconLeft key={index} style={{width:360}}>
-                                  <Icon name='ios-medkit'/>
-                                  <Text onPress={() => Linking.openURL(
-                                        'http://maps.apple.com/?q='+ center.title+', '+center.streetAddress+', '+center.postalCode
-                                    )}>{[
-                                      center.title,
-                                      center.telephone,
-                                      '',
-                                      center.streetAddress,
-                                      `${center.locality}, ${center.region} ${center.postalCode}`
-                                    ].join('\n')
-                                    }</Text>
-                                    <Text onPress={() => Linking.openURL(center.link)}>
-                                        More Info
-                                    </Text>
-                              </ListItem>
-                            ))}
-                        </List>
-                        <View tabBgColor={{backgroundColor:'#000'}} tabLabel='Map'>
+                        <View tabLabel='Map'>
                             <MapView
                                 style={{height:558, width: 380}}
                                 showsUserLocation
@@ -117,6 +93,26 @@ class CareLocator extends Component {
                                 })))()}
                             />
                         </View>
+                        <List  tabLabel="List">
+                            {this.state.testCenters.map((center, index) => (
+                              <ListItem key={index} style={{ width: 380, paddingLeft: 30, backgroundColor: 'white'}}>
+                                <Text>
+                                  <Text style={{ color: '#000',  fontWeight: '500', fontSize: 16 }}>{center.title + '\n'}</Text>
+                                  <Text style={{ color: '#000', fontWeight: '300' }} onPress={() => Linking.openURL(
+                                        'http://maps.apple.com/?q='+ center.title+', '+center.streetAddress+', '+center.postalCode
+                                    )}>{[
+                                      center.telephone,
+                                      center.streetAddress,
+                                      `${center.locality}, ${center.region} ${center.postalCode}`
+                                    ].join('\n')
+                                    }</Text>
+                                    <Text style={{ color: '#0000EE', fontSize: 13, textAlign: 'right', textDecorationLine: 'underline'}} onPress={() => Linking.openURL(center.link)}>
+                                        {'\n'}More Info
+                                    </Text>
+                                </Text>
+                              </ListItem>
+                            ))}
+                        </List>
                     </Tabs>
                   }
                 </Content>

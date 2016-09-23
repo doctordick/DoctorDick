@@ -10,24 +10,17 @@ module.exports = StyleSheet.create({
     },
     question: {
         flex: 1,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: 30,
+        paddingRight: 30,
         paddingTop: 20,
         backgroundColor: '#FFF',
-        flexDirection: 'column',
-        alignItems: 'center'
+        flexDirection: 'column'
     },
     questionText: {
         color: '#696969',
-        fontSize: 14,
-        textAlign: 'center',
+        fontSize: 13,
         marginTop: 25,
         fontWeight: '300'
-    },
-    header: { 
-        backgroundColor: '#fff',
-        borderBottomColor: '#000',
-        borderBottomWidth: 0.5
     },
     buttonBlock: {
         width: 200,

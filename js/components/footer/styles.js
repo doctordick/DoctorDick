@@ -1,4 +1,3 @@
-
 'use strict';
 
 var React = require('react-native');
@@ -17,13 +16,33 @@ module.exports = StyleSheet.create({
   		alignSelf: 'stretch',
   		alignItems: 'center',
 		justifyContent: 'space-around',
-		borderTopColor: '#000',
+		borderTopColor: '#999',
 		borderTopWidth: 0.5
 	},
 	icon: {
-		paddingLeft: 30, 
+		paddingLeft: 30,
 		paddingRight: 30,
 		marginBottom: -10,
-		color: '#000'
-	}
+		color: '#999'
+	},
+	iconText: {
+		backgroundColor: 'transparent',
+		color: 'black',
+		textAlign: 'center',
+		fontSize: 10,
+		color: '#999'
+	},
+	activeIcon: {
+		paddingLeft: 30,
+		paddingRight: 30,
+		marginBottom: -10,
+		color: '#6699cc'
+	},
+	activeText: {
+		backgroundColor: 'transparent',
+		color: 'black',
+		textAlign: 'center',
+		fontSize: 10,
+		color: '#6699cc'
+	},
 });

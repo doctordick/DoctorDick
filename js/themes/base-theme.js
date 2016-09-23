@@ -62,7 +62,7 @@ module.exports = {
 
     footerHeight: 55,
     toolbarHeight: (Platform.OS === 'ios' ) ? 64 : 56,
-    toolbarDefaultBg: "#00c497",
+    toolbarDefaultBg: "#6699cc",
     toolbarInverseBg: "#222",
 
     iosToolbarBtnColor: '#fff',
@@ -81,9 +81,9 @@ module.exports = {
 
     radioBtnSize: (Platform.OS === 'ios') ? 25 : 23,
 
-    tabBgColor: "#fff",
+    tabBgColor: "#6699cc",
     tabFontSize: 15,
-	tabTextColor: "#000",
+	tabTextColor: "#fff",
 
     btnDisabledBg: '#b5b5b5',
     btnDisabledClr: '#f1f1f1',
@@ -159,12 +159,12 @@ module.exports = {
 
     contentPadding: 10,
 
-    listBorderColor: "rgba(181, 181, 181, 0.34)",
-    listDividerBg: "#f2f2f2",
+    listBorderColor: "#ccc",
+    listDividerBg: "#ccc",
     listItemPadding: 15,
-    listNoteColor: "#bababa",
+    listNoteColor: "yellow",
     listNoteSize: 13,
-    listBg: "#fff",
+    listBg: "#000",
 
     iconFontSize: (Platform.OS === 'ios' ) ? 30 : 28,
 

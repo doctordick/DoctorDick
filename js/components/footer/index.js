@@ -17,25 +17,27 @@ class Footer extends Component {
 	pushNewRoute(route) {
     this.props.pushNewRoute(route);
   }
-
+  isActive(name) {
+  	return this.props.currentPage === name;
+  }
 	render() {
 		return (
 			<View style={styles.footer} theme={theme}>
 				<TouchableOpacity onPress={this.props.currentPage !== 'home' ? () => this.pushNewRoute('home') : null}>
-					<Icon style={styles.icon} name={'ios-home'+(this.props.currentPage === 'home' ? '' : '-outline')} />
-					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 10 }}>Home</Text>
+					<Icon style={this.isActive('home') ? styles.activeIcon : styles.icon} name={'ios-home'+(this.props.currentPage === 'home' ? '' : '-outline')} />
+					<Text style={this.isActive('home') ? styles.activeText : styles.iconText}>Home</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'recommendationPage' ? () => this.pushNewRoute('recommendationPage') : null}>
-					<Icon style={styles.icon} name={'ios-medkit'+(this.props.currentPage === 'recommendationPage' ? '' : '-outline')} />
-					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 10 }}>Recs</Text>
+					<Icon style={this.isActive('recommendationPage') ? styles.activeIcon : styles.icon} name={'ios-medkit'+(this.props.currentPage === 'recommendationPage' ? '' : '-outline')} />
+					<Text style={this.isActive('recommendationPage') ? styles.activeText : styles.iconText}>Recs</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'remindersPage' ? () => this.pushNewRoute('remindersPage') : null}>
-					<Icon style={styles.icon} name={'ios-alarm'+(this.props.currentPage === 'remindersPage' ? '' : '-outline')} />
-					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 10 }}>Reminders</Text>
+					<Icon style={this.isActive('remindersPage') ? styles.activeIcon : styles.icon} name={'ios-alarm'+(this.props.currentPage === 'remindersPage' ? '' : '-outline')} />
+					<Text style={this.isActive('remindersPage') ? styles.activeText : styles.iconText}>Reminders</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'careLocator' ? () => this.pushNewRoute('careLocator') : null}>
-					<Icon style={styles.icon} name={'ios-pin'+(this.props.currentPage === 'careLocator' ? '' : '-outline')} />
-					<Text style={{ backgroundColor: 'transparent', color: 'black', textAlign: 'center', fontSize: 10 }}>Find Services</Text>
+					<Icon style={this.isActive('careLocator') ? styles.activeIcon : styles.icon} name={'ios-pin'+(this.props.currentPage === 'careLocator' ? '' : '-outline')} />
+					<Text style={this.isActive('careLocator') ? styles.activeText : styles.iconText}>Find Services</Text>
 				</TouchableOpacity>
 		        <TouchableOpacity onPress={this.props.openDrawer}>
 		          <Icon style={styles.icon} name='ios-more' />

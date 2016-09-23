@@ -7,7 +7,6 @@ import { pushNewRoute, replaceRoute, popRoute, pushNewRouteParams } from '../../
 import { Container,
          Content,
          Text,
-         Header,
          Title,
          Button,
          Icon,
@@ -17,6 +16,7 @@ import { Container,
 import FooterComponent from './../footer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
+import CustomHeader from '../custom-header'
 
 class Home extends Component {
 
@@ -71,14 +71,14 @@ class Home extends Component {
         } else {
             return (
                 <View style={styles.content}>
-                    <Text style={{ color:'#000', textAlign:'center'}}>
+                    <Text style={{ color:'#000', textAlign:'center', fontWeight: '300', paddingLeft: 30, paddingRight: 30}}>
                         Getting started is easy!
                         {"\n\n"}
                         First, answer a few questions so Doctor D can make recommendations about HIV testing for you.
                     </Text>
                     <View style={styles.buttonBlock}>
-                        <Button rounded textStyle={{color: '#fff', fontWeight: '500'}} style={styles.button} onPress={() => this.pushNewRoute('survey')}>
-                            Take Survey
+                        <Button rounded textStyle={{color: '#fff', fontSize: 12, fontWeight: '500'}} style={styles.button} onPress={() => this.pushNewRoute('survey')}>
+                            TAKE SURVEY
                         </Button>
                     </View>
                     <Text style={styles.linkText} onPress={() => this.pushNewRouteParams('survey', { question: 4 })}>
@@ -92,13 +92,13 @@ class Home extends Component {
     render() {
         return (
             <Container theme={theme}>
-                <Header style={styles.header}>
-                    <Title style={{color: '#000'}}>HOME</Title>
-                </Header>
-                {this.renderView()}
-                <Footer>
-                    <FooterComponent navigator={this.props.navigator} currentPage='home' />
-                </Footer>
+                <View>
+                    <CustomHeader title={"HOME"} showBackButton={false} />
+                    {this.renderView()}
+                    <Footer>
+                        <FooterComponent navigator={this.props.navigator} currentPage='home' />
+                    </Footer>
+                </View>
             </Container>
         )
     }

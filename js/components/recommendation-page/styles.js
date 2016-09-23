@@ -15,7 +15,6 @@ module.exports = StyleSheet.create({
     },
 
     modal: {
-      backgroundColor: '#384850',
       alignItems: 'center'
     },
 

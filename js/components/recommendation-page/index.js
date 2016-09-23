@@ -8,7 +8,7 @@ import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route'
 import { toggleReminder, setReminderDate, createNewIOSReminder } from '../../actions/recommendations';
 
 
-import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer, Card, CardItem } from 'native-base';
+import {Container, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer, Card, CardItem } from 'native-base';
 
 import Modal from 'react-native-modalbox';
 import RecommendationCard from './recommendation-card';
@@ -18,6 +18,8 @@ import theme from '../../themes/base-theme';
 import styles from './styles';
 import Calendar from '../calendar';
 import RNCalendarReminders from 'react-native-calendar-reminders';
+
+import CustomHeader from '../custom-header';
 
 class RecommendationPage extends Component {
     constructor(props) {
@@ -110,14 +112,7 @@ class RecommendationPage extends Component {
         return (
             <Container theme={theme} style={styles.container} >
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
-                    <Header style={styles.header}>
-                        <Button transparent onPress={() => this.popRoute()}>
-                            <Icon name='ios-arrow-back' style={styles.backButton} />
-                        </Button>
-
-                        <Title style={{ color: '#000'}}>MY RECOMMENDATIONS</Title>
-                    </Header>
-
+                    <CustomHeader title={"MY RECOMMENDATIONS"} showBackButton={true} />
                     <Content padder>
                         {recommendations.HIV.RecommendationCode &&
                         <View padder>

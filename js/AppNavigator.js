@@ -123,6 +123,7 @@ class AppNavigator extends Component {
                 negotiatePan={true}>
                 <StatusBar
                     backgroundColor={statusBarColor}
+                    barStyle="light-content"
                 />
                 <Navigator
                     ref={(ref) => this._navigator = ref}

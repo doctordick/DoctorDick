@@ -70,7 +70,7 @@ class FAQ extends Component {
                 </Header>
                 <Content>
                     <View style={styles.container}>
-                        <Text style={{alignSelf: 'flex-start', marginLeft: 20, fontSize: 26, lineHeight: 40, fontWeight: '500', marginTop: 20, marginBottom: 20}}>{faqs.about.title}</Text>
+                        <Text style={styles.sectionHeading}>{faqs.about.title}</Text>
                         <Accordion
                             sections={faqs.about.questionCollection}
                             renderHeader={this._renderHeader}
@@ -78,7 +78,7 @@ class FAQ extends Component {
                         />
                     </View>
                     <View style={[styles.containerBottom]}>
-                        <Text style={{ alignSelf: 'flex-start', marginLeft: 20, fontSize: 20, fontWeight: '500', marginTop: 20, marginBottom: 20}}>{faqs.aboutSexualHealth.title}</Text>
+                        <Text style={styles.sectionHeading}>{faqs.aboutSexualHealth.title}</Text>
                         <Accordion
                             sections={faqs.aboutSexualHealth.questionCollection}
                             renderHeader={this._renderHeader}

@@ -44,7 +44,16 @@ module.exports = StyleSheet.create({
         paddingBottom: 20,
         paddingTop: 0
     },
-    header: { 
-        backgroundColor: '#000'
+    header: {
+        backgroundColor: '#6699cc'
+    },
+    sectionHeading: {
+        alignSelf: 'flex-start',
+        marginLeft: 20,
+        fontSize: 20,
+        fontWeight: '500',
+        marginTop: 20,
+        lineHeight: 40,
+        marginBottom: 20
     }
 });

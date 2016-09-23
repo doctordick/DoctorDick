@@ -7,7 +7,6 @@ module.exports = StyleSheet.create({
         flex: 1,
         width: null,
         height: null,
-        backgroundColor:'#384850'
     },
     mb25: {
     	marginBottom: 25

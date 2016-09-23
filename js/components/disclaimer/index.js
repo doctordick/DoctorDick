@@ -7,13 +7,13 @@ import { pushNewRoute, replaceRoute, popRoute } from '../../actions/route';
 import { Container,
          Content,
          Text,
-         Header,
          Title,
          Button,
          Icon,
          View } from 'native-base';
 import theme from '../../themes/base-theme';
 import styles from './styles';
+import CustomHeader from '../custom-header'
 
 class Disclaimer extends Component {
 
@@ -40,23 +40,17 @@ class Disclaimer extends Component {
     render() {
         return (
             <Container theme={theme}>
-                <Header style={styles.header}>
-                    <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name='ios-arrow-back' style={{color: '#000', fontSize: 30, lineHeight: 32}} />
-                    </Button>
-                    <Title style={{color: '#000'}}>Disclaimer</Title>
-                </Header>
-                <View style={styles.question}>
-                    <Text style={styles.questionText}>
-                        Doctor Dick is meant only for people who are not having any current symptoms of a sexually transmitted disease, HIV infection, or any other illness.
-                    </Text>
-                    <Text style={styles.questionText}>
-                        If you're currently experiencing symptoms of a sexually transmitted disease, HIV infection, or any other illness, including rash, sores on skin or in mouth, anal, or genital area, fever, chills, discharge from penis, pain with urination, rectal pain or discharge, you should contact your doctor or other healthcare provider for help with your symptoms. If you are having a medical or psychiatric emergency, call 911 or go to the nearest emergency room.
-                    </Text>
-                    <View style={{ flex: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                    <Button rounded textStyle={{ color: '#fff' }} style={styles.buttonBlock} onPress={() => this.pushNewRoute('home')}>
-                        I Agree
-                    </Button>
+                <View>
+                    <CustomHeader title={"DISCLAIMER"} showBackButton={true} />
+                    <View style={styles.question}>
+                        <Text style={styles.questionText}>
+                            Doctor Dick is meant only for people who are not having any current symptoms of a sexually transmitted disease, HIV infection, or any other illness. If you're currently experiencing symptoms of a sexually transmitted disease, HIV infection, or any other illness, including rash, sores on skin or in mouth, anal, or genital area, fever, chills, discharge from penis, pain with urination, rectal pain or discharge, you should contact your doctor or other healthcare provider for help with your symptoms. If you are having a medical or psychiatric emergency, call 911 or go to the nearest emergency room.
+                        </Text>
+                        <View style={{ flex: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                        <Button rounded textStyle={{ color: '#fff', fontSize: 12, fontWeight: '600' }} style={styles.buttonBlock} onPress={() => this.pushNewRoute('home')}>
+                            I AGREE
+                        </Button>
+                        </View>
                     </View>
                 </View>
             </Container>
