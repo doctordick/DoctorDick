@@ -35,9 +35,9 @@ class Footer extends Component {
 					<Icon style={this.isActive('remindersPage') ? styles.activeIcon : styles.icon} name={'ios-alarm'+(this.props.currentPage === 'remindersPage' ? '' : '-outline')} />
 					<Text style={this.isActive('remindersPage') ? styles.activeText : styles.iconText}>REMINDERS</Text>
 				</TouchableOpacity>
-				<TouchableOpacity onPress={this.props.currentPage !== 'careLocator' ? () => this.pushNewRoute('careLocator') : null}>
-					<Icon style={this.isActive('careLocator') ? styles.activeIcon : styles.icon} name={'ios-pin'+(this.props.currentPage === 'careLocator' ? '' : '-outline')} />
-					<Text style={this.isActive('careLocator') ? styles.activeText : styles.iconText}>SERVICES</Text>
+				<TouchableOpacity onPress={this.props.currentPage !== 'findServices' ? () => this.pushNewRoute('findServices') : null}>
+					<Icon style={this.isActive('findServices') ? styles.activeIcon : styles.icon} name={'ios-pin'+(this.props.currentPage === 'findServices' ? '' : '-outline')} />
+					<Text style={this.isActive('findServices') ? styles.activeText : styles.iconText}>SERVICES</Text>
 				</TouchableOpacity>
 		        <TouchableOpacity onPress={this.props.openDrawer}>
 		          <Icon style={styles.icon} name='ios-more' />

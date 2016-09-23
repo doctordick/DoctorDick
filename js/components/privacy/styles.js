@@ -25,7 +25,7 @@ module.exports = StyleSheet.create({
     },
 
     legalTitle: {
-        color: '#000',
+        color: '#696969',
         fontWeight: '300',
         fontSize: 20,
         paddingBottom: 10,
@@ -33,7 +33,7 @@ module.exports = StyleSheet.create({
     },
 
     legalAnswer: {
-        color: '#000',
+        color: '#696969',
         fontWeight: '300',
         textAlign: 'left',
         fontSize: 13

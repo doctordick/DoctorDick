@@ -21,12 +21,12 @@ module.exports = StyleSheet.create({
         height: null
     },
     faq: {
-        borderTopColor: '#000',
+        borderTopColor: '#ccc',
         borderTopWidth: 0.5,
         borderStyle: 'solid'
     },
     faqText: {
-        color: '#000',
+        color: '#696969',
         fontSize: 16,
         paddingTop: 15,
         paddingBottom: 15,
@@ -42,7 +42,8 @@ module.exports = StyleSheet.create({
     faqAnswer: {
         fontWeight: '200',
         paddingBottom: 20,
-        paddingTop: 0
+        paddingTop: 0,
+        color: '#696969'
     },
     header: {
         backgroundColor: '#6699cc'
@@ -54,6 +55,7 @@ module.exports = StyleSheet.create({
         fontWeight: '500',
         marginTop: 20,
         lineHeight: 40,
-        marginBottom: 20
+        marginBottom: 20,
+        color: '#696969'
     }
 });

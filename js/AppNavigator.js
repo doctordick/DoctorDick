@@ -21,6 +21,8 @@ import Survey from './components/survey';
 import Feedback from './components/feedback';
 import Home from './components/home';
 import RemindersPage from './components/reminders';
+import FindServices from './components/find-services';
+import PrepLocator from './components/prep-locator';
 
 import { statusBarColor } from './themes/base-theme';
 
@@ -162,6 +164,10 @@ class AppNavigator extends Component {
                 return <Survey navigator={navigator} />;
             case 'feedback':
                 return <Feedback navigator={navigator} />;
+            case 'findServices':
+                return <FindServices navigator={navigator} />;
+            case 'prepLocator':
+                return <PrepLocator navigator={navigator} />;
             default:
                 return <RecommendationPage navigator={navigator} />;
         }
