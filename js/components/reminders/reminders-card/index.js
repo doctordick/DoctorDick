@@ -65,12 +65,12 @@ class RemindersCard extends Component {
               <View padder style={styles.card}>
                 <Text style={styles.title}>{reminderText}</Text>
 
-                <Text style={{color: 'red'}}>Next reminder: {this.props.reminder ? this.props.date.toString().substr(4,12) : 'No reminder set.'}</Text>
+                <Text style={{color: 'red', marginTop: 10}}>Next reminder: {this.props.reminder ? this.props.date.toString().substr(4,12) : 'No reminder set.'}</Text>
 
-                <Text style={{color: 'red'}}>My last {this.props.label} test was on: { false ? '' : 'Not Sure.'}</Text>
+                <Text style={{color: 'red', marginBottom: 30}}>My last {this.props.label} test was on: { false ? '' : 'Not Sure.'}</Text>
 
               </View>
-              <Button style={[styles.saveButton, {backgroundColor: 'blue'}]} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Manage</Button>
+              <Button style={[styles.saveButton, {backgroundColor: '#689acc'}]} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Manage</Button>
             </View>}
           <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'https://www.aids.gov/hiv-aids-basics')}>
               More Information About HIV

@@ -117,7 +117,7 @@ class RemindersPage extends Component {
                     <Content padder>
                         {recommendations.HIV.RecommendationCode &&
                         <View padder>
-                            <Text>Based on your questionnaire answers, the CDC recommends:</Text>
+
                             <RemindersCard
                               label="HIV"
                               recommendationCode={recommendations.HIV.RecommendationCode}
