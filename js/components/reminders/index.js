@@ -5,7 +5,7 @@ import { Image, NativeAppEventEmitter } from 'react-native';
 import { connect } from 'react-redux';
 
 import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
-import { toggleReminder, setReminderDate, createNewIOSReminder } from '../../actions/recommendations';
+import { toggleReminder, setReminderDate, setLastTestDate, createNewIOSReminder } from '../../actions/recommendations';
 
 
 import {Container, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer, Card, CardItem } from 'native-base';
@@ -25,7 +25,8 @@ class RemindersPage extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        modal: null,
+        nextModal: null,
+        lastModal: null,
         defaultDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90)
       }
     }
@@ -53,7 +54,8 @@ class RemindersPage extends Component {
 
     componentDidMount() {
       // this solves the race condition with this.refs.modal
-      this.setState({modal: this.refs.modal})
+      this.setState({nextModal: this.refs.nextModal})
+      this.setState({lastModal: this.refs.lastModal})
     }
 
     popRoute() {
@@ -66,8 +68,12 @@ class RemindersPage extends Component {
          this.props.pushNewRoute(route);
     }
 
-    closeModal() {
-        this.refs.modal.close()
+    closeNextModal() {
+        this.refs.nextModal.close()
+    }
+
+    closeLastModal() {
+        this.refs.lastModal.close()
     }
 
     toggleReminder() {
@@ -107,6 +113,10 @@ class RemindersPage extends Component {
       }
     }
 
+    setLastTestDate(date) {
+      this.props.setLastTestDate(date, 'HIV');
+    }
+
     render() {
         const recommendations = this.props.recommendations;
         return (
@@ -123,14 +133,16 @@ class RemindersPage extends Component {
                               recommendationCode={recommendations.HIV.RecommendationCode}
                               reminder={recommendations.HIV.ReminderEnabled}
                               toggleReminder={this.toggleReminder.bind(this)}
-                              date={recommendations.HIV.NextReminder || this.state.defaultDate}
-                              modal={this.state.modal}
+                              nextDate={recommendations.HIV.NextReminder || this.state.defaultDate}
+                              lastDate={recommendations.HIV.LastTestDate}
+                              nextModal={this.state.nextModal}
+                              lastModal={this.state.lastModal}
                             />
                         </View>}
                         <Modal
                           style={[styles.modal, styles.modal1]}
                           backdrop={false}
-                          ref={'modal'}
+                          ref={'nextModal'}
                           swipeToClose={true} >
                               <View style={styles.space}>
                                   <Calendar
@@ -140,7 +152,23 @@ class RemindersPage extends Component {
                                   <Text style={{textAlign: 'center'}}>
                                     { this.state.defaultDate.toString().substr(4,12) } is 90 days from today.
                                   </Text>
-                                  <Button style={styles.saveButton} rounded onPress={this.closeModal.bind(this)} >
+                                  <Button style={styles.saveButton} rounded onPress={this.closeNextModal.bind(this)} >
+                                      Save
+                                  </Button>
+                              </View>
+                         </Modal>
+                         <Modal
+                          style={[styles.modal, styles.modal1]}
+                          backdrop={false}
+                          ref={'lastModal'}
+                          swipeToClose={true} >
+                              <View style={styles.space}>
+                                  <Calendar
+                                      date={recommendations.HIV.LastTestDate}
+                                      setDate={this.setLastTestDate.bind(this)}
+                                  />
+
+                                  <Button style={styles.saveButton} rounded onPress={this.closeLastModal.bind(this)} >
                                       Save
                                   </Button>
                               </View>
@@ -162,6 +190,7 @@ function mapActionsToProps(dispatch) {
         replaceOrPushRoute: (route) => dispatch(replaceOrPushRoute(route)),
         toggleReminder: (questionnaireType) => dispatch(toggleReminder(questionnaireType)),
         setReminderDate: (date, questionnaireType) => dispatch(setReminderDate(date, questionnaireType)),
+        setLastTestDate: (date, questionnaireType) => dispatch(setLastTestDate(date, questionnaireType)),
         createNewIOSReminder: (reminderID, questionnaireType) => dispatch(createNewIOSReminder(reminderID, questionnaireType)),
     }
 }

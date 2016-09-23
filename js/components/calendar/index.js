@@ -18,13 +18,13 @@ class Calendar extends Component {
 
                     <Content padder style={{backgroundColor: 'transparent'}} >
                         <CalendarPicker
-                        selectedDate={this.props.date}
+                        selectedDate={this.props.date || new Date()}
                         onDateChange={this.props.setDate}
                         textStyle={{color: '#fff'}}
                         selectedDayColor='#00c497'/>
 
                         <Text style={{marginBottom: 20, alignSelf: 'center'}} >
-                            Date:  { this.props.date.toString().substr(4,12) }
+                            Date:  { this.props.date? this.props.date.toString().substr(4,12): 'not set' }
                         </Text>
                     </Content>
 

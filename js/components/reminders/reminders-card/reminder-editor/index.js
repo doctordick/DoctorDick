@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'native-base';
 
 import { TouchableOpacity } from 'react-native';
-import styles from './styles';
 
 class ReminderEditor extends Component {
 

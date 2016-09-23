@@ -11,6 +11,8 @@ import recommendations from '../../recommendation-page/recommendation-card/recom
 import Collapsible from 'react-native-collapsible';
 import ReminderEditor from './reminder-editor';
 
+import LastTestDatePicker from './last-test-date-picker';
+
 class RemindersCard extends Component {
     constructor(props) {
       super(props)
@@ -42,6 +44,10 @@ class RemindersCard extends Component {
             <View>
               <View padder style={styles.card}>
                 <Text style={styles.title}>
+                  Dr. D has set a reminder for you to get an HIV test every 3 months, since many guys should get tested every 3 months.{"\n"}
+                </Text>
+
+                <Text style={styles.title}>
                 Ask your doctor if you have any questions about how often you should get a test. Talk to your doctor immediately if you have had a <Text style={[styles.title, {fontWeight: 'bold'}]}>high-risk exposure</Text> to HIV.
                 </Text>
 
@@ -56,9 +62,15 @@ class RemindersCard extends Component {
                 }
 
                 <Collapsible collapsed={!this.props.reminder}>
-                  <ReminderEditor modal={this.props.modal} date={this.props.date}/>
+                  <ReminderEditor modal={this.props.nextModal} date={this.props.nextDate}/>
                 </Collapsible>
+
+                <LastTestDatePicker modal={this.props.lastModal} date={this.props.lastDate}/>
+
               </View>
+
+
+
               <Button style={styles.saveButton} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Save Reminder</Button>
             </View>
           : <View>
@@ -72,9 +84,11 @@ class RemindersCard extends Component {
               </View>
               <Button style={[styles.saveButton, {backgroundColor: '#689acc'}]} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Manage</Button>
             </View>}
+
           <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'https://www.aids.gov/hiv-aids-basics')}>
               More Information About HIV
           </Button>
+
         </View>
       )
     }

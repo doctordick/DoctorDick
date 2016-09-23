@@ -10,7 +10,6 @@ import styles from './styles';
 import recommendations from './recommendations.js';
 import FindTestingCenterButton from '../find-test-center-button';
 import Collapsible from 'react-native-collapsible';
-import ReminderEditor from './reminder-editor';
 import { connect } from 'react-redux';
 
 
