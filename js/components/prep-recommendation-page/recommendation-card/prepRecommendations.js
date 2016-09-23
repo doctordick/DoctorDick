@@ -20,7 +20,7 @@ export default {
 
   'stopFour': {
     text: 'You should consider taking PrEP to reduce your risk of getting HIV. Talk to your doctor about PrEP. Tap the button below to locate clinics where you can find out more about PrEP.',
-    summary: 'GET PREP NOW',
+    summary: 'PrEP MAY BE RIGHT FOR YOU',
     findPrEP: true
   },
 
