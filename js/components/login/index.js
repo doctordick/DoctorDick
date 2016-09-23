@@ -18,7 +18,8 @@ import { Container,
 import Modal from 'react-native-modalbox';
 import login from './login-theme';
 import styles from './styles';
-import Privacy from './../privacy'
+import Privacy from './../privacy';
+import CustomHeader from '../custom-header';
 
 class Login extends Component {
 
@@ -71,7 +72,7 @@ class Login extends Component {
                         <View>
                             <Text style={styles.title}>Doctor D</Text>
                             <Text style={styles.slogan}>
-                                 Empowering guys to stay on top of their sexual health
+                                 Empowering guys to stay on top {'\n'} of their sexual health
                             </Text>
                         </View>
                         <View style={{backgroundColor: 'rgba(255, 255, 255, 0.85)', marginBottom: -40 }}>

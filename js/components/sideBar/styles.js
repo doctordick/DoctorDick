@@ -26,11 +26,12 @@ module.exports = StyleSheet.create({
 	    top: 0, 
 	    left: 0, 
 	    right: 0,
-		backgroundColor: '#fff',
-		borderBottomColor: '#000',
-		borderBottomWidth: 0.5
+		backgroundColor: '#6699cc',
+		borderRightWidth: 0.5,
+		borderColor: '#696969'
 	},
 	modalHeaderTitle: {
-	    color: '#000'
+	    color: '#fff',
+	    fontWeight: '300'
 	}
 });

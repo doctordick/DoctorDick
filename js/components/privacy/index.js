@@ -19,7 +19,7 @@ class Privacy extends Component {
     return (
       <View style={styles.legalView}>
         <Content>
-          <Text>{"\n\n"}</Text>
+          <Text>{"\n"}</Text>
           {Object.keys(CONSTANTS.legals)
             .map(key => (
                 <View key={key} style={styles.legalItemView}>

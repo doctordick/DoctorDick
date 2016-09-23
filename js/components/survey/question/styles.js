@@ -15,15 +15,16 @@ module.exports = StyleSheet.create({
     surveyQuestion: {
         fontWeight: '300',
         color: '#696969',
-        fontSize: 16,
+        fontSize: 14,
         marginBottom: 40,
-        paddingLeft: 20,
-        paddingRight: 20,
-        textAlign: 'center'
+        paddingLeft: 25,
+        paddingRight: 25,
+        textAlign: 'center',
+        lineHeight: 24
     },
     buttonBlock: {
         borderColor: '#517aa3',
-        borderWidth: 1,
+        borderWidth: 0.5,
         backgroundColor: '#fff',
         marginBottom: 20,
         borderRadius: 0,

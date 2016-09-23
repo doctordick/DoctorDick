@@ -25,19 +25,19 @@ class Footer extends Component {
 			<View style={styles.footer} theme={theme}>
 				<TouchableOpacity onPress={this.props.currentPage !== 'home' ? () => this.pushNewRoute('home') : null}>
 					<Icon style={this.isActive('home') ? styles.activeIcon : styles.icon} name={'ios-home'+(this.props.currentPage === 'home' ? '' : '-outline')} />
-					<Text style={this.isActive('home') ? styles.activeText : styles.iconText}>Home</Text>
+					<Text style={this.isActive('home') ? styles.activeText : styles.iconText}>HOME</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'recommendationPage' ? () => this.pushNewRoute('recommendationPage') : null}>
 					<Icon style={this.isActive('recommendationPage') ? styles.activeIcon : styles.icon} name={'ios-medkit'+(this.props.currentPage === 'recommendationPage' ? '' : '-outline')} />
-					<Text style={this.isActive('recommendationPage') ? styles.activeText : styles.iconText}>Recs</Text>
+					<Text style={this.isActive('recommendationPage') ? styles.activeText : styles.iconText}>RECS</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'remindersPage' ? () => this.pushNewRoute('remindersPage') : null}>
 					<Icon style={this.isActive('remindersPage') ? styles.activeIcon : styles.icon} name={'ios-alarm'+(this.props.currentPage === 'remindersPage' ? '' : '-outline')} />
-					<Text style={this.isActive('remindersPage') ? styles.activeText : styles.iconText}>Reminders</Text>
+					<Text style={this.isActive('remindersPage') ? styles.activeText : styles.iconText}>REMINDERS</Text>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.props.currentPage !== 'careLocator' ? () => this.pushNewRoute('careLocator') : null}>
 					<Icon style={this.isActive('careLocator') ? styles.activeIcon : styles.icon} name={'ios-pin'+(this.props.currentPage === 'careLocator' ? '' : '-outline')} />
-					<Text style={this.isActive('careLocator') ? styles.activeText : styles.iconText}>Find Services</Text>
+					<Text style={this.isActive('careLocator') ? styles.activeText : styles.iconText}>SERVICES</Text>
 				</TouchableOpacity>
 		        <TouchableOpacity onPress={this.props.openDrawer}>
 		          <Icon style={styles.icon} name='ios-more' />

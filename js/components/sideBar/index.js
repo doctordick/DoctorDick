@@ -29,7 +29,7 @@ class SideBar extends Component {
     render(){
         return (
             <Content style={{backgroundColor: '#999999'}} >
-                <Thumbnail size={150} square style={{alignSelf: 'center', marginTop: 50, marginBottom: 15, resizeMode: 'contain'}} source={require('../../../images/banana.png')} />
+                <Thumbnail size={150} square style={{alignSelf: 'center', marginTop: 50, marginBottom: 15, resizeMode: 'contain'}} source={require('../../../images/doctor.png')} />
                 <List  foregroundColor={'white'} >
                     <ListItem button onPress={() => this.navigateTo('faq')} iconLeft style={styles.links} >
                         <Icon style={{ color: '#444' }} name='ios-help' />
@@ -41,16 +41,16 @@ class SideBar extends Component {
                     </ListItem>
                     <ListItem button onPress={() => this.navigateTo('feedback')} iconLeft style={styles.links} >
                         <Icon style={{ color: '#444' }} name='ios-chatboxes-outline' />
-                        <Text style={{ color: '#444' }}>Give Feedback</Text>
+                        <Text style={{ color: '#444' }}>Share Feedback</Text>
                     </ListItem>
                 </List>
                  <Modal navigator={this.props.navigator} style={[styles.modal, styles.legalsModal]} backdrop={false} ref={'legalsModal'}  swipeToClose={false} >
                      <Header style={styles.modalHeader}>
                         <Button transparent onPress={this.closeLegalsModal.bind(this)}>
-                            <Icon name="ios-arrow-back" style={{fontSize: 30, lineHeight: 32, color: '#000'}} />
+                            <Icon name="ios-arrow-back" style={{fontSize: 30, lineHeight: 32, color: '#FFF'}} />
                         </Button>
 
-                        <Title style={styles.modalHeaderTitle}>Legals</Title>
+                        <Title style={styles.modalHeaderTitle}>LEGALS</Title>
                     </Header>
                     <Privacy />
                 </Modal>

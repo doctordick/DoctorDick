@@ -49,7 +49,7 @@ module.exports = StyleSheet.create({
       marginRight: 10
     },
     setReminderButton: {
-      backgroundColor: '#000',
+      backgroundColor: '#517aa3',
       marginTop: 20,
       marginHorizontal: 10,
       marginBottom: 10,

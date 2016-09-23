@@ -30,19 +30,19 @@ class RecommendationCard extends Component {
 
       return (
           <Card style={{width: 350, marginLeft: -5}}>
-            <CardItem style={{justifyContent:'center'}} header>
-              <Text>HIV TESTING</Text>
+            <CardItem style={{backgroundColor: '#517aa3', justifyContent:'center'}} header>
+              <Text style={{color: '#FFF', fontWeight: '300'}}>HIV TESTING RECS</Text>
             </CardItem>
             <CardItem>
-              <Text>Based on your most recent answers, here are Doctor D's recommendations for you</Text>
+              <Text style={{color: '#696969', fontWeight: '300'}}>Based on your most recent answers, here are Doctor D's recommendations for you:</Text>
             </CardItem>
             <CardItem>
-              <Text style={{ fontWeight: 'bold'}}>{summary}</Text>
+              <Text style={{ color: '#696969', fontWeight: 'bold', fontSize: 18}}>{summary}</Text>
             </CardItem>
             { setRemindersFirst && setReminders &&
               <CardItem>
-                <Text>{reminderText}</Text>
-                <Button block style={styles.setReminderButton} textStyle={{fontSize: 16, color: '#eee'}}
+                <Text style={{color: '#696969', fontWeight: '300'}}>{reminderText}</Text>
+                <Button block style={styles.setReminderButton} textStyle={{fontSize: 16, color: '#eee', fontWeight: '300'}}
                 onPress={() => {
                   this.pushNewRoute('remindersPage')}
                 }>
@@ -51,7 +51,7 @@ class RecommendationCard extends Component {
               </CardItem>
             }
             <CardItem>
-              <Text>{text}</Text>
+              <Text style={{color: '#696969',fontWeight: '300'}}>{text}</Text>
               { findTestingCenter && <FindTestingCenterButton title={buttonTitle} />}
               <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'https://www.aids.gov/hiv-aids-basics')}>
                   More Information About HIV
@@ -59,7 +59,7 @@ class RecommendationCard extends Component {
             </CardItem>
             { !setRemindersFirst && setReminders &&
               <CardItem>
-                <Text>{reminderText}</Text>
+                <Text style={{color: '#696969',fontWeight: '300'}}>{reminderText}</Text>
                 <Button block style={styles.setReminderButton} textStyle={{fontSize: 16, color: '#eee'}}
                 onPress={() => {
                   this.pushNewRoute('remindersPage')}

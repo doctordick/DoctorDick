@@ -30,7 +30,7 @@ module.exports = StyleSheet.create({
     buttonLong:{
         width: 300,
         borderColor: '#5cb85c',
-        borderWidth: 1,
+        borderWidth: 0.5,
         backgroundColor: '#fff',
         borderRadius: 0,
         shadowOpacity: 0

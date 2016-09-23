@@ -42,11 +42,14 @@ module.exports = StyleSheet.create({
         backgroundColor: '#000'
     },
     findTestingCenterButton: {
-      backgroundColor: '#000',
+      backgroundColor: '#517aa3',
       marginTop: 20,
       marginHorizontal: 10,
       marginBottom: 10,
-      borderRadius: 50
+      borderRadius: 50,
+      shadowOpacity: 0,
+      borderColor: '#517aa3',
+      borderWidth: 0.5
     },
     card: {
       backgroundColor: '#EEE',

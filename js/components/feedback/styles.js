@@ -30,10 +30,12 @@ module.exports = StyleSheet.create({
         borderBottomWidth: 0.5
     },
     buttonBlock: {
-        backgroundColor: '#000',
-        marginBottom: 20,
-        marginTop: 40,
-        paddingBottom:10,
-        borderRadius: 0 
+        backgroundColor: '#FFF',
+        shadowOpacity: 0,
+        borderColor: '#517aa3',
+        borderWidth: 0.5,
+        width: 250,
+        marginTop: 30,
+        alignSelf: 'center',
     }
 });

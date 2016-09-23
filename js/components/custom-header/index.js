@@ -15,15 +15,15 @@ class CustomHeader extends Component {
             return (
                 <Header>
                     <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name='ios-arrow-back' style={{fontSize: 30, lineHeight: 32}} />
+                        <Icon name='ios-arrow-back' style={{fontWeight: '300', fontSize: 30, lineHeight: 32}} />
                     </Button>
-                    <Title style={{paddingTop: 10}}>{ this.props.title }</Title>
+                    <Title style={{paddingTop: 10, fontWeight: '300'}}>{ this.props.title }</Title>
                 </Header>
             )
         } else {
             return (
                 <Header>
-                <Title style={{paddingTop: 10}}>{ this.props.title }</Title>
+                <Title style={{paddingTop: 10, fontWeight: '300'}}>{ this.props.title }</Title>
             </Header>
             )
         }

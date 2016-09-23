@@ -14,6 +14,7 @@ import { Container,
          View } from 'native-base';
 import theme from '../../themes/base-theme';
 import styles from './styles';
+import CustomHeader from '../custom-header';
 
 class Feedback extends Component {
 
@@ -41,21 +42,18 @@ class Feedback extends Component {
     render() {
         return (
             <Container theme={theme}>
-                <Header style={styles.header}>
-                    <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name='ios-arrow-back' style={{color: '#000', fontSize: 30, lineHeight: 32}} />
-                    </Button>
-                    <Title style={{color: '#000'}}>Share Your Feedback</Title>
-                </Header>
-                <View style={styles.question}>
-                    <Text style={styles.questionText}>
-                        Please tell us how we can improve Doctor Dick to benefit you and the gay community even more!
-                    </Text>
-                    <Button block style={styles.buttonBlock} onPress={this.openLink.bind(this, 'https://goo.gl/forms/iV5gbDpXfAts2axR2')}>
-                        <Text>
-                            Share Feedback
+                <View>
+                    <CustomHeader title={'SHARE FEEDBACK'} showBackButton={true}/>
+                    <View style={styles.question}>
+                        <Text style={styles.questionText}>
+                            Please tell us how we can improve Doctor D to benefit you and the gay community even more!
                         </Text>
-                    </Button>
+                        <Button rounded style={styles.buttonBlock} onPress={this.openLink.bind(this, 'https://goo.gl/forms/iV5gbDpXfAts2axR2')}>
+                            <Text style={{fontSize: 13, fontWeight: '300', color: '#517aa3'}}>
+                                SHARE FEEDBACK
+                            </Text>
+                        </Button>
+                    </View>
                 </View>
             </Container>
         )

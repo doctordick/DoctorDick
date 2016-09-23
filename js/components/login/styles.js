@@ -40,11 +40,12 @@ module.exports = StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        backgroundColor: '#000'
+        backgroundColor: '#6699CC'
     },
     modalHeaderTitle: {
         fontFamily: 'Avenir',
-        color: '#FFF'
+        color: '#FFF',
+        fontWeight: '300'
     },
 
     legalView: {

@@ -25,15 +25,17 @@ module.exports = StyleSheet.create({
     },
 
     legalTitle: {
-        color: 'black',
-        fontWeight: 'bold',
-        fontSize: 18,
+        color: '#000',
+        fontWeight: '300',
+        fontSize: 20,
         paddingBottom: 10,
         textAlign: 'center',
     },
 
     legalAnswer: {
-        color: 'black',
+        color: '#000',
+        fontWeight: '300',
         textAlign: 'left',
+        fontSize: 13
     }
 });

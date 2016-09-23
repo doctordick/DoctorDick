@@ -131,7 +131,8 @@ class Survey extends Component {
             return (
                 <Progress.Bar
                     borderRadius={0}
-                    color={'#000'}
+                    borderWidth={0.5}
+                    color={'#517aa3'}
                     unfilledColor= {'#FFFFFF'}
                     style={{ marginTop: 40 }}
                     progress={this.state.progress}
