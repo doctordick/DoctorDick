@@ -16,8 +16,8 @@ class ReminderEditor extends Component {
   render() {
     return (
       <View>
-        <Text style={{textAlign: 'center', fontSize: 20, color: 'black', fontWeight: 'bold'}}>Your next reminder: { this.props.date.toString().substr(4,12) }</Text>
-        <Button block style={{ marginTop: 10, backgroundColor: '#000'}} textStyle={{color: '#FFF'}} onPress={()=>this.openModal()}>
+        <Text style={{marginTop: 25, textAlign: 'center', fontSize: 16, color: 'black', fontWeight: 'bold'}}>Your next reminder is { this.props.date.toString().substr(4,12) }</Text>
+        <Button block style={{ marginTop: 15, marginBottom: 35,backgroundColor: '#000'}} textStyle={{color: '#FFF'}} onPress={()=>this.openModal()}>
           Change Reminder Date
         </Button>
       </View>

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import {Switch, Linking} from 'react-native';
 
-import {Text, Content, View, Button } from 'native-base';
+import {Text, Content, View, Button, Card, CardItem} from 'native-base';
 
 import styles from './styles';
 import recommendations from '../../recommendation-page/recommendation-card/recommendations.js';
@@ -34,10 +34,9 @@ class RemindersCard extends Component {
       const {text, reminderText, setReminders, orderHomeKit} = recommendations[this.props.recommendationCode]
 
       return (
-        <View>
+        <View style={{marginTop: 20}}>
           <View style={styles.cardHeader}>
             <Text style={styles.headerText}>{this.props.label} Testing Reminder</Text>
-            { !editingMode && <Button onPress={this.toggleEditingMode.bind(this)}>Manage</Button> }
           </View>
           { editingMode ?
             <View>
@@ -59,10 +58,6 @@ class RemindersCard extends Component {
                 <Collapsible collapsed={!this.props.reminder}>
                   <ReminderEditor modal={this.props.modal} date={this.props.date}/>
                 </Collapsible>
-
-                <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'https://www.aids.gov/hiv-aids-basics')}>
-                    More Information About HIV
-                </Button>
               </View>
               <Button style={styles.saveButton} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Save Reminder</Button>
             </View>
@@ -75,6 +70,7 @@ class RemindersCard extends Component {
                 <Text style={{color: 'red'}}>My last {this.props.label} test was on: { false ? '' : 'Not Sure.'}</Text>
 
               </View>
+              <Button style={[styles.saveButton, {backgroundColor: 'blue'}]} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Manage</Button>
             </View>}
           <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'https://www.aids.gov/hiv-aids-basics')}>
               More Information About HIV

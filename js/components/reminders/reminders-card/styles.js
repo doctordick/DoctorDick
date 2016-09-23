@@ -17,12 +17,6 @@ module.exports = StyleSheet.create({
       paddingVertical: 10,
       paddingHorizontal: 25,
       borderRadius: 0,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0, height: 3
-      },
-      shadowOpacity: 0.6,
-      shadowRadius: 2,
     },
     title: {
       color: 'black',
@@ -48,7 +42,7 @@ module.exports = StyleSheet.create({
     },
     cardHeader: {
       backgroundColor: 'black',
-      padding: 20,
+      padding: 10,
       flexWrap: 'wrap',
       alignItems: 'center',
       flexDirection: 'row',
@@ -56,16 +50,12 @@ module.exports = StyleSheet.create({
     },
     headerText: {
       fontSize: 18,
+      color: 'white',
     },
     saveButton: {
       backgroundColor: 'green',
       borderRadius: 0,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0, height: 3
-      },
-      shadowOpacity: 0.6,
-      shadowRadius: 2,
+
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'stretch',
