@@ -13,40 +13,44 @@ module.exports = StyleSheet.create({
     	marginBottom: 25
     },
     card: {
-      backgroundColor: '#EEE',
+      backgroundColor: '#FFF',
       paddingVertical: 10,
       paddingHorizontal: 25,
       borderRadius: 0,
+      borderWidth: 0.5,
     },
     title: {
       color: 'black',
-      fontSize: 17,
+      fontSize: 15,
+      fontWeight: '300',
       textAlign: 'justify',
       lineHeight: 25,
+      color: '#696969',
     },
     reminderContainer: {
       flexDirection: 'row',
       flex: 1,
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginTop: 15,
-      marginBottom: 5,
+      marginTop: 20,
+      marginBottom: 20,
     },
     reminderLabel: {
       marginLeft: 10,
       color: 'black',
-      width: 150,
+      width: 180,
     },
     reminderSwitch: {
       marginRight: 10
     },
     cardHeader: {
-      backgroundColor: 'black',
+      backgroundColor: '#517aa3',
       padding: 10,
+      paddingTop: 15,
       flexWrap: 'wrap',
       alignItems: 'center',
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
     },
     headerText: {
       fontSize: 18,
@@ -55,7 +59,6 @@ module.exports = StyleSheet.create({
     saveButton: {
       backgroundColor: 'green',
       borderRadius: 0,
-
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'stretch',

@@ -38,13 +38,13 @@ class RemindersCard extends Component {
       return (
         <View style={{marginTop: 20}}>
           <View style={styles.cardHeader}>
-            <Text style={styles.headerText}>{this.props.label} Testing Reminder</Text>
+            <Text style={styles.headerText}>{this.props.label} TESTING REMINDER</Text>
           </View>
           { editingMode ?
             <View>
               <View padder style={styles.card}>
                 <Text style={styles.title}>
-                  Dr. D has set a reminder for you to get an HIV test every 3 months, since many guys should get tested every 3 months.{"\n"}
+                  Doctor D has set a reminder for you to get an HIV test every 3 months, since many guys should get tested every 3 months.{"\n"}
                 </Text>
 
                 <Text style={styles.title}>
@@ -53,7 +53,7 @@ class RemindersCard extends Component {
 
                 { setReminders &&
                   <View style={styles.reminderContainer}>
-                    <Text style={styles.reminderLabel}>SET REMINDERS:</Text>
+                    <Text style={styles.reminderLabel}>TURN {this.props.reminder ? 'OFF' : 'ON'} REMINDERS:</Text>
                     <Switch style={styles.reminderSwitch}
                       onValueChange={() => this.props.toggleReminder()}
                       value={this.props.reminder}
@@ -69,25 +69,19 @@ class RemindersCard extends Component {
 
               </View>
 
-
-
-              <Button style={styles.saveButton} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Save Reminder</Button>
+              <Button style={styles.saveButton} textStyle={{color: 'white', fontSize: 15}} onPress={this.toggleEditingMode.bind(this)}>SAVE REMINDER</Button>
             </View>
           : <View>
               <View padder style={styles.card}>
                 <Text style={styles.title}>{reminderText}</Text>
 
-                <Text style={{color: 'red', marginTop: 10}}>Next reminder: {this.props.reminder ? this.props.date.toString().substr(4,12) : 'No reminder set.'}</Text>
+                <Text style={{color: 'red', marginTop: 10}}>Next reminder: {this.props.reminder ? this.props.nextDate.toString().substr(4,12) : 'No reminder set.'}</Text>
 
-                <Text style={{color: 'red', marginBottom: 30}}>My last {this.props.label} test was on: { false ? '' : 'Not Sure.'}</Text>
+                <Text style={{color: 'red', marginBottom: 50}}>My last {this.props.label} test was on: { this.props.lastDate ? this.props.lastDate.toString().substr(4,12) : 'Not Sure.'}</Text>
 
               </View>
               <Button style={[styles.saveButton, {backgroundColor: '#689acc'}]} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Manage</Button>
             </View>}
-
-          <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'https://www.aids.gov/hiv-aids-basics')}>
-              More Information About HIV
-          </Button>
 
         </View>
       )
