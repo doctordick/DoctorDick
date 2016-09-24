@@ -75,12 +75,12 @@ class RemindersCard extends Component {
               <View padder style={styles.card}>
                 <Text style={styles.title}>{reminderText}</Text>
 
-                <Text style={{color: 'red', marginTop: 10}}>Next reminder: {this.props.reminder ? this.props.nextDate.toString().substr(4,12) : 'No reminder set.'}</Text>
+                <Text style={{color: 'red', marginTop: 30, marginBottom: 10}}>Next reminder: {this.props.reminder ? this.props.nextDate.toString().substr(4,12).toUpperCase() : 'No reminder set.'}</Text>
 
-                <Text style={{color: 'red', marginBottom: 50}}>My last {this.props.label} test was on: { this.props.lastDate ? this.props.lastDate.toString().substr(4,12) : 'Not Sure.'}</Text>
+                <Text style={{color: 'red', marginBottom: 30}}>My last {this.props.label} test was on: { this.props.lastDate ? this.props.lastDate.toString().substr(4,12).toUpperCase() : 'Not Sure.'}</Text>
 
               </View>
-              <Button style={[styles.saveButton, {backgroundColor: '#689acc'}]} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>Manage</Button>
+              <Button style={[styles.saveButton, {backgroundColor: '#689acc'}]} textStyle={{color: 'white', fontSize: 14}} onPress={this.toggleEditingMode.bind(this)}>MANAGE</Button>
             </View>}
 
         </View>

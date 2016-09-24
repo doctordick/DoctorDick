@@ -37,7 +37,7 @@ module.exports = StyleSheet.create({
     },
     reminderLabel: {
       marginLeft: 10,
-      color: 'black',
+      color: '#696969',
       width: 180,
     },
     reminderSwitch: {
