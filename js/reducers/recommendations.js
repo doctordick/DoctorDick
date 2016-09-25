@@ -100,6 +100,10 @@ export default function (state:State = initialState, action:Action): State {
       savedData.HIV.NextReminder = new Date(savedData.HIV.NextReminder);
     }
 
+    if (savedData.HIV.LastTestDate) {
+      savedData.HIV.LastTestDate = new Date(savedData.HIV.LastTestDate);
+    }
+
     return {
       ...savedData
     }
