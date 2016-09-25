@@ -18,7 +18,7 @@ module.exports = StyleSheet.create({
       paddingHorizontal: 15,
       borderRadius: 0,
       borderWidth: 0.5,
-      borderColor: 'black'
+      borderColor: '#999'
     },
     title: {
       color: 'black',
@@ -51,6 +51,8 @@ module.exports = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       borderWidth: 0.5,
+      borderColor: '#999',
+      borderBottomWidth: 0
     },
     headerText: {
       fontSize: 18,
