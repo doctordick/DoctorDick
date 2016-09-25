@@ -49,7 +49,9 @@ module.exports = StyleSheet.create({
       borderRadius: 50,
       shadowOpacity: 0,
       borderColor: '#517aa3',
-      borderWidth: 0.5
+      borderWidth: 0.5,
+      width: 250,
+      alignSelf: 'center'
     },
     card: {
       backgroundColor: '#EEE',

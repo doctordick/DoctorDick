@@ -29,19 +29,19 @@ class RecommendationCard extends Component {
       const {text, summary, findPrEP} = prepRecommendations[this.props.recommendationCode]
       return (
         <Card style={{width: 350, marginLeft: -5}}>
-          <CardItem style={{backgroundColor: '#517aa3', justifyContent:'center'}} header>
-            <Text style={{color: '#FFF', fontWeight: '300'}}>PrEP RECS</Text>
+          <CardItem style={{backgroundColor: '#FFF', justifyContent:'center'}} header>
+            <Text style={{color: '#517aa3', fontWeight: '300', fontWeight: '500'}}>PrEP RECS</Text>
           </CardItem>
-          <CardItem>
+          <CardItem style={{borderColor: '#e9e9e9'}}>
             <Text style={{color: '#696969', fontWeight: '300'}}>Based on your most recent answers, here are Doctor D's recommendations for you:</Text>
           </CardItem>
-          <CardItem>
-            <Text style={{ color: '#696969', fontWeight: 'bold', fontSize: 18}}>{summary}</Text>
+          <CardItem style={{borderColor: '#e9e9e9'}}>
+            <Text style={{color:'#517aa3', alignSelf: 'center', fontWeight: '800', fontSize: 14}}>{summary}</Text>
           </CardItem>
-          <CardItem>
+          <CardItem style={{borderColor: '#e9e9e9'}}>
             <Text style={{color: '#696969',fontWeight: '300'}}>{text}</Text>
             <View>
-            { findPrEP && <FindTestingCenterButton destination={'prepLocator'} title={'Find PrEP Services'} />}
+            { findPrEP && <FindTestingCenterButton destination={'prepLocator'} title={'FIND PrEP SERVICES'} />}
             </View>
             <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'http://www.cdc.gov/hiv/basics/prep.html')}>
                 More Information About PrEP

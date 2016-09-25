@@ -23,8 +23,8 @@ class Calendar extends Component {
                         textStyle={{color: '#fff'}}
                         selectedDayColor='#00c497'/>
 
-                        <Text style={{marginBottom: 20, alignSelf: 'center'}} >
-                            Date:  { this.props.date? this.props.date.toString().substr(4,12): 'not set' }
+                        <Text style={{color: '#FFF', marginBottom: 20, alignSelf: 'center'}} >
+                            DATE:  { this.props.date ? this.props.date.toString().substr(4,12).toUpperCase() : 'not set' }
                         </Text>
                     </Content>
 

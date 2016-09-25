@@ -18,7 +18,7 @@ class FindTestingCenterButton extends Component {
   render() {
     let destination = this.props.destination;
     return (
-      <Button block style={styles.findTestingCenterButton} textStyle={{color: '#eee'}}
+      <Button block style={styles.findTestingCenterButton} textStyle={{fontSize: 14, color: '#eee'}}
       onPress={() => {
         this.navigateTo(destination)}
       }>

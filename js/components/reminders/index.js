@@ -102,9 +102,9 @@ class RemindersPage extends Component {
           }]
         });
       } else {
-        RNCalendarReminders.saveReminder('Doctor Dick Reminder', {
+        RNCalendarReminders.saveReminder('Doctor D Reminder', {
           location: '',
-          notes: 'Doctor Dick says: Open the App and stay Healthy!',
+          notes: 'Doctor D says: Open the App and stay Healthy!',
           startDate: date.toISOString(),
           alarms: [{
             date: date.toISOString()
@@ -126,7 +126,7 @@ class RemindersPage extends Component {
 
                     <Content padder>
                         {recommendations.HIV.RecommendationCode &&
-                        <View padder>
+                        <View style={{marginTop: -10}} padder>
 
                             <RemindersCard
                               label="HIV"
@@ -149,11 +149,11 @@ class RemindersPage extends Component {
                                       date={recommendations.HIV.NextReminder || this.state.defaultDate }
                                       setDate={this.setDate.bind(this)}
                                   />
-                                  <Text style={{textAlign: 'center'}}>
-                                    { this.state.defaultDate.toString().substr(4,12) } is 90 days from today.
+                                  <Text style={{marginTop: 20, textAlign: 'center'}}>
+                                    { this.state.defaultDate.toString().substr(4,12).toUpperCase() } is 90 days from today.
                                   </Text>
-                                  <Button style={styles.saveButton} rounded onPress={this.closeNextModal.bind(this)} >
-                                      Save
+                                  <Button textStyle={{color:'#fff'}} style={styles.saveButton} rounded onPress={this.closeNextModal.bind(this)} >
+                                      SAVE
                                   </Button>
                               </View>
                          </Modal>
@@ -168,8 +168,8 @@ class RemindersPage extends Component {
                                       setDate={this.setLastTestDate.bind(this)}
                                   />
 
-                                  <Button style={styles.saveButton} rounded onPress={this.closeLastModal.bind(this)} >
-                                      Save
+                                  <Button textStyle={{color:'#fff'}} style={styles.saveButton} rounded onPress={this.closeLastModal.bind(this)} >
+                                      SAVE
                                   </Button>
                               </View>
                          </Modal>

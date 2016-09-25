@@ -14,9 +14,9 @@ class ReminderEditor extends Component {
 
   render() {
     return (
-      <View style={{borderTopWidth: 0.5, borderColor: '#999'}}>
-        <Text style={{marginTop: 25, textAlign: 'center', fontSize: 16, color: '#696969', fontWeight: 'bold'}}>Your next reminder is { this.props.date.toString().substr(4,12).toUpperCase() }</Text>
-        <Button block style={{ marginTop: 15, marginBottom: 35,backgroundColor: '#517aa3', borderRadius: 30}} textStyle={{color: '#FFF', fontSize: 15}} onPress={()=>this.openModal()}>
+      <View>
+        <Text style={{textAlign: 'center', fontSize: 16, color: '#696969', fontWeight: 'bold'}}>Your next reminder is on { this.props.date.toString().substr(4,12).toUpperCase() }</Text>
+        <Button block style={{ alignSelf: 'center', width: 250, marginTop: 30, marginBottom: 30,backgroundColor: '#517aa3', borderRadius: 30}} textStyle={{color: '#FFF', fontSize: 14}} onPress={()=>this.openModal()}>
           CHANGE REMINDER DATE
         </Button>
       </View>

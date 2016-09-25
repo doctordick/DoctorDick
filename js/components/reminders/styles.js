@@ -19,7 +19,9 @@ module.exports = StyleSheet.create({
     },
 
     saveButton: {
-      alignSelf: 'stretch',
+      alignSelf: 'center',
+      width: 250,
+      marginVertical: 20
     },
 
     header: {

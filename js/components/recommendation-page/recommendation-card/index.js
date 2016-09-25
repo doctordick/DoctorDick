@@ -39,35 +39,35 @@ class RecommendationCard extends Component {
         const {text, summary, reminderText, buttonTitle, setRemindersFirst, findTestingCenter, setReminders, orderHomeKit} = recommendations[this.props.recommendationCode]
         return (
             <Card style={{width: 350, marginLeft: -5}}>
-              <CardItem style={{backgroundColor: '#517aa3', justifyContent:'center'}} header>
-                <Text style={{color: '#FFF', fontWeight: '300'}}>HIV TESTING RECS</Text>
+              <CardItem style={{backgroundColor: '#FFF', justifyContent:'center'}} header>
+                <Text style={{fontSize: 18, color: '#517aa3', fontWeight: '500'}}>HIV TESTING RECS</Text>
               </CardItem>
-              <CardItem>
+              <CardItem style={{borderColor: '#e9e9e9'}}>
                 <Text style={{color: '#696969', fontWeight: '300'}}>Based on your most recent answers, here are Doctor D's recommendations for you:</Text>
               </CardItem>
-              <CardItem>
-                <Text style={{ color: '#696969', fontWeight: 'bold', fontSize: 18}}>{summary}</Text>
+              <CardItem style={{borderColor: '#e9e9e9'}}>
+                <Text style={{color:'#517aa3', alignSelf: 'center', fontWeight: '800', fontSize: 14}}>{summary}</Text>
               </CardItem>
               { setRemindersFirst && setReminders &&
-                <CardItem>
+                <CardItem style={{borderColor: '#e9e9e9'}}>
                   <Text style={{color: '#696969', fontWeight: '300'}}>{reminderText}</Text>
-                  <Button block style={styles.setReminderButton} textStyle={{fontSize: 16, color: '#eee', fontWeight: '300'}}
+                  <Button block style={styles.setReminderButton} textStyle={{fontSize: 14, color: '#eee', fontWeight: '300'}}
                   onPress={() => {
                     this.pushNewRoute('remindersPage')}
                   }>
-                  Set Reminder
+                  SET REMINDER
                   </Button>
                 </CardItem>
               }
-              <CardItem>
+              <CardItem style={{borderColor: '#e9e9e9'}}>
                 <Text style={{color: '#696969',fontWeight: '300'}}>{text}</Text>
-                { findTestingCenter && <FindTestingCenterButton destination={'careLocator'} title={buttonTitle} />}
+                { findTestingCenter && <FindTestingCenterButton destination={'careLocator'} title={buttonTitle.toUpperCase()} />}
                 <Button transparent textStyle={{color: '#0000EE', fontSize: 14}} style={{alignSelf: 'center'}} onPress={this.openLink.bind(this, 'https://www.aids.gov/hiv-aids-basics')}>
                     More Information About HIV
                 </Button>
               </CardItem>
               { !setRemindersFirst && setReminders &&
-                <CardItem>
+                <CardItem style={{borderColor: '#e9e9e9'}}>
                   <Text style={{color: '#696969',fontWeight: '300'}}>{reminderText}</Text>
                   <Button block style={styles.setReminderButton} textStyle={{fontSize: 16, color: '#eee'}}
                   onPress={() => {
@@ -77,7 +77,7 @@ class RecommendationCard extends Component {
                   </Button>
                 </CardItem>
               }
-              <CardItem style={{alignItems:'center'}}>
+              <CardItem style={{alignItems:'center', borderColor: '#e9e9e9'}}>
                 <Text onPress={() => this.pushNewRoute('survey')} style={{fontSize: 13, color: '#0000EE', textDecorationLine: 'underline'}}>RETAKE HIV TESTING SURVEY</Text>
               </CardItem>
             </Card>

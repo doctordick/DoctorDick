@@ -51,8 +51,9 @@ module.exports = StyleSheet.create({
     setReminderButton: {
       backgroundColor: '#517aa3',
       marginTop: 20,
-      marginHorizontal: 10,
       marginBottom: 10,
-      borderRadius: 50
+      borderRadius: 50,
+      width: 250,
+      alignSelf:'center'
     },
 });
