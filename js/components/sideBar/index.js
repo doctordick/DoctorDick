@@ -28,7 +28,7 @@ class SideBar extends Component {
 
     render(){
         return (
-            <Content style={{backgroundColor: '#999999'}} >
+            <Content style={{backgroundColor: '#FFF', borderRightColor: '#ccc', borderRightWidth: 0.5}} >
                 <Thumbnail size={150} square style={{alignSelf: 'center', marginTop: 50, marginBottom: 15, resizeMode: 'contain'}} source={require('../../../images/doctor.png')} />
                 <List  foregroundColor={'white'} >
                     <ListItem button onPress={() => this.navigateTo('faq')} iconLeft style={styles.links} >
