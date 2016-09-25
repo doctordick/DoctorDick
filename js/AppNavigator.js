@@ -11,7 +11,6 @@ import { popRoute } from './actions/route';
 import { Drawer } from 'native-base';
 import Navigator from 'Navigator';
 import Login from './components/login';
-import SplashPage from './components/splashscreen';
 import SideBar from './components/sideBar';
 import RecommendationPage from './components/recommendation-page';
 import CareLocator from './components/care-locator';
@@ -138,7 +137,7 @@ class AppNavigator extends Component {
                             gestures: {}
                         };
                     }}
-                    initialRoute={{id: (Platform.OS === 'android') ? 'splashscreen' : 'splashscreen', statusBarHidden: true}}
+                    initialRoute={{id: 'login', statusBarHidden: true}}
                     renderScene={this.renderScene}
                   />
             </Drawer>
@@ -147,8 +146,6 @@ class AppNavigator extends Component {
 
     renderScene(route, navigator) {
         switch (route.id) {
-            case 'splashscreen':
-                return <SplashPage navigator={navigator} />;
             case 'login':
                 return <Login navigator={navigator} />;
             case 'home':
