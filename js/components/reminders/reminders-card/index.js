@@ -17,7 +17,7 @@ class RemindersCard extends Component {
     constructor(props) {
       super(props)
       this.state = {
-        editingMode: true,
+        editingMode: false,
       }
     }
 

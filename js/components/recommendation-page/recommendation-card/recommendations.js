@@ -5,16 +5,16 @@ export default {
     reminderText: 'An HIV test is recommended every 3 months for many guys, but some guys might want or need to get tested more frequently.',
     summary: 'GET TESTED NOW',
     findTestingCenter: true,
-    buttonTitle: 'Find HIV Care Services',
+    buttonTitle: 'Find an HIV Testing Site',
     setReminders: true,
     orderHomeKit: true,
     setRemindersFirst: false
   },
 
   'referCare': {
-    text: 'You should see a doctor or other healthcare provider about HIV treatment. Doctor D can help you find HIV care services nearby.',
+    text: 'You should see a doctor or other healthcare provider about HIV treatment. Doctor D can help you find HIV testing sites nearby.',
     summary: 'FIND A DOCTOR',
-    buttonTitle: 'Find HIV Care Services',
+    buttonTitle: 'Find an HIV Testing Site',
     findTestingCenter: true,
     setReminders: false,
     orderHomeKit: false,
@@ -33,9 +33,9 @@ export default {
   },
 
   'contactDoc': {
-    text: 'You should keep seeing your doctor for HIV care. Doctor D can also help you find HIV care services nearby.',
+    text: 'You should keep seeing your doctor for HIV care. Doctor D can also help you find HIV testing sites nearby.',
     summary: 'CONTACT YOUR DOCTOR',
-    buttonTitle: 'Find HIV Care Services',
+    buttonTitle: 'Find an HIV Testing Site',
     findTestingCenter: true,
     setReminders: false,
     orderHomeKit: false,

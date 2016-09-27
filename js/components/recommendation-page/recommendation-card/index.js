@@ -7,7 +7,6 @@ import {Switch, Linking} from 'react-native';
 import {Container, Text, Content, View, Button, Card, CardItem } from 'native-base';
 
 import styles from './styles';
-import prepRecommendations from './prepRecommendations.js';
 import recommendations from './recommendations.js';
 import FindTestingCenterButton from '../find-test-center-button';
 import Collapsible from 'react-native-collapsible';
@@ -69,11 +68,11 @@ class RecommendationCard extends Component {
               { !setRemindersFirst && setReminders &&
                 <CardItem style={{borderColor: '#e9e9e9'}}>
                   <Text style={{color: '#696969',fontWeight: '300'}}>{reminderText}</Text>
-                  <Button block style={styles.setReminderButton} textStyle={{fontSize: 16, color: '#eee'}}
+                  <Button block style={styles.setReminderButton} textStyle={{fontSize: 14, color: '#eee'}}
                   onPress={() => {
                     this.pushNewRoute('remindersPage')}
                   }>
-                  Set Reminder
+                  SET REMINDER
                   </Button>
                 </CardItem>
               }
