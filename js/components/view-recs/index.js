@@ -30,7 +30,7 @@ class ViewRecs extends Component {
         return (
             <Container theme={theme}>
                 <View>
-                    <CustomHeader title={'MY RECOMMENDATIONS'} showBackButton={true} />
+                    <CustomHeader title={'MY RECOMMENDATIONS'} showBackButton={false} />
                     <Text style={styles.questionText}>
                         I'd like to view my...
                     </Text>

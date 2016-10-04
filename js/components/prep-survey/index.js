@@ -121,12 +121,21 @@ class PrepSurvey extends Component {
         } else {
             setTimeout(() => {
                 this.pushNewRoute('prepRecommendationPage');
-            }, 0)
+            }, 1500)
+            
+        }
+
+        if(this.state.done) {
+            return(
+                <Text style={{fontWeight: '300', color: '#696969', fontSize: 16}}>
+                    Thank you for completing the survey!
+                </Text>
+            )
         }
     }
 
     renderProgressBar() {
-        if(!this.state.isDisclaimer) {
+        if(!this.state.isDisclaimer && this.state.progress < 1) {
             return (
                 <Progress.Bar
                     borderRadius={0}
