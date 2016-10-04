@@ -831,7 +831,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.preventionhealthlabs.Doctor-D";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.preventionhealthlabs.Doctor-Dick";
 				PRODUCT_NAME = "Doctor D";
 			};
 			name = Debug;
@@ -856,7 +856,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.preventionhealthlabs.Doctor-D";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.preventionhealthlabs.Doctor-Dick";
 				PRODUCT_NAME = "Doctor D";
 			};
 			name = Release;
