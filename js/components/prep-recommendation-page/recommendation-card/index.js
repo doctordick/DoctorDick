@@ -48,7 +48,8 @@ class RecommendationCard extends Component {
             </Button>
           </CardItem>
           <CardItem style={{alignItems:'center'}}>
-            <Text onPress={() => this.pushNewRoute('prepSurvey')} style={{fontSize: 13, color: '#0000EE', textDecorationLine: 'underline'}}>RETAKE PrEP SURVEY</Text>
+                <Text style={{fontSize: 14, marginBottom: 10}}>HAVE YOUR BEHAVIORS CHANGED?</Text>
+                <Text style={{fontSize: 14, textAlign: 'center', color: '#696969',fontWeight: '300'}}>If your sexual activity has changed, you should <Text onPress={() => this.pushNewRoute('prepSurvey')} style={{fontSize: 13, color: '#0000EE', textDecorationLine: 'underline'}}>answer the PrEP questions again.</Text></Text>
           </CardItem>
         </Card>
       )

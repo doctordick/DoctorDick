@@ -77,7 +77,8 @@ class RecommendationCard extends Component {
                 </CardItem>
               }
               <CardItem style={{alignItems:'center', borderColor: '#e9e9e9'}}>
-                <Text onPress={() => this.pushNewRoute('survey')} style={{fontSize: 13, color: '#0000EE', textDecorationLine: 'underline'}}>RETAKE HIV TESTING SURVEY</Text>
+                <Text style={{fontSize: 14, marginBottom: 10}}>HAVE YOUR BEHAVIORS CHANGED?</Text>
+                <Text style={{fontSize: 14, textAlign: 'center', color: '#696969',fontWeight: '300'}}>If your sexual activity has changed, you should <Text onPress={() => this.pushNewRoute('survey')} style={{fontSize: 13, color: '#0000EE', textDecorationLine: 'underline'}}>answer the HIV testing questions again.</Text></Text>
               </CardItem>
             </Card>
         )
