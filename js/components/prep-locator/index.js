@@ -20,7 +20,7 @@ export default class PrepLocator extends Component {
         return (
             <Container theme={theme}>
                 <View>
-                    <CustomHeader title={'PREP LOCATOR'} showBackButton={true}/>
+                    <CustomHeader title={'PrEP LOCATOR'} showBackButton={true}/>
                     <WebView
                         source={{uri: this.state.url}}
                         scalesPageToFit={true}
