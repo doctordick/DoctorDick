@@ -104,7 +104,7 @@ class RemindersPage extends Component {
       } else {
         RNCalendarReminders.saveReminder('Doctor D Reminder', {
           location: '',
-          notes: 'Doctor D says: Open the App and stay Healthy!',
+          notes: 'Open the app and stay on top of your sexual health!',
           startDate: date.toISOString(),
           alarms: [{
             date: date.toISOString()

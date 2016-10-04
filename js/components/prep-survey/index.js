@@ -113,7 +113,7 @@ class PrepSurvey extends Component {
 
     renderView () {
         if(this.state.goingForward && !this.state.isDisclaimer) {
-            this.state.progress += 1/6;
+            this.state.progress += 1/8;
         }
 
         if(!this.state.done) {

@@ -33,12 +33,13 @@ const prep = {
       }
     ]
   },
+
   2: {
-    question: 'Are you in a monogamous relationship with another HIV-negative guy?',
+    question: 'Do you have more than one sex partner?',
     answers: [
       {
         text: 'YES',
-        done: 'stopThree'
+        next: 5
       },
       {
         text: 'NO',
@@ -46,11 +47,49 @@ const prep = {
       },
       {
         text: 'NOT SURE',
-        next: 3
+        next: 5
       }
     ]
   },
+
   3: {
+    question: 'Does your one sex partner only have sex with you?',
+    answers: [
+      {
+        text: 'YES',
+        next: 4
+      },
+      {
+        text: 'NO',
+        next: 5
+      },
+      {
+        text: 'NOT SURE',
+        next: 5
+      }
+    ]
+  },
+
+  4: {
+    question: 'Is your one sex partner HIV-positive?',
+    answers: [
+      {
+        text: 'YES',
+        next: 5
+      },
+      {
+        text: 'NO',
+        done: 'stopThree'
+      },
+      {
+        text: 'NOT SURE',
+        next: 5
+      }
+    ]
+  },
+
+
+  5: {
     question: 'Have you topped or bottomed without a condom in the past 6 months?',
     answers: [
       {
@@ -59,7 +98,7 @@ const prep = {
       },
       {
         text: 'NO',
-        next: 4
+        next: 6
       },
       {
         text: 'NOT SURE',
@@ -67,7 +106,7 @@ const prep = {
       }
     ]
   },
-  4: {
+  6: {
     question: 'Have you had an STD in the past 6 months?',
     answers: [
       {
@@ -76,7 +115,7 @@ const prep = {
       },
       {
         text: 'NO',
-        next: 5
+        next: 7
       },
       {
         text: 'NOT SURE',
@@ -84,7 +123,7 @@ const prep = {
       }
     ]
   },
-  5: {
+  7: {
     question: 'Are you in a relationship with a guy who’s HIV-positive?',
     answers: [
       {
