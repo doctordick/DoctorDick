@@ -14,7 +14,6 @@ import Login from './components/login';
 import SideBar from './components/sideBar';
 import RecommendationPage from './components/recommendation-page';
 import CareLocator from './components/care-locator';
-import Disclaimer from './components/disclaimer';
 import FAQ from './components/faq';
 import Survey from './components/survey';
 import Feedback from './components/feedback';

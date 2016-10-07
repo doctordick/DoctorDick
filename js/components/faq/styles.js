@@ -20,6 +20,12 @@ module.exports = StyleSheet.create({
         width: null,
         height: null
     },
+    link: {
+        textDecorationLine: 'underline',
+        fontWeight: '300',
+        lineHeight: 18,
+        color: '#0000ee'
+    },
     faq: {
         borderTopColor: '#ccc',
         borderTopWidth: 0.5,
