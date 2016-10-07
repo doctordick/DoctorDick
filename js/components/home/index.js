@@ -83,7 +83,7 @@ class Home extends Component {
                     </Text>
                     <View style={styles.buttonBlock}>
                         <Button rounded textStyle={{color: '#fff', fontSize: 12, fontWeight: '500'}} style={styles.button} onPress={() => this.pushNewRoute('survey')}>
-                            TAKE SURVEY
+                            LETS GO
                         </Button>
                     </View>
                     <Text style={styles.linkText} onPress={() => this.pushNewRouteParams('survey', { question: 4 })}>

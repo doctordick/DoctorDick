@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { TouchableHighlight, Image, Platform } from 'react-native';
+import { TouchableHighlight, Image, Platform, Linking } from 'react-native';
 import { connect } from 'react-redux';
 import { pushNewRoute, replaceRoute, popRoute } from '../../actions/route';
 import { Container,
@@ -43,19 +43,41 @@ class FAQ extends Component {
     pushNewRoute(route) {
          this.props.pushNewRoute(route);
     }
+
+    linkHandler (link) {
+        return <Text style={styles.link} onPress={() => Linking.openURL(link.url)}>{ link.label }</Text>
+    }
+
+    renderAnswer (section) {
+        if(section.link) {
+            let sectionParts = section.answer.split(section.link.label);
+            let link = this.linkHandler(section.link);
+            return (
+                <Animatable.Text style={[styles.faqText, styles.faqAnswer]}>
+                    {sectionParts[0]}
+                    {this.linkHandler(section.link)}
+                    {sectionParts[1]}
+                </Animatable.Text>
+            )
+        } else {
+            return <Animatable.Text style={[styles.faqText, styles.faqAnswer]}>{section.answer}</Animatable.Text>
+        }
+    }
+
     _renderHeader(section, i, isActive) {
         return (
-            <Animatable.View duration={50} style={[styles.faq, isActive ? styles.active : styles.inactive]} transition="backgroundColor">
+            <Animatable.View duration={300} style={[styles.faq, isActive ? styles.active : styles.inactive]} transition="backgroundColor">
                     <Text style={[styles.faqText, styles.faqQuestion, isActive ? styles.selected : styles.notSelected]}>{section.question}</Text>
             </Animatable.View>
         );
     }
 
     _renderContent(section, i, isActive) {
+        let answer = this.renderAnswer(section);
         return (
-      <Animatable.View duration={50}  style={[styles.content, isActive ? styles.active : styles.inactive]} transition="backgroundColor">
-        <Animatable.Text style={[styles.faqText, styles.faqAnswer]} animation={isActive ? 'bounceInDown' : undefined}>{section.answer}</Animatable.Text>
-      </Animatable.View>
+            <Animatable.View duration={300} style={[styles.content, isActive ? styles.active : styles.inactive]} transition="backgroundColor">
+                {answer}
+            </Animatable.View>
         );
     }
 
@@ -72,6 +94,10 @@ class FAQ extends Component {
                     <View style={styles.container}>
                         <Text style={styles.sectionHeading}>{faqs.about.title}</Text>
                         <Accordion
+                            linkHandler={this.linkHandler}
+                            renderAnswer={this.renderAnswer}
+                            underlayColor={'#f5f5f5'}
+                            duration={300}
                             sections={faqs.about.questionCollection}
                             renderHeader={this._renderHeader}
                             renderContent={this._renderContent}
@@ -80,6 +106,10 @@ class FAQ extends Component {
                     <View style={[styles.containerBottom]}>
                         <Text style={styles.sectionHeading}>{faqs.aboutSexualHealth.title}</Text>
                         <Accordion
+                            linkHandler={this.linkHandler}
+                            renderAnswer={this.renderAnswer}
+                            underlayColor={'#f5f5f5'}
+                            duration={300}
                             sections={faqs.aboutSexualHealth.questionCollection}
                             renderHeader={this._renderHeader}
                             renderContent={this._renderContent}

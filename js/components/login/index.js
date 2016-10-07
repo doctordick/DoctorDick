@@ -76,7 +76,7 @@ class Login extends Component {
                             </Text>
                         </View>
                         <View style={{backgroundColor: 'rgba(255, 255, 255, 0.85)', marginBottom: -40 }}>
-                            <Button rounded textStyle={{color: '#fff', fontWeight: '500', fontFamily: 'Avenir'}} block style={styles.button} onPress={() => this.pushNewRoute('disclaimer')}>
+                            <Button rounded textStyle={{color: '#fff', fontWeight: '500', fontFamily: 'Avenir'}} block style={styles.button} onPress={() => this.pushNewRoute('home')}>
                                     LET'S GET STARTED
                             </Button>
                             <Button textStyle={{color: '#0000EE', fontFamily: 'Avenir'}} transparent style={styles.transButton} onPress={() => this.pushNewRoute('faq')}>

@@ -44,7 +44,7 @@ class RemindersCard extends Component {
             <View>
               <View padder style={styles.card}>
                 <Text style={styles.title}>
-                  Doctor D has set a reminder for you to get an HIV test every 3 months, since many guys should get tested every 3 months.{"\n"}
+                  Doctor D has set a reminder for you to get an HIV test every 3-6 months, since many guys should get tested every 3-6 months.{"\n"}
                 </Text>
 
                 <Text style={styles.title}>
