@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import {Switch, Linking} from 'react-native';
 
-import {Text, Content, View, Button, Card, CardItem} from 'native-base';
+import {Text, Content, Container, Picker, View, Button, Card, CardItem} from 'native-base';
 
 import styles from './styles';
 import recommendations from '../../recommendation-page/recommendation-card/recommendations.js';
@@ -13,11 +13,15 @@ import ReminderEditor from './reminder-editor';
 
 import LastTestDatePicker from './last-test-date-picker';
 
+const Item = Picker.Item;
+
 class RemindersCard extends Component {
     constructor(props) {
       super(props)
       this.state = {
         editingMode: false,
+        selectedItem: undefined,
+        selected1: '3months',
       }
     }
 
@@ -29,6 +33,12 @@ class RemindersCard extends Component {
 
     openLink(url) {
         Linking.openURL(url).catch(err => console.error('An error occurred', err));
+    }
+
+    onValueChange (value: string) {
+        this.setState({
+            selected1 : value
+        });
     }
 
     render() {
@@ -62,6 +72,19 @@ class RemindersCard extends Component {
                 }
 
                 <Collapsible collapsed={!this.props.reminder}>
+                  <View style={{flexDirection: 'row'}}>
+                    <Text style={[styles.reminderLabel,{marginTop: 8}]}>PICK FREQUENCY: </Text>
+                    <Picker
+                        iosHeader="Select one"
+                        mode="dropdown"
+                        selectedValue={this.state.selected1}
+                        onValueChange={this.onValueChange.bind(this)}>
+                        <Item label="Every 3 months" value="3months" />
+                        <Item label="Every 6 months" value="6months" />
+                        <Item label="Every 9 months" value="9months" />
+                     </Picker>
+                   </View>
+
                   <ReminderEditor modal={this.props.nextModal} date={this.props.nextDate}/>
                 </Collapsible>
 
