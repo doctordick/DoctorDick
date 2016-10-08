@@ -2,7 +2,7 @@
 'use strict';
 
 import type {Action, RecommendationCode} from '../actions/types';
-import { REACH_DECISION, TOGGLE_REMINDER, SET_REMINDER_DATE, SET_LAST_TEST_DATE, CREATE_NEW_IOS_REMINDER } from '../actions/recommendations';
+import { REACH_DECISION, TOGGLE_REMINDER, SET_REMINDER_DATE, SET_LAST_TEST_DATE, SET_TEST_FREQUENCY, CREATE_NEW_IOS_REMINDER } from '../actions/recommendations';
 import { REHYDRATE } from 'redux-persist/constants'
 
 export type Recommendation = {
@@ -10,6 +10,7 @@ export type Recommendation = {
   ReminderEnabled: Boolean,
   NextReminder: Date,
   LastTestDate: Date,
+  TestFrequency: String,
   ReminderID: String,
 }
 
@@ -31,6 +32,7 @@ const initialState = {
     ReminderEnabled: false,
     NextReminder: null,
     LastTestDate: null,
+    TestFrequency: '3months',
     ReminderID: null,
   },
   'Other STDs': {
@@ -38,6 +40,7 @@ const initialState = {
     ReminderEnabled: false,
     NextReminder: null,
     LastTestDate: null,
+    TestFrequency: '3months',
     ReminderID: null,
   },
   'PrEP': {
@@ -48,6 +51,7 @@ const initialState = {
     ReminderEnabled: false,
     NextReminder: null,
     LastTestDate: null,
+    TestFrequency: '3months',
     ReminderID: null,
   },
 };
@@ -83,6 +87,12 @@ export default function (state:State = initialState, action:Action): State {
   if (action.type === SET_LAST_TEST_DATE) {
     const newState = { ...state }
     newState[action.questionnaireType].LastTestDate = action.date
+    return newState
+  }
+
+  if (action.type === SET_TEST_FREQUENCY) {
+    const newState = { ...state }
+    newState[action.questionnaireType].TestFrequency = action.num
     return newState
   }
 

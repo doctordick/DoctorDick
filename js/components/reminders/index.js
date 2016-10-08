@@ -5,7 +5,7 @@ import { Image, NativeAppEventEmitter } from 'react-native';
 import { connect } from 'react-redux';
 
 import { popRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
-import { toggleReminder, setReminderDate, setLastTestDate, createNewIOSReminder } from '../../actions/recommendations';
+import { toggleReminder, setReminderDate, setLastTestDate, setTestFrequency, createNewIOSReminder } from '../../actions/recommendations';
 
 
 import {Container, Title, Content, Text, Button, Icon, InputGroup, Input, View, Footer, Card, CardItem } from 'native-base';
@@ -120,6 +120,10 @@ class RemindersPage extends Component {
       this.props.setLastTestDate(date, 'HIV');
     }
 
+    setTestFrequency(num){
+      this.props.setTestFrequency(num, 'HIV');
+    }
+
     render() {
         const recommendations = this.props.recommendations;
         return (
@@ -136,7 +140,9 @@ class RemindersPage extends Component {
                               recommendationCode={recommendations.HIV.RecommendationCode}
                               reminder={recommendations.HIV.ReminderEnabled}
                               toggleReminder={this.toggleReminder.bind(this)}
-                              nextDate={recommendations.HIV.NextReminder || this.state.defaultDate}
+                              nextDate={recommendations.HIV.nextDate || this.state.defaultDate}
+                              testFrequency={recommendations.HIV.testFrequency}
+                              setTestFrequency={(val) => this.setTestFrequency(val)}
                               lastDate={recommendations.HIV.LastTestDate}
                               nextModal={this.state.nextModal}
                               lastModal={this.state.lastModal}
@@ -194,6 +200,7 @@ function mapActionsToProps(dispatch) {
         toggleReminder: (questionnaireType) => dispatch(toggleReminder(questionnaireType)),
         setReminderDate: (date, questionnaireType) => dispatch(setReminderDate(date, questionnaireType)),
         setLastTestDate: (date, questionnaireType) => dispatch(setLastTestDate(date, questionnaireType)),
+        setTestFrequency: (date, questionnaireType) => dispatch(setTestFrequency(date, questionnaireType)),
         createNewIOSReminder: (reminderID, questionnaireType) => dispatch(createNewIOSReminder(reminderID, questionnaireType)),
     }
 }

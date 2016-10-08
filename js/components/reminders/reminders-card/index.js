@@ -20,8 +20,7 @@ class RemindersCard extends Component {
       super(props)
       this.state = {
         editingMode: false,
-        selectedItem: undefined,
-        selected1: '3months',
+        testFrequency: '9months',
       }
     }
 
@@ -35,10 +34,11 @@ class RemindersCard extends Component {
         Linking.openURL(url).catch(err => console.error('An error occurred', err));
     }
 
-    onValueChange (value: string) {
-        this.setState({
-            selected1 : value
-        });
+    setTestFrequency(frequency) {
+      this.props.setTestFrequency(frequency)
+      this.setState({
+        testFrequency: frequency,
+      })
     }
 
     render() {
@@ -77,8 +77,9 @@ class RemindersCard extends Component {
                     <Picker
                         iosHeader="Select one"
                         mode="dropdown"
-                        selectedValue={this.state.selected1}
-                        onValueChange={this.onValueChange.bind(this)}>
+                        selectedValue={this.state.testFrequency}
+                        onValueChange={this.setTestFrequency.bind(this)}
+                        >
                         <Item label="Every 3 months" value="3months" />
                         <Item label="Every 6 months" value="6months" />
                         <Item label="Every 9 months" value="9months" />
