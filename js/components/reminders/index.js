@@ -85,7 +85,10 @@ class RemindersPage extends Component {
       });
 
       if (this.props.recommendations.HIV.ReminderID && this.props.recommendations.HIV.ReminderEnabled) {
-        RNCalendarReminders.removeReminder(this.props.recommendations.HIV.ReminderID);
+        try {
+          RNCalendarReminders.removeReminder(this.props.recommendations.HIV.ReminderID);
+        } catch (err) {}
+
       }
       this.props.toggleReminder('HIV');
     }
