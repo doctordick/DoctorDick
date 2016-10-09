@@ -98,15 +98,19 @@ class RemindersPage extends Component {
 
       // check if we have IOS reminder already, if so edit it, if not create new.
       if (this.props.recommendations.HIV.ReminderID) {
-        RNCalendarReminders.updateReminder(this.props.recommendations.HIV.ReminderID, {
-          startDate: date.toISOString(),
-          dueDate: new Date(date + 1).toISOString(),
-          alarms: [{
-            date: date.toISOString()
-          }],
-          recurrence: 'monthly',
-          recurrenceInterval: this.props.recommendations.HIV.TestFrequency[0],
-        });
+        try {
+          RNCalendarReminders.updateReminder(this.props.recommendations.HIV.ReminderID, {
+            startDate: date.toISOString(),
+            dueDate: new Date(date + 1).toISOString(),
+            alarms: [{
+              date: date.toISOString()
+            }],
+            recurrence: 'monthly',
+            recurrenceInterval: this.props.recommendations.HIV.TestFrequency[0],
+          });
+        } catch (error) {
+          console.error(error)
+        }
       } else {
         RNCalendarReminders.saveReminder('Doctor D Reminder', {
           location: '',
