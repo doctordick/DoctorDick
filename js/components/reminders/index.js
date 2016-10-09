@@ -141,7 +141,7 @@ class RemindersPage extends Component {
                               reminder={recommendations.HIV.ReminderEnabled}
                               toggleReminder={this.toggleReminder.bind(this)}
                               nextDate={recommendations.HIV.nextDate || this.state.defaultDate}
-                              testFrequency={recommendations.HIV.testFrequency}
+                              testFrequency={recommendations.HIV.TestFrequency}
                               setTestFrequency={(val) => this.setTestFrequency(val)}
                               lastDate={recommendations.HIV.LastTestDate}
                               nextModal={this.state.nextModal}

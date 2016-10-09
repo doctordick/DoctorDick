@@ -18,9 +18,10 @@ const Item = Picker.Item;
 class RemindersCard extends Component {
     constructor(props) {
       super(props)
+      console.log('this.props.testFrequency: ', this.props.testFrequency);
       this.state = {
         editingMode: false,
-        testFrequency: '9months',
+        testFrequency: this.props.testFrequency,
       }
     }
 
