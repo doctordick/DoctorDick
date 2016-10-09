@@ -100,18 +100,24 @@ class RemindersPage extends Component {
       if (this.props.recommendations.HIV.ReminderID) {
         RNCalendarReminders.updateReminder(this.props.recommendations.HIV.ReminderID, {
           startDate: date.toISOString(),
+          dueDate: new Date(date + 1).toISOString(),
           alarms: [{
             date: date.toISOString()
-          }]
+          }],
+          recurrence: 'monthly',
+          recurrenceInterval: this.props.recommendations.HIV.TestFrequency[0],
         });
       } else {
         RNCalendarReminders.saveReminder('Doctor D Reminder', {
           location: '',
           notes: 'Open the app and stay on top of your sexual health!',
           startDate: date.toISOString(),
+          dueDate: new Date(date + 1).toISOString(),
           alarms: [{
             date: date.toISOString()
-          }]
+          }],
+          recurrence: 'monthly',
+          recurrenceInterval: this.props.recommendations.HIV.TestFrequency[0],
         });
       }
     }
@@ -122,6 +128,33 @@ class RemindersPage extends Component {
 
     setTestFrequency(num){
       this.props.setTestFrequency(num, 'HIV');
+
+      const date = this.props.recommendations.HIV.NextReminder
+
+      // check if we have IOS reminder already, if so edit it, if not create new.
+      if (this.props.recommendations.HIV.ReminderID) {
+        RNCalendarReminders.updateReminder(this.props.recommendations.HIV.ReminderID, {
+          startDate: date.toISOString(),
+          dueDate: new Date(date + 1).toISOString(),
+          alarms: [{
+            date: date.toISOString()
+          }],
+          recurrence: 'monthly',
+          recurrenceInterval: num[0],
+        });
+      } else {
+        RNCalendarReminders.saveReminder('Doctor D Reminder', {
+          location: '',
+          notes: 'Open the app and stay on top of your sexual health!',
+          startDate: date.toISOString(),
+          dueDate: new Date(date + 1).toISOString(),
+          alarms: [{
+            date: date.toISOString()
+          }],
+          recurrence: 'monthly',
+          recurrenceInterval: num[0],
+        });
+      }
     }
 
     render() {
