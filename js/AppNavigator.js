@@ -24,6 +24,7 @@ import ViewRecs from './components/view-recs';
 import PrepLocator from './components/prep-locator';
 import PrepRecommendationPage from './components/prep-recommendation-page';
 import PrepSurvey from './components/prep-survey';
+import Disclaimer from './components/disclaimer';
 
 import { statusBarColor } from './themes/base-theme';
 

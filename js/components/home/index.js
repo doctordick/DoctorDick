@@ -23,6 +23,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            initialized: false
         };
     }
 
@@ -38,12 +39,18 @@ class Home extends Component {
         this.props.pushNewRoute(route);
     }
 
+    pushNewRouteHome(route) {
+        this.setState({
+            initialized: true
+        })
+    }
+
     pushNewRouteParams(route, params) {
          this.props.pushNewRouteParams(route, params);
     }
 
     renderView() {
-        if(this.props.recommendations.HIV.RecommendationCode) {
+        if(this.state.initialized || this.props.recommendations.HIV.RecommendationCode || this.props.recommendations.PrEP.RecommendationCode) {
             return (
                 <View style={styles.content}>
                     <Image style={{height: 250, width: 250}} source={require('../../../images/doctor.png')}>
@@ -79,11 +86,11 @@ class Home extends Component {
                     <Text style={{ color:'#555', textAlign:'center', fontWeight: '300', paddingLeft: 30, paddingRight: 30}}>
                         Getting started is easy!
                         {"\n\n"}
-                        First, answer a few questions so Doctor D can make recommendations about HIV testing for you.
+                        First, answer a few questions so Doctor D can make recommendations for you.
                     </Text>
                     <View style={styles.buttonBlock}>
-                        <Button rounded textStyle={{color: '#fff', fontSize: 12, fontWeight: '500'}} style={styles.button} onPress={() => this.pushNewRoute('survey')}>
-                            LETS GO
+                        <Button rounded textStyle={{color: '#fff', fontSize: 12, fontWeight: '500'}} style={styles.button} onPress={() => this.pushNewRouteHome('home')}>
+                            LET&apos;S GO
                         </Button>
                     </View>
                     <Text style={styles.linkText} onPress={() => this.pushNewRouteParams('survey', { question: 4 })}>
