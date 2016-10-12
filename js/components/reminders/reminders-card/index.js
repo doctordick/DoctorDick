@@ -74,7 +74,7 @@ class RemindersCard extends Component {
 
                 <Collapsible collapsed={!this.props.reminder}>
                   <View style={{flexDirection: 'row'}}>
-                    <Text style={[styles.reminderLabel,{marginTop: 8}]}>PICK FREQUENCY: </Text>
+                    <Text style={[styles.reminderLabel,{marginTop: 8, marginRight: -30}]}>PICK FREQUENCY: </Text>
                     <Picker
                         iosHeader="Select one"
                         mode="dropdown"

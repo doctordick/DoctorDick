@@ -39,7 +39,7 @@ class RecommendationCard extends Component {
         return (
             <Card style={{width: 350, marginLeft: -5}}>
               <CardItem style={{backgroundColor: '#FFF', justifyContent:'center'}} header>
-                <Text style={{fontSize: 18, color: '#517aa3', fontWeight: '500'}}>HIV TESTING RECS</Text>
+                <Text style={{fontSize: 18, color: '#517aa3', fontWeight: '500', textAlign:'center'}}>HIV TESTING RECS</Text>
               </CardItem>
               <CardItem style={{borderColor: '#e9e9e9'}}>
                 <Text style={{color: '#696969', fontWeight: '300'}}>Based on your most recent answers, here are Doctor D's recommendations for you:</Text>
@@ -76,8 +76,8 @@ class RecommendationCard extends Component {
                   </Button>
                 </CardItem>
               }
-              <CardItem style={{alignItems:'center', borderColor: '#e9e9e9'}}>
-                <Text style={{fontSize: 14, marginBottom: 10}}>HAVE YOUR BEHAVIORS CHANGED?</Text>
+              <CardItem style={{alignItems:'center', borderColor: '#e9e9e9', height: 110}}>
+                <Text style={{fontSize: 14, marginBottom: 0}}>HAVE YOUR BEHAVIORS CHANGED?</Text>
                 <Text style={{fontSize: 14, textAlign: 'center', color: '#696969',fontWeight: '300'}}>If your sexual activity has changed, you should <Text onPress={() => this.pushNewRoute('survey')} style={{fontSize: 13, color: '#0000EE', textDecorationLine: 'underline'}}>answer the HIV testing questions again.</Text></Text>
               </CardItem>
             </Card>
